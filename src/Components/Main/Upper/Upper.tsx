@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Search from "./Search/Search";
+import { ReactElement } from "react";
+import SearchBar from "./SearchBar/SearchBar";
 
 const Container = styled.section`
   width: 100%;
@@ -10,10 +11,10 @@ const Container = styled.section`
   align-items: center;
   border: 1px solid blue;
 `;
-const Upper = () => {
+const Upper: React.FC = (): ReactElement => {
   return (
     <Container>
-      <Search />
+      <SearchBar />
     </Container>
   );
 };
