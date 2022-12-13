@@ -8,14 +8,14 @@ const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 70px;
-  border: 1px solid blue;
   box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 const Header = styled.h1`
   margin: 0;
   padding: 0;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   width: fit-content;
 `;
 
@@ -28,7 +28,7 @@ const DarkContainer = styled.div`
 `;
 const DarkText = styled.h4`
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 `;
 const Nav = () => {
