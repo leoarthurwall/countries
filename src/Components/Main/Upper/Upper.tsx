@@ -9,7 +9,6 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
 `;
 const Upper: React.FC = (): ReactElement => {
   return (
