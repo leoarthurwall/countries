@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoMoonOutline } from "react-icons/io5";
 
 const Container = styled.nav`
   height: 60px;
@@ -6,7 +7,7 @@ const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 70px;
   border: 1px solid blue;
   box-sizing: border-box;
 `;
@@ -22,7 +23,7 @@ const DarkContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   padding
 `;
 const DarkText = styled.h4`
@@ -35,6 +36,7 @@ const Nav = () => {
     <Container>
       <Header>Where in the world?</Header>
       <DarkContainer>
+        <IoMoonOutline />
         <DarkText>Dark Mode</DarkText>
       </DarkContainer>
     </Container>
