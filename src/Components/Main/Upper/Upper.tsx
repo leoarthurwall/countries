@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import Search from "./Search/Search";
 
 const Container = styled.section`
   width: 100%;
-  padding: 40px 70px;
+  padding: 30px 70px;
 
   display: flex;
   justify-content: space-between;
@@ -10,7 +11,11 @@ const Container = styled.section`
   border: 1px solid blue;
 `;
 const Upper = () => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Search />
+    </Container>
+  );
 };
 
 export default Upper;
