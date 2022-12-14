@@ -19,6 +19,7 @@ const DropdownContainer = styled.div`
   box-sizing: border-box;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
 `;
 const Text = styled.h4`
   margin: 0;
@@ -28,9 +29,10 @@ const Text = styled.h4`
 const IconContainer = styled.div<IisOpen>`
   height: 20px;
   width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  transform: ${({ isOpen }) => isOpen && "rotate(0.5turn)"};
+  transform-origin: center center;
+  transition: all 0.4s ease-in-out;
 `;
 const DropdownMenu = styled.ul<IisOpen>`
   margin: 0;
