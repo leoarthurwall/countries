@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CardSingle from "./CardSingle/CardSingle";
 
 const Container = styled.section`
   width: 100%;
@@ -14,16 +15,14 @@ const Container = styled.section`
   grid-column-gap: 25px;
 `;
 
-const CardSingle = styled.div`
-  height: 400px;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-`;
+
 
 const Card = () => {
   return (
     <Container>
+      <CardSingle />
+      <CardSingle />
+      <CardSingle />
       <CardSingle />
       <CardSingle />
       <CardSingle />
