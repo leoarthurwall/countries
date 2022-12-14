@@ -10,6 +10,8 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+
 `;
 const Upper: React.FC = (): ReactElement => {
   return (
