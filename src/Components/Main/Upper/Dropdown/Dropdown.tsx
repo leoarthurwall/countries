@@ -25,6 +25,13 @@ const Text = styled.h4`
   font-weight: 400;
   font-size: 14px;
 `;
+const IconContainer = styled.div<IisOpen>`
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const DropdownMenu = styled.ul<IisOpen>`
   margin: 0;
   list-style: none;
@@ -35,7 +42,7 @@ const DropdownMenu = styled.ul<IisOpen>`
   width: 200px;
   top: 55px;
   box-sizing: border-box;
-  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")}
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
 `;
 const DropdownItem = styled.li`
   font-weight: 400;
@@ -44,9 +51,8 @@ const DropdownItem = styled.li`
 `;
 
 interface IisOpen {
-    isOpen: Boolean;
-} 
-
+  isOpen: Boolean;
+}
 
 const Dropdown: React.FC = (): ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -58,7 +64,9 @@ const Dropdown: React.FC = (): ReactElement => {
     <Wrapper>
       <DropdownContainer onClick={handleDropdownClick}>
         <Text> Filter by Region</Text>
-        <BiChevronUp size={20} />
+        <IconContainer isOpen={isOpen}>
+          <BiChevronUp size={"auto"} />
+        </IconContainer>
       </DropdownContainer>
       <DropdownMenu isOpen={isOpen}>
         <DropdownItem>Europe</DropdownItem>
