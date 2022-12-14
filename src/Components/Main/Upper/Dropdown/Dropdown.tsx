@@ -39,7 +39,7 @@ const DropdownMenu = styled.ul<IisOpen>`
   list-style: none;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 10px 20px;
+  padding: 10px 0;
   position: absolute;
   width: 200px;
   top: 55px;
@@ -49,7 +49,12 @@ const DropdownMenu = styled.ul<IisOpen>`
 const DropdownItem = styled.li`
   font-weight: 400;
   font-size: 14px;
-  padding: 10px 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover{
+    background-color: #E8EAED;
+  }
+
 `;
 
 interface IisOpen {
