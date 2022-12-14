@@ -5,7 +5,7 @@ import Dropdown from "./Dropdown/Dropdown";
 
 const Container = styled.section`
   width: 100%;
-  padding: 30px 70px;
+  padding: 30px 0;
 
   display: flex;
   justify-content: space-between;
