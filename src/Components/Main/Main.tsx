@@ -7,11 +7,12 @@ import Card from "./Card/Card";
 const Container = styled.main`
 height: 100%;
 width: 100%;
-padding: 0 70px;
+padding: 0 70px 50px 70px;
 box-sizing: border-box;
 
 display: flex;
 flex-direction: column;
+
 `
 
 const Main: React.FC = (): ReactElement => {

@@ -3,11 +3,12 @@ import Main from "./Components/Main/Main";
 import Nav from "./Components/Nav/Nav";
 
 const Container = styled.main`
-height: 100vh;
+height: 100%;
 width: 100vw;
 
 display: flex:
 flex-direction: column;
+
 `;
 
 function App() {

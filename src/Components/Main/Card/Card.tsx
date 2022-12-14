@@ -3,7 +3,7 @@ import CardSingle from "./CardSingle/CardSingle";
 
 const Container = styled.section`
   width: 100%;
-  height: auto;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -13,6 +13,7 @@ const Container = styled.section`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 50px;
   grid-column-gap: 25px;
+
 `;
 
 
