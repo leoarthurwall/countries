@@ -77,7 +77,7 @@ const Dropdown: React.FC = (): ReactElement => {
       </DropdownContainer>
       <DropdownMenu isOpen={isOpen}>
         <DropdownItem>Europe</DropdownItem>
-        <DropdownItem> America</DropdownItem>
+        <DropdownItem> Americas</DropdownItem>
         <DropdownItem>Africa</DropdownItem>
         <DropdownItem> Asia</DropdownItem>
         <DropdownItem>Oceana</DropdownItem>

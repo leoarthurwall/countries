@@ -4,6 +4,8 @@ import { ICountries } from "../../../../ICountries";
 const Container = styled.div`
   height: 380px;
   width: 100%;
+  min-width: 220px;
+  max-width: 300px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
