@@ -11,10 +11,12 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Flag = styled.div`
+const Flag = styled.img`
   background-color: #92d3ee;
   height: 50%;
   width: 100%;
+  object-fit: contain;
+
 `;
 const TextContainer = styled.div`
   height: 50%;
@@ -41,11 +43,11 @@ type Props = {
 
 const CardSingle: React.FC<Props> = ({country}) => {
 
-  const { region, capital, population, name, common } = country
+  const { region, capital, population, name, flags } = country
 
   return (
     <Container >
-      <Flag></Flag>
+      <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
       <TextContainer>
         <Header>{name.common}</Header>
         <SubHeader>
