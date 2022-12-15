@@ -18,24 +18,22 @@ const Container = styled.section`
 `;
 
 const Card = () => {
-    const [countries, setCountries] = useState<ICountries[]>([])
+  const [countries, setCountries] = useState<ICountries[]>([]);
 
-    useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/all`)
-          .then((res) => res.json())
-          .then((json) => {
-            console.log(json);
-            setCountries(json);
-          });
-      }, []);
-      console.log({countries})
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setCountries(json);
+      });
+  }, []);
+  console.log({ countries });
   return (
     <Container>
-        {countries.map((country) =>{
-
-      <CardSingle />
-        })}
-     
+      {countries.map((country, index) => (
+        <CardSingle key={index} country={country} />
+      ))}
     </Container>
   );
 };

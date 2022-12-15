@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ICountries } from "../../../../ICountries";
 
 const Container = styled.div`
   height: 380px;
@@ -34,7 +35,12 @@ const Result = styled.span`
   font-weight: 300;
 `;
 
-const CardSingle = () => {
+type Props = {
+  key: number;
+  country: ICountries;
+}
+
+const CardSingle: React.FC<Props> = ({key, country}) => {
   return (
     <Container>
       <Flag></Flag>
