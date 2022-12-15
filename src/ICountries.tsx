@@ -1,7 +1,8 @@
 export interface ICountries {
     capital: string
-    continents: string
+    region: string
     flags: string
     population: number
-    name: string   
+    name: string  
+    common: string
 }

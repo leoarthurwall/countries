@@ -37,20 +37,22 @@ const Result = styled.span`
 
 type Props = {
   country: ICountries;
-  key: number;
 }
 
-const CardSingle: React.FC<Props> = ({country, key}) => {
+const CardSingle: React.FC<Props> = ({country}) => {
+
+  const { region } = country
+
   return (
-    <Container>
+    <Container >
       <Flag></Flag>
       <TextContainer>
-        <Header>Germany</Header>
+        <Header></Header>
         <SubHeader>
           Population: <Result>81,770,343</Result>
         </SubHeader>
         <SubHeader>
-          Region: <Result>Europe</Result>
+          Region: <Result>{region}</Result>
         </SubHeader>
         <SubHeader>
           Capital: <Result>Berlin</Result>
