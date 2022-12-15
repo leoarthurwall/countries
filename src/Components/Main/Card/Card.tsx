@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CardSingle from "./CardSingle/CardSingle";
 import { useState, useEffect } from "react";
+import { ICountries } from "../../../ICountries";
 
 const Container = styled.section`
   width: 100%;
@@ -17,28 +18,24 @@ const Container = styled.section`
 `;
 
 const Card = () => {
-    const [data, setData] = useState([])
+    const [countries, setCountries] = useState<ICountries[]>([])
 
     useEffect(() => {
         fetch(`https://restcountries.com/v3.1/all`)
           .then((res) => res.json())
           .then((json) => {
             console.log(json);
-            setData(json);
+            setCountries(json);
           });
       }, []);
+      console.log({countries})
   return (
     <Container>
+        {countries.map((country) =>{
+
       <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
-      <CardSingle />
+        })}
+     
     </Container>
   );
 };
