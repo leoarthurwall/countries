@@ -15,7 +15,6 @@ const Flag = styled.img`
   background-color: #92d3ee;
   height: 50%;
   width: 100%;
-  object-fit: contain;
 
 `;
 const TextContainer = styled.div`
