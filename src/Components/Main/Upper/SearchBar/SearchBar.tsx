@@ -13,6 +13,9 @@ const Input = styled.input`
   ::placeholder {
     color: grey;
   }
+  @media(max-width: 700px){
+    width: 250px;
+  }
 `;
 
 const InputForm = styled.div`
