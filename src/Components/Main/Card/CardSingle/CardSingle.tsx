@@ -41,21 +41,21 @@ type Props = {
 
 const CardSingle: React.FC<Props> = ({country}) => {
 
-  const { region } = country
+  const { region, capital, population, name, common } = country
 
   return (
     <Container >
       <Flag></Flag>
       <TextContainer>
-        <Header></Header>
+        <Header>{name.common}</Header>
         <SubHeader>
-          Population: <Result>81,770,343</Result>
+          Population: <Result>{population}</Result>
         </SubHeader>
         <SubHeader>
           Region: <Result>{region}</Result>
         </SubHeader>
         <SubHeader>
-          Capital: <Result>Berlin</Result>
+          Capital: <Result>{capital}</Result>
         </SubHeader>
       </TextContainer>
     </Container>

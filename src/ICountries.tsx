@@ -3,6 +3,6 @@ export interface ICountries {
     region: string
     flags: string
     population: number
-    name: string  
+    name: any
     common: string
 }
