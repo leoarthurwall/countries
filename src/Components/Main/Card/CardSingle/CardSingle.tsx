@@ -36,11 +36,11 @@ const Result = styled.span`
 `;
 
 type Props = {
-  key: number;
   country: ICountries;
+  key: number;
 }
 
-const CardSingle: React.FC<Props> = ({key, country}) => {
+const CardSingle: React.FC<Props> = ({country, key}) => {
   return (
     <Container>
       <Flag></Flag>
