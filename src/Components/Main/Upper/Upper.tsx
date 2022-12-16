@@ -43,11 +43,11 @@ const Upper: React.FC<Props> = ({
       <SearchBar />
       {selectedItem === "" ? (
         <Text>
-          All Countries <Span>({countries.length} results)</Span>
+          All <Span>({countries.length} countries)</Span>
         </Text>
       ) : (
         <Text>
-          {selectedItem} <Span>({filteredItems.length} results)</Span>
+          {selectedItem} <Span>({filteredItems.length} countries)</Span>
         </Text>
       )}
 
