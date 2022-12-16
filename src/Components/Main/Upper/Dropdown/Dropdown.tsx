@@ -76,11 +76,11 @@ const Dropdown: React.FC = (): ReactElement => {
         </IconContainer>
       </DropdownContainer>
       <DropdownMenu isOpen={isOpen}>
-        <DropdownItem>Europe</DropdownItem>
-        <DropdownItem> Americas</DropdownItem>
-        <DropdownItem>Africa</DropdownItem>
-        <DropdownItem> Asia</DropdownItem>
-        <DropdownItem>Oceana</DropdownItem>
+        <DropdownItem value={"Europe"}>Europe</DropdownItem>
+        <DropdownItem value={"Americas"}> Americas</DropdownItem>
+        <DropdownItem value={"Africa"}>Africa</DropdownItem>
+        <DropdownItem value={"Asia"}> Asia</DropdownItem>
+        <DropdownItem value={"Oceana"}>Oceana</DropdownItem>
       </DropdownMenu>
     </Wrapper>
   );
