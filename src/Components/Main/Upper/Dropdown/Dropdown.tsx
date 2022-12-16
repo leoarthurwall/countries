@@ -83,6 +83,10 @@ const Dropdown: React.FC<Props> = ({
     console.log({ selectedItem });
   };
 
+  const handleAllOptions = () => {
+    setSelectedItem("")
+  }
+
   return (
     <Wrapper>
       <DropdownContainer onClick={handleDropdownClick}>
@@ -97,6 +101,8 @@ const Dropdown: React.FC<Props> = ({
         <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Asia</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Oceania</DropdownItem>
+        <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
+
       </DropdownMenu>
     </Wrapper>
   );
