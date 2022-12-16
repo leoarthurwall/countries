@@ -85,6 +85,7 @@ const Dropdown: React.FC<Props> = ({
 
   const handleAllOptions = () => {
     setSelectedItem("")
+    setIsOpen(!isOpen);
   }
 
   return (
