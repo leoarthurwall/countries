@@ -44,6 +44,7 @@ const Main: React.FC = (): ReactElement => {
         countries={countries}
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
+        filteredItems={filteredItems} 
       />
       <Card countries={countries} filteredItems={filteredItems} />
     </Container>

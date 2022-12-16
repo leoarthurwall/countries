@@ -18,19 +18,39 @@ const Container = styled.section`
   }
 `;
 
+const Text = styled.h3`
+font-weight: 500`;
+const Span = styled.span`
+  font-weight: 300;
+  font-size: 14px;
+  color: grey;
+`;
+
 type Props = {
   countries: any;
   selectedItem: string;
   setSelectedItem: (val: string) => void;
+  filteredItems: any[]
 };
 const Upper: React.FC<Props> = ({
   countries,
   selectedItem,
   setSelectedItem,
+  filteredItems
 }): ReactElement => {
   return (
     <Container>
       <SearchBar />
+      {selectedItem === "" ? (
+        <Text>
+          All Countries <Span>({countries.length} results)</Span>
+        </Text>
+      ) : (
+        <Text>
+          {selectedItem} <Span>({filteredItems.length} results)</Span>
+        </Text>
+      )}
+
       <Dropdown
         countries={countries}
         selectedItem={selectedItem}
