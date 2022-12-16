@@ -63,10 +63,20 @@ interface IisOpen {
 
 const Dropdown: React.FC = (): ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<any>("")
 
   const handleDropdownClick = (val: any) => {
     setIsOpen(!isOpen);
   };
+
+  const handleSelectedOption = (e:any) => {
+    setSelectedItem(e.target.innerHTML);
+    setIsOpen(!isOpen)
+    console.log(selectedItem)
+  }
+
+
+
   return (
     <Wrapper>
       <DropdownContainer onClick={handleDropdownClick}>
@@ -76,11 +86,11 @@ const Dropdown: React.FC = (): ReactElement => {
         </IconContainer>
       </DropdownContainer>
       <DropdownMenu isOpen={isOpen}>
-        <DropdownItem value={"Europe"}>Europe</DropdownItem>
-        <DropdownItem value={"Americas"}> Americas</DropdownItem>
-        <DropdownItem value={"Africa"}>Africa</DropdownItem>
-        <DropdownItem value={"Asia"}> Asia</DropdownItem>
-        <DropdownItem value={"Oceana"}>Oceana</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}> Americas</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}> Asia</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Oceana</DropdownItem>
       </DropdownMenu>
     </Wrapper>
   );
