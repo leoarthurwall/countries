@@ -78,7 +78,8 @@ const Dropdown: React.FC<Props> = ({ countries }): ReactElement => {
     console.log({ selectedItem });
   };
 
-  const filteredItem = countries.region
+  const filteredItem = countries.filter((country: any) => country.region === selectedItem)
+
   console.log({filteredItem})
 
   return (
