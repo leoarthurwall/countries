@@ -20,12 +20,22 @@ const Container = styled.section`
 
 type Props = {
   countries: any;
+  selectedItem: string;
+  setSelectedItem: (val: string) => void;
 };
-const Upper: React.FC<Props> = ({ countries }): ReactElement => {
+const Upper: React.FC<Props> = ({
+  countries,
+  selectedItem,
+  setSelectedItem,
+}): ReactElement => {
   return (
     <Container>
       <SearchBar />
-      <Dropdown countries={countries}/>
+      <Dropdown
+        countries={countries}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
+      />
     </Container>
   );
 };

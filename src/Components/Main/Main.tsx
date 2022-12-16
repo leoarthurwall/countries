@@ -20,6 +20,7 @@ const Container = styled.main`
 
 const Main: React.FC = (): ReactElement => {
   const [countries, setCountries] = useState<ICountries[]>([]);
+  const [selectedItem, setSelectedItem] = useState<any>("");
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/all`)
@@ -32,7 +33,11 @@ const Main: React.FC = (): ReactElement => {
   console.log({ countries });
   return (
     <Container>
-      <Upper countries={countries}/>
+      <Upper
+        countries={countries}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
+      />
       <Card countries={countries} />
     </Container>
   );
