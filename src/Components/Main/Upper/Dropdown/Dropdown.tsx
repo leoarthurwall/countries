@@ -78,6 +78,9 @@ const Dropdown: React.FC<Props> = ({ countries }): ReactElement => {
     console.log({ selectedItem });
   };
 
+  const filteredItem = countries.region
+  console.log({filteredItem})
+
   return (
     <Wrapper>
       <DropdownContainer onClick={handleDropdownClick}>
