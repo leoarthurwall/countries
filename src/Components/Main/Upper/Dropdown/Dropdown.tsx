@@ -56,6 +56,16 @@ const DropdownItem = styled.li`
   }
 `;
 
+const OptionsOverlay = styled.div<IisOpen>`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  visibility: ${({ isOpen }) => !isOpen && "hidden"};
+`;
 interface IisOpen {
   isOpen: Boolean;
 }
@@ -84,28 +94,32 @@ const Dropdown: React.FC<Props> = ({
   };
 
   const handleAllOptions = () => {
-    setSelectedItem("")
+    setSelectedItem("");
     setIsOpen(!isOpen);
-  }
+  };
+
+ 
 
   return (
-    <Wrapper>
-      <DropdownContainer onClick={handleDropdownClick}>
-        <Text> Filter by Region</Text>
-        <IconContainer isOpen={isOpen}>
-          <BiChevronUp size={"auto"} />
-        </IconContainer>
-      </DropdownContainer>
-      <DropdownMenu isOpen={isOpen}>
-        <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}>Asia</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}>Oceania</DropdownItem>
-        <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
-
-      </DropdownMenu>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <DropdownContainer onClick={handleDropdownClick}>
+          <Text> Filter by Region</Text>
+          <IconContainer isOpen={isOpen}>
+            <BiChevronUp size={"auto"} />
+          </IconContainer>
+        </DropdownContainer>
+        <DropdownMenu isOpen={isOpen}>
+          <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
+          <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
+          <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
+          <DropdownItem onClick={handleSelectedOption}>Asia</DropdownItem>
+          <DropdownItem onClick={handleSelectedOption}>Oceania</DropdownItem>
+          <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
+        </DropdownMenu>
+      </Wrapper>
+      <OptionsOverlay isOpen={isOpen} onClick={handleDropdownClick}/>
+    </>
   );
 };
 

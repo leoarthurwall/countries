@@ -5,7 +5,7 @@ import Dropdown from "./Dropdown/Dropdown";
 
 const Container = styled.section`
   width: 100%;
-  padding: 30px 0;
+  padding: 40px 0;
 
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,8 @@ const Container = styled.section`
 `;
 
 const Text = styled.h3`
-font-weight: 500`;
+  font-weight: 500;
+`;
 const Span = styled.span`
   font-weight: 300;
   font-size: 14px;
@@ -30,13 +31,13 @@ type Props = {
   countries: any;
   selectedItem: string;
   setSelectedItem: (val: string) => void;
-  filteredItems: any[]
+  filteredItems: any[];
 };
 const Upper: React.FC<Props> = ({
   countries,
   selectedItem,
   setSelectedItem,
-  filteredItems
+  filteredItems,
 }): ReactElement => {
   return (
     <Container>
