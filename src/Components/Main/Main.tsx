@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Upper from "./Upper/Upper";
 import { ReactElement } from "react";
 import Card from "./Card/Card";
+import { useState, useEffect } from "react";
+import { ICountries } from "../../ICountries";
 
 const Container = styled.main`
   height: 100%;
@@ -17,10 +19,21 @@ const Container = styled.main`
 `;
 
 const Main: React.FC = (): ReactElement => {
+  const [countries, setCountries] = useState<ICountries[]>([]);
+
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setCountries(json);
+      });
+  }, []);
+  console.log({ countries });
   return (
     <Container>
       <Upper />
-      <Card />
+      <Card countries={countries} />
     </Container>
   );
 };

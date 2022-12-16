@@ -51,10 +51,9 @@ const DropdownItem = styled.li`
   font-size: 14px;
   padding: 10px 20px;
   cursor: pointer;
-  &:hover{
-    background-color: #E8EAED;
+  &:hover {
+    background-color: #e8eaed;
   }
-
 `;
 
 interface IisOpen {
@@ -63,19 +62,17 @@ interface IisOpen {
 
 const Dropdown: React.FC = (): ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<any>("")
+  const [selectedItem, setSelectedItem] = useState<any>("");
 
   const handleDropdownClick = (val: any) => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelectedOption = (e:any) => {
+  const handleSelectedOption = (e: any) => {
     setSelectedItem(e.target.innerHTML);
-    setIsOpen(!isOpen)
-    console.log(selectedItem)
-  }
-
-
+    setIsOpen(!isOpen);
+    console.log({ selectedItem });
+  };
 
   return (
     <Wrapper>
@@ -87,7 +84,7 @@ const Dropdown: React.FC = (): ReactElement => {
       </DropdownContainer>
       <DropdownMenu isOpen={isOpen}>
         <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}> Americas</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}> Asia</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Oceana</DropdownItem>

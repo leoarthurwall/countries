@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import CardSingle from "./CardSingle/CardSingle";
-import { useState, useEffect } from "react";
-import { ICountries } from "../../../ICountries";
+import { ReactElement } from "react";
+
+
 
 const Container = styled.section`
   width: auto;
@@ -27,21 +28,15 @@ const Container = styled.section`
   }
 `;
 
-const Card = () => {
-  const [countries, setCountries] = useState<ICountries[]>([]);
+ type Props = {
+    countries: any
+}
 
-  useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/all`)
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        setCountries(json);
-      });
-  }, []);
-  console.log({ countries });
+const Card: React.FC<Props> = ({countries}): ReactElement => {
+  
   return (
     <Container>
-      {countries.map((country, index) => (
+      {countries.map((country: any, index: any) => (
         <CardSingle key={index} country={country} />
       ))}
     </Container>
