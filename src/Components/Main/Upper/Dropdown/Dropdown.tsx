@@ -66,7 +66,11 @@ type Props = {
   setSelectedItem: (val: string) => void;
 };
 
-const Dropdown: React.FC<Props> = ({ countries, selectedItem, setSelectedItem }): ReactElement => {
+const Dropdown: React.FC<Props> = ({
+  countries,
+  selectedItem,
+  setSelectedItem,
+}): ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleDropdownClick = (val: any) => {
@@ -78,10 +82,6 @@ const Dropdown: React.FC<Props> = ({ countries, selectedItem, setSelectedItem })
     setIsOpen(!isOpen);
     console.log({ selectedItem });
   };
-
-  const filteredItem = countries.filter((country: any) => country.region === selectedItem)
-
-  console.log({filteredItem})
 
   return (
     <Wrapper>
@@ -95,8 +95,8 @@ const Dropdown: React.FC<Props> = ({ countries, selectedItem, setSelectedItem })
         <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
         <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}> Asia</DropdownItem>
-        <DropdownItem onClick={handleSelectedOption}>Oceana</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Asia</DropdownItem>
+        <DropdownItem onClick={handleSelectedOption}>Oceania</DropdownItem>
       </DropdownMenu>
     </Wrapper>
   );

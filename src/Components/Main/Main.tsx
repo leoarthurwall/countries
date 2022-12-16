@@ -31,6 +31,13 @@ const Main: React.FC = (): ReactElement => {
       });
   }, []);
   console.log({ countries });
+
+  const filteredItem = countries.filter(
+    (country: any) => country.region === selectedItem
+  );
+
+  console.log({ filteredItem });
+  
   return (
     <Container>
       <Upper
