@@ -4,6 +4,7 @@ import { BiChevronUp } from "react-icons/bi";
 import { useState } from "react";
 
 const Wrapper = styled.div`
+  z-index: 20;
   position: relative;
   gap: 10px;
   display: flex;
@@ -98,8 +99,6 @@ const Dropdown: React.FC<Props> = ({
     setIsOpen(!isOpen);
   };
 
- 
-
   return (
     <>
       <Wrapper>
@@ -118,7 +117,7 @@ const Dropdown: React.FC<Props> = ({
           <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
         </DropdownMenu>
       </Wrapper>
-      <OptionsOverlay isOpen={isOpen} onClick={handleDropdownClick}/>
+      <OptionsOverlay isOpen={isOpen} onClick={handleDropdownClick} />
     </>
   );
 };
