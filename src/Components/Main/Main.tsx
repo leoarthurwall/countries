@@ -32,12 +32,12 @@ const Main: React.FC = (): ReactElement => {
   }, []);
   console.log({ countries });
 
-  const filteredItem = countries.filter(
+  const filteredItems: any[] = countries.filter(
     (country: any) => country.region === selectedItem
   );
 
-  console.log({ filteredItem });
-  
+  console.log({ filteredItems });
+
   return (
     <Container>
       <Upper
@@ -45,7 +45,7 @@ const Main: React.FC = (): ReactElement => {
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
       />
-      <Card countries={countries} />
+      <Card countries={countries} filteredItems={filteredItems} />
     </Container>
   );
 };

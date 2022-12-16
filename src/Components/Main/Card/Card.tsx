@@ -2,8 +2,6 @@ import styled from "styled-components";
 import CardSingle from "./CardSingle/CardSingle";
 import { ReactElement } from "react";
 
-
-
 const Container = styled.section`
   width: auto;
   margin: 0 auto;
@@ -28,17 +26,22 @@ const Container = styled.section`
   }
 `;
 
- type Props = {
-    countries: any
-}
+type Props = {
+  countries: any;
+  filteredItems: any;
+};
 
-const Card: React.FC<Props> = ({countries}): ReactElement => {
-  
+const Card: React.FC<Props> = ({ countries, filteredItems }): ReactElement => {
+  console.log("filteredItems", filteredItems.length);
   return (
     <Container>
-      {countries.map((country: any, index: any) => (
-        <CardSingle key={index} country={country} />
-      ))}
+      {filteredItems.length === 0
+        ? countries.map((country: any, index: any) => (
+            <CardSingle key={index} country={country} />
+          ))
+        : filteredItems.map((country: any, index: any) => (
+            <CardSingle key={index} country={country} />
+          ))}
     </Container>
   );
 };
