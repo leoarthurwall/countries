@@ -45,6 +45,8 @@ type Props = {
 const CardSingle: React.FC<Props> = ({country}) => {
 
   const { region, capital, population, name, flags } = country
+  
+  const populationFormatted = population.toLocaleString('en-UK')
 
   return (
     <Container >
@@ -52,7 +54,7 @@ const CardSingle: React.FC<Props> = ({country}) => {
       <TextContainer>
         <Header>{name.common}</Header>
         <SubHeader>
-          Population: <Result>{population}</Result>
+          Population: <Result>{populationFormatted}</Result>
         </SubHeader>
         <SubHeader>
           Region: <Result>{region}</Result>
