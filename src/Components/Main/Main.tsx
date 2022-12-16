@@ -32,7 +32,7 @@ const Main: React.FC = (): ReactElement => {
   console.log({ countries });
   return (
     <Container>
-      <Upper />
+      <Upper countries={countries}/>
       <Card countries={countries} />
     </Container>
   );

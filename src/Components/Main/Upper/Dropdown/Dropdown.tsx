@@ -60,7 +60,11 @@ interface IisOpen {
   isOpen: Boolean;
 }
 
-const Dropdown: React.FC = (): ReactElement => {
+type Props = {
+  countries: any;
+};
+
+const Dropdown: React.FC<Props> = ({ countries }): ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<any>("");
 

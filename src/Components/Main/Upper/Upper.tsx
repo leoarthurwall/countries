@@ -12,16 +12,20 @@ const Container = styled.section`
   align-items: center;
   box-sizing: border-box;
 
-  @media(max-width: 700px){
+  @media (max-width: 700px) {
     flex-direction: column;
     gap: 25px;
   }
 `;
-const Upper: React.FC = (): ReactElement => {
+
+type Props = {
+  countries: any;
+};
+const Upper: React.FC<Props> = ({ countries }): ReactElement => {
   return (
     <Container>
       <SearchBar />
-      <Dropdown />
+      <Dropdown countries={countries}/>
     </Container>
   );
 };
