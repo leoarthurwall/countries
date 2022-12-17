@@ -32,15 +32,17 @@ type Props = {
 const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
 
+  // SETS THE INPUT TEXT STATE 
   const handleInputChange = (e: any) => {
     setInputText(e.target.value.toLowerCase());
     console.log({ inputText });
-    console.log({includesInputText})
-
+    console.log({ inputFilteredArray });
   };
 
-  const includesInputText = countries.filter((country:any) => country.name.common.toLowerCase().startsWith(inputText) //make case insensitive!!!
-  )
+  //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
+  const inputFilteredArray = countries.filter((country: any) =>
+    country.name.common.toLowerCase().startsWith(inputText)
+  );
   return (
     <InputForm onChange={handleInputChange}>
       <Input type="text" placeholder="Search for a country..."></Input>
