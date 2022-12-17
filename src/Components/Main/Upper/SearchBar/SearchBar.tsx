@@ -68,23 +68,26 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
+  //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
+  const inputFilteredArray = countries.filter((country: any) =>
+    country.name.common.toLowerCase().startsWith(inputText)
+  );
+
   // SETS THE INPUT TEXT STATE
   const handleInputChange = (e: any) => {
     setInputText(e.target.value.toLowerCase());
     console.log({ inputText });
     console.log({ inputFilteredArray });
-    // if (inputFilteredArray.length < 250 && inputFilteredArray.length > 1) {
-    //   setIsSearchOpen(true);
-    // } else {
-    //   setIsSearchOpen(false);
-    // }
     console.log({ isSearchOpen });
   };
 
-  //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
-  const inputFilteredArray = countries.filter((country: any) =>
-    country.name.common.toLowerCase().startsWith(inputText)
-  );
+  //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
+  const displaySearchOptions =
+    inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
+
+  const handleCountryClick = () => {
+    
+  }
   return (
     <Wrapper>
       <InputForm onChange={handleInputChange}>
@@ -94,14 +97,15 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
           style={{ position: "absolute", left: "20px", color: "grey" }}
         />
       </InputForm>
-      {inputText.length > 0 && (
+      {displaySearchOptions ? (
         <SearchOptions isSearchOpen={isSearchOpen}>
-          {inputText !== "" &&
-            inputFilteredArray.map((item: any, index: any) => (
-              <SearchItem key={index}>{item.name.common}</SearchItem>
-            ))}
+          {inputFilteredArray.map((item: any, index: any) => (
+            <SearchItem key={index} onClick={handleCountryClick}>
+              {item.name.common}
+            </SearchItem>
+          ))}
         </SearchOptions>
-      )}
+      ) : null}
     </Wrapper>
   );
 };
