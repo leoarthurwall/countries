@@ -33,13 +33,13 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
 
   const handleInputChange = (e: any) => {
-    setInputText(e.target.value);
+    setInputText(e.target.value.toLowerCase());
     console.log({ inputText });
     console.log({includesInputText})
 
   };
 
-  const includesInputText = countries.filter((country:any) => country.name.common.startsWith(inputText)
+  const includesInputText = countries.filter((country:any) => country.name.common.toLowerCase().startsWith(inputText) //make case insensitive!!!
   )
   return (
     <InputForm onChange={handleInputChange}>
