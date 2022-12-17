@@ -29,8 +29,12 @@ const InputForm = styled.form`
 const SearchBar: React.FC = (): ReactElement => {
   const[inputText, setInputText] = useState("")
 
+  const handleInputChange = (e:any) => {
+    setInputText(e.target.value)
+  }
+
   return (
-    <InputForm>
+    <InputForm onChange={handleInputChange}>
       <Input type="text" placeholder="Search for a country..."></Input>
       <AiOutlineSearch
         size={20}
