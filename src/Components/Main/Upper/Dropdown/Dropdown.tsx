@@ -57,7 +57,7 @@ const DropdownItem = styled.li`
   }
 `;
 
-const OptionsOverlay = styled.div<IisOpen>`
+const OptionsOverlay = styled.div<IisDropdownOpen>`
   position: fixed;
   background-color: rgba(0, 0, 0, 0);
   top: 0;
@@ -65,10 +65,10 @@ const OptionsOverlay = styled.div<IisOpen>`
   left: 0;
   right: 0;
   z-index: 5;
-  visibility: ${({ isOpen }) => !isOpen && "hidden"};
+  visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
 `;
-interface IisOpen {
-  isOpen: Boolean;
+interface IisDropdownOpen {
+  isDropdownOpen: Boolean;
 }
 
 type Props = {
@@ -82,21 +82,21 @@ const Dropdown: React.FC<Props> = ({
   selectedItem,
   setSelectedItem,
 }): ReactElement => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const handleDropdownClick = (val: any) => {
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleSelectedOption = (e: any) => {
     setSelectedItem(e.target.innerHTML);
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
     console.log({ selectedItem });
   };
 
   const handleAllOptions = () => {
     setSelectedItem("");
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -104,11 +104,11 @@ const Dropdown: React.FC<Props> = ({
       <Wrapper>
         <DropdownContainer onClick={handleDropdownClick}>
           <Text> Filter by Region</Text>
-          <IconContainer isOpen={isOpen}>
+          <IconContainer isDropdownOpen={isDropdownOpen}>
             <BiChevronUp size={"auto"} />
           </IconContainer>
         </DropdownContainer>
-        <DropdownMenu isOpen={isOpen}>
+        <DropdownMenu isDropdownOpen={isDropdownOpen}>
           <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
           <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
           <DropdownItem onClick={handleSelectedOption}>Africa</DropdownItem>
@@ -117,7 +117,7 @@ const Dropdown: React.FC<Props> = ({
           <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
         </DropdownMenu>
       </Wrapper>
-      <OptionsOverlay isOpen={isOpen} onClick={handleDropdownClick} />
+      <OptionsOverlay isDropdownOpen={isDropdownOpen} onClick={handleDropdownClick} />
     </>
   );
 };

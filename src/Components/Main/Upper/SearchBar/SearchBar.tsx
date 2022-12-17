@@ -3,6 +3,14 @@ import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
 
+const Wrapper = styled.div`
+  z-index: 20;
+  position: relative;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+`;
+
 const Input = styled.input`
   padding-left: 50px;
   height: 45px;
@@ -26,11 +34,39 @@ const InputForm = styled.form`
   position: relative;
 `;
 
+const SearchOptions = styled.ul<IisSearchOpen>`
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px 0;
+  position: absolute;
+  width: 200px;
+  top: 55px;
+  box-sizing: border-box;
+  visibility: ${({ isSearchOpen }) => (isSearchOpen ? "visible" : "hidden")};
+`;
+
+const SearchItem = styled.li`
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #e8eaed;
+  }
+`;
+
+interface IisSearchOpen {
+  isSearchOpen: Boolean;
+}
+
 type Props = {
   countries: any;
 };
 const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   // SETS THE INPUT TEXT STATE 
   const handleInputChange = (e: any) => {
@@ -44,6 +80,8 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
     country.name.common.toLowerCase().startsWith(inputText)
   );
   return (
+    <Wrapper>
+
     <InputForm onChange={handleInputChange}>
       <Input type="text" placeholder="Search for a country..."></Input>
       <AiOutlineSearch
@@ -51,6 +89,10 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
         style={{ position: "absolute", left: "20px", color: "grey" }}
       />
     </InputForm>
+    <SearchOptions isSearchOpen={isSearchOpen}>
+      <SearchItem />
+    </SearchOptions>
+    </Wrapper>
   );
 };
 
