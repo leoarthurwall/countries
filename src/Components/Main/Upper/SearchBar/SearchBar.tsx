@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
+import {useState} from "react"
 
 const Input = styled.input`
   padding-left: 50px;
@@ -18,7 +19,7 @@ const Input = styled.input`
   }
 `;
 
-const InputForm = styled.div`
+const InputForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +27,8 @@ const InputForm = styled.div`
 `;
 
 const SearchBar: React.FC = (): ReactElement => {
+  const[inputText, setInputText] = useState("")
+
   return (
     <InputForm>
       <Input type="text" placeholder="Search for a country..."></Input>

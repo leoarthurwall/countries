@@ -17,7 +17,6 @@ const Flag = styled.img`
   background-color: #92d3ee;
   height: 50%;
   width: 100%;
-
 `;
 const TextContainer = styled.div`
   height: 50%;
@@ -32,7 +31,7 @@ const Header = styled.h4`
   margin-bottom: 15px;
 `;
 const SubHeader = styled.h5`
-  margin:  5px 0;
+  margin: 5px 0;
 `;
 const Result = styled.span`
   font-weight: 300;
@@ -40,16 +39,15 @@ const Result = styled.span`
 
 type Props = {
   country: ICountries;
-}
+};
 
-const CardSingle: React.FC<Props> = ({country}) => {
+const CardSingle: React.FC<Props> = ({ country }) => {
+  const { region, capital, population, name, flags } = country;
 
-  const { region, capital, population, name, flags } = country
-  
-  const populationFormatted = population.toLocaleString('en-UK')
+  const populationFormatted = population.toLocaleString("en-UK");
 
   return (
-    <Container >
+    <Container>
       <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
       <TextContainer>
         <Header>{name.common}</Header>
