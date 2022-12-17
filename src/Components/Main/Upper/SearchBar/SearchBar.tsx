@@ -41,10 +41,10 @@ const SearchOptions = styled.ul<IisSearchOpen>`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 10px 0;
   position: absolute;
-  width: 200px;
+  width: 100%;
   top: 55px;
   box-sizing: border-box;
-  visibility: ${({ isSearchOpen }) => (isSearchOpen ? "visible" : "hidden")};
+  // visibility: ${({ isSearchOpen }) => (isSearchOpen ? "visible" : "hidden")};
 `;
 
 const SearchItem = styled.li`
@@ -89,11 +89,10 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
         />
       </InputForm>
       <SearchOptions isSearchOpen={isSearchOpen}>
-        
         {inputText !== "" &&
-        inputFilteredArray.map((item: any, index: any) => (
-          <SearchItem key={index}>{item.name.common}</SearchItem>
-        ))}
+          inputFilteredArray.map((item: any, index: any) => (
+            <SearchItem key={index}>{item.name.common}</SearchItem>
+          ))}
       </SearchOptions>
     </Wrapper>
   );
