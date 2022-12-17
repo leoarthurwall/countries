@@ -27,15 +27,15 @@ const Text = styled.h4`
   font-weight: 400;
   font-size: 14px;
 `;
-const IconContainer = styled.div<IisOpen>`
+const IconContainer = styled.div<IisDropdownOpen>`
   height: 20px;
   width: 20px;
 
-  transform: ${({ isOpen }) => isOpen && "rotate(0.5turn)"};
+  transform: ${({ isDropdownOpen }) => isDropdownOpen && "rotate(0.5turn)"};
   transform-origin: center center;
   transition: all 0.4s ease-in-out;
 `;
-const DropdownMenu = styled.ul<IisOpen>`
+const DropdownMenu = styled.ul<IisDropdownOpen>`
   margin: 0;
   list-style: none;
   background-color: #fff;
@@ -45,7 +45,7 @@ const DropdownMenu = styled.ul<IisOpen>`
   width: 200px;
   top: 55px;
   box-sizing: border-box;
-  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
+  visibility: ${({ isDropdownOpen }) => (isDropdownOpen ? "visible" : "hidden")};
 `;
 const DropdownItem = styled.li`
   font-weight: 400;

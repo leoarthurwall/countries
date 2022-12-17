@@ -68,7 +68,7 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
-  // SETS THE INPUT TEXT STATE 
+  // SETS THE INPUT TEXT STATE
   const handleInputChange = (e: any) => {
     setInputText(e.target.value.toLowerCase());
     console.log({ inputText });
@@ -81,17 +81,20 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   );
   return (
     <Wrapper>
-
-    <InputForm onChange={handleInputChange}>
-      <Input type="text" placeholder="Search for a country..."></Input>
-      <AiOutlineSearch
-        size={20}
-        style={{ position: "absolute", left: "20px", color: "grey" }}
-      />
-    </InputForm>
-    <SearchOptions isSearchOpen={isSearchOpen}>
-      <SearchItem />
-    </SearchOptions>
+      <InputForm onChange={handleInputChange}>
+        <Input type="text" placeholder="Search for a country..."></Input>
+        <AiOutlineSearch
+          size={20}
+          style={{ position: "absolute", left: "20px", color: "grey" }}
+        />
+      </InputForm>
+      <SearchOptions isSearchOpen={isSearchOpen}>
+        
+        {inputText !== "" &&
+        inputFilteredArray.map((item: any, index: any) => (
+          <SearchItem key={index}>{item.name.common}</SearchItem>
+        ))}
+      </SearchOptions>
     </Wrapper>
   );
 };
