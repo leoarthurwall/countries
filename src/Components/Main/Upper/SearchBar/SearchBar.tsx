@@ -67,6 +67,7 @@ type Props = {
 const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [selectedCountry, setSelectedCountry] = useState<string>("")
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) =>
@@ -85,9 +86,17 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const displaySearchOptions =
     inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
 
-  const handleCountryClick = () => {
-    
+  const handleCountryClick = (e:any) => {
+    setSelectedCountry(e.target.innerText)
+    console.log("selectedCountry:", selectedCountry)
   }
+
+   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
+   const selectedSearchItem: any = countries.filter((country: any) =>
+   country.name.common.toLowerCase() === inputText
+ );
+
+ // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
   return (
     <Wrapper>
       <InputForm onChange={handleInputChange}>
