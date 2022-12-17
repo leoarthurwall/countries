@@ -31,6 +31,7 @@ const SearchBar: React.FC = (): ReactElement => {
 
   const handleInputChange = (e:any) => {
     setInputText(e.target.value)
+    console.log({inputText})
   }
 
   return (
