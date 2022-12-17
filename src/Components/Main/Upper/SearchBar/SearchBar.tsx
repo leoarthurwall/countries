@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
-import {useState} from "react"
+import { useState } from "react";
 
 const Input = styled.input`
   padding-left: 50px;
@@ -14,7 +14,7 @@ const Input = styled.input`
   ::placeholder {
     color: grey;
   }
-  @media(max-width: 700px){
+  @media (max-width: 700px) {
     width: 250px;
   }
 `;
@@ -27,16 +27,19 @@ const InputForm = styled.form`
 `;
 
 type Props = {
-  countries: any
-}
-const SearchBar: React.FC<Props> = ({countries}): ReactElement => {
-  const[inputText, setInputText] = useState("")
+  countries: any;
+};
+const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
+  const [inputText, setInputText] = useState("");
 
-  const handleInputChange = (e:any) => {
-    setInputText(e.target.value)
-    console.log({inputText})
-  }
+  const handleInputChange = (e: any) => {
+    setInputText(e.target.value);
+    console.log({ inputText });
+    console.log({includesInputText})
 
+  };
+
+  const includesInputText = countries.filter((country:any) => country.name.common.includes(inputText))
   return (
     <InputForm onChange={handleInputChange}>
       <Input type="text" placeholder="Search for a country..."></Input>
