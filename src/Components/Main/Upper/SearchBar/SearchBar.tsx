@@ -26,7 +26,10 @@ const InputForm = styled.form`
   position: relative;
 `;
 
-const SearchBar: React.FC = (): ReactElement => {
+type Props = {
+  countries: any
+}
+const SearchBar: React.FC<Props> = ({countries}): ReactElement => {
   const[inputText, setInputText] = useState("")
 
   const handleInputChange = (e:any) => {

@@ -41,7 +41,7 @@ const Upper: React.FC<Props> = ({
 }): ReactElement => {
   return (
     <Container>
-      <SearchBar />
+      <SearchBar countries={countries}/>
       {selectedItem === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
