@@ -39,7 +39,8 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
 
   };
 
-  const includesInputText = countries.filter((country:any) => country.name.common.includes(inputText))
+  const includesInputText = countries.filter((country:any) => country.name.common.startsWith(inputText)
+  )
   return (
     <InputForm onChange={handleInputChange}>
       <Input type="text" placeholder="Search for a country..."></Input>
