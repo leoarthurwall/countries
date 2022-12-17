@@ -73,6 +73,12 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
     setInputText(e.target.value.toLowerCase());
     console.log({ inputText });
     console.log({ inputFilteredArray });
+    // if (inputFilteredArray.length < 250 && inputFilteredArray.length > 1) {
+    //   setIsSearchOpen(true);
+    // } else {
+    //   setIsSearchOpen(false);
+    // }
+    console.log({ isSearchOpen });
   };
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
@@ -88,12 +94,14 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
           style={{ position: "absolute", left: "20px", color: "grey" }}
         />
       </InputForm>
-      <SearchOptions isSearchOpen={isSearchOpen}>
-        {inputText !== "" &&
-          inputFilteredArray.map((item: any, index: any) => (
-            <SearchItem key={index}>{item.name.common}</SearchItem>
-          ))}
-      </SearchOptions>
+      {inputText.length > 0 && (
+        <SearchOptions isSearchOpen={isSearchOpen}>
+          {inputText !== "" &&
+            inputFilteredArray.map((item: any, index: any) => (
+              <SearchItem key={index}>{item.name.common}</SearchItem>
+            ))}
+        </SearchOptions>
+      )}
     </Wrapper>
   );
 };
