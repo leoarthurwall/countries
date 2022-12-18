@@ -21,8 +21,7 @@ const Container = styled.main`
 const Main: React.FC = (): ReactElement => {
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [selectedItem, setSelectedItem] = useState<any>("");
-  const [inputText, setInputText] = useState("");
-
+  const [inputText, setInputText] = useState<any>("");
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/all`)
@@ -37,8 +36,12 @@ const Main: React.FC = (): ReactElement => {
   const filteredItems: any[] = countries.filter(
     (country: any) => country.region === selectedItem
   );
-
   console.log({ filteredItems });
+
+  const inputReturn: any[] = countries.filter(
+    (country: any) => country.name.common.toLowerCase() === inputText.toLowerCase()
+  );
+  console.log({ inputReturn });
 
   return (
     <Container>
@@ -46,11 +49,11 @@ const Main: React.FC = (): ReactElement => {
         countries={countries}
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
-        filteredItems={filteredItems} 
+        filteredItems={filteredItems}
         inputText={inputText}
         setInputText={setInputText}
       />
-      <Card countries={countries} filteredItems={filteredItems} />
+      <Card countries={countries} filteredItems={filteredItems} inputReturn={inputReturn} />
     </Container>
   );
 };

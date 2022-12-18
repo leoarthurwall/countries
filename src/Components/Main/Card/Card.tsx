@@ -29,9 +29,10 @@ const Container = styled.section`
 type Props = {
   countries: any;
   filteredItems: any;
+  inputReturn: any;
 };
 
-const Card: React.FC<Props> = ({ countries, filteredItems }): ReactElement => {
+const Card: React.FC<Props> = ({ countries, filteredItems, inputReturn }): ReactElement => {
   console.log("filteredItems", filteredItems.length);
   return (
     <Container>
