@@ -22,6 +22,7 @@ const Main: React.FC = (): ReactElement => {
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [selectedItem, setSelectedItem] = useState<any>("");
   const [inputText, setInputText] = useState<any>("");
+  const [selectedCountry, setSelectedCountry] = useState<any>("") 
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/all`)
@@ -53,6 +54,8 @@ const Main: React.FC = (): ReactElement => {
         filteredItems={filteredItems}
         inputText={inputText}
         setInputText={setInputText}
+        selectedCountrty={selectedCountrty}
+        setSelectedCountry={setSelectedCountry}
       />
       <Card
         countries={countries}

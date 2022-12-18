@@ -101,6 +101,7 @@ const SearchBar: React.FC<Props> = ({
   //FORM SUBMIT HANDLER
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+    console.log({event})
     setInputText("");
   };
 
