@@ -66,47 +66,59 @@ type Props = {
 };
 const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
   const [inputText, setInputText] = useState("");
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [selectedCountry, setSelectedCountry] = useState<string>("")
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
-  const inputFilteredArray = countries.filter((country: any) =>
-    country.name.common.toLowerCase().startsWith(inputText)
-  );
+  const inputFilteredArray = countries.filter((country: any) => {
+    if (inputText === "") {
+      return null;
+    } else if (
+      country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
+    ) {
+      return country;
+    }
+  });
 
   // SETS THE INPUT TEXT STATE
-  const handleInputChange = (e: any) => {
-    setInputText(e.target.value.toLowerCase());
-    console.log({ inputText });
-    console.log({ inputFilteredArray });
-    console.log({ isSearchOpen });
+  //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
+    const displaySearchOptions = inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0
+
+   
+
+
+  // const handleInputChange = (e: any) => {
+  //   setInputText(e.target.value);
+  //   e.preventDefault();
+  //   console.log({ inputText });
+  //   console.log({ inputFilteredArray });
+  //   console.log({ isSearchOpen });
+  //   toggleSearchOpen()
+  // };
+
+
+  // GETS THE COUNTRY THAT IS CLICKED ON
+  const handleCountryClick = (e: any) => {
+    setInputText(e.target.innerText);
+    console.log("selectedCountry:", inputText);
   };
 
-  //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
-  const displaySearchOptions =
-    inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
 
-  const handleCountryClick = (e:any) => {
-    setSelectedCountry(e.target.innerText)
-    console.log("selectedCountry:", selectedCountry)
-  }
-
-   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
-   const selectedSearchItem: any = countries.filter((country: any) =>
-   country.name.common.toLowerCase() === inputText
- );
-
- // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
+  // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
   return (
     <Wrapper>
-      <InputForm onChange={handleInputChange}>
-        <Input type="text" placeholder="Search for a country..."></Input>
+      <InputForm onChange={(e: any) => {
+        setInputText(e.target.value)}}>
+        <Input
+          value={inputText}
+          type="text"
+          placeholder="Search for a country..."
+        ></Input>
         <AiOutlineSearch
           size={20}
           style={{ position: "absolute", left: "20px", color: "grey" }}
         />
       </InputForm>
-      {displaySearchOptions ? (
+      { displaySearchOptions ? (
         <SearchOptions isSearchOpen={isSearchOpen}>
           {inputFilteredArray.map((item: any, index: any) => (
             <SearchItem key={index} onClick={handleCountryClick}>
