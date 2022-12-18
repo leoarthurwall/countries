@@ -39,10 +39,11 @@ const Main: React.FC = (): ReactElement => {
   console.log({ filteredItems });
 
   const inputReturn: any[] = countries.filter(
-    (country: any) => country.name.common.toLowerCase() === inputText.toLowerCase()
+    (country: any) =>
+      country.name.common.toLowerCase() === inputText.toLowerCase()
   );
-  console.log({ inputReturn });
 
+  console.log({ inputReturn });
   return (
     <Container>
       <Upper
@@ -53,7 +54,11 @@ const Main: React.FC = (): ReactElement => {
         inputText={inputText}
         setInputText={setInputText}
       />
-      <Card countries={countries} filteredItems={filteredItems} inputReturn={inputReturn} />
+      <Card
+        countries={countries}
+        filteredItems={filteredItems}
+        inputReturn={inputReturn}
+      />
     </Container>
   );
 };

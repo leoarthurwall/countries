@@ -34,15 +34,19 @@ type Props = {
 
 const Card: React.FC<Props> = ({ countries, filteredItems, inputReturn }): ReactElement => {
   console.log("filteredItems", filteredItems.length);
+  console.log({inputReturn})
   return (
     <Container>
-      {filteredItems.length === 0
+        {inputReturn.length === 1 && inputReturn.map((country: any, index: any) => (
+            <CardSingle key={index} country={country} />
+          )) }
+      {/* {filteredItems.length === 0
         ? countries.map((country: any, index: any) => (
             <CardSingle key={index} country={country} />
           ))
         : filteredItems.map((country: any, index: any) => (
             <CardSingle key={index} country={country} />
-          ))}
+          ))} */}
     </Container>
   );
 };

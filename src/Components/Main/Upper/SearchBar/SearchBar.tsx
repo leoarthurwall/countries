@@ -107,7 +107,7 @@ const SearchBar: React.FC<Props> = ({
   // GETS THE COUNTRY THAT IS CLICKED ON
   const handleCountryClick = (e: any) => {
     setInputText(e.target.innerText);
-    console.log("selectedCountry:", inputText);
+    console.log("handleCountryClick - selectedCountry:", inputText);
   };
 
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
