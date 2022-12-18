@@ -63,9 +63,14 @@ interface IisSearchOpen {
 
 type Props = {
   countries: any;
+  inputText: string;
+  setInputText: (val: string) => void;
 };
-const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
-  const [inputText, setInputText] = useState("");
+const SearchBar: React.FC<Props> = ({
+  countries,
+  inputText,
+  setInputText,
+}): ReactElement => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
@@ -79,22 +84,25 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
     }
   });
 
+  //create state for written input and
+
   // SETS THE INPUT TEXT STATE
   //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
-    const displaySearchOptions = inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0
+  const displaySearchOptions =
+    inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
 
-   
+  const handleInputChange = (e: any) => {
+    setInputText(e.target.value);
+    console.log({ inputText });
+    console.log({ inputFilteredArray });
+    console.log({ isSearchOpen });
+  };
 
-
-  // const handleInputChange = (e: any) => {
-  //   setInputText(e.target.value);
-  //   e.preventDefault();
-  //   console.log({ inputText });
-  //   console.log({ inputFilteredArray });
-  //   console.log({ isSearchOpen });
-  //   toggleSearchOpen()
-  // };
-
+  //FORM SUBMIT HANDLER
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    setInputText("");
+  };
 
   // GETS THE COUNTRY THAT IS CLICKED ON
   const handleCountryClick = (e: any) => {
@@ -102,23 +110,22 @@ const SearchBar: React.FC<Props> = ({ countries }): ReactElement => {
     console.log("selectedCountry:", inputText);
   };
 
-
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
   return (
     <Wrapper>
-      <InputForm onChange={(e: any) => {
-        setInputText(e.target.value)}}>
+      <InputForm onSubmit={handleFormSubmit}>
         <Input
           value={inputText}
           type="text"
           placeholder="Search for a country..."
+          onChange={handleInputChange}
         ></Input>
         <AiOutlineSearch
           size={20}
           style={{ position: "absolute", left: "20px", color: "grey" }}
         />
       </InputForm>
-      { displaySearchOptions ? (
+      {displaySearchOptions ? (
         <SearchOptions isSearchOpen={isSearchOpen}>
           {inputFilteredArray.map((item: any, index: any) => (
             <SearchItem key={index} onClick={handleCountryClick}>

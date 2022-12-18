@@ -32,16 +32,20 @@ type Props = {
   selectedItem: string;
   setSelectedItem: (val: string) => void;
   filteredItems: any[];
+  inputText: string;
+  setInputText: (val: string) => void;
 };
 const Upper: React.FC<Props> = ({
   countries,
   selectedItem,
   setSelectedItem,
   filteredItems,
+  inputText,
+  setInputText,
 }): ReactElement => {
   return (
     <Container>
-      <SearchBar countries={countries}/>
+      <SearchBar countries={countries} inputText={inputText} setInputText={setInputText}/>
       {selectedItem === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
