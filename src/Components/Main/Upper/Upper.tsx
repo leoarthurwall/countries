@@ -34,6 +34,8 @@ type Props = {
   filteredItems: any[];
   inputText: string;
   setInputText: (val: string) => void;
+  selectedCountry: string;
+  setSelectedCountry: (val: string) => void;
 };
 const Upper: React.FC<Props> = ({
   countries,
@@ -42,6 +44,8 @@ const Upper: React.FC<Props> = ({
   filteredItems,
   inputText,
   setInputText,
+  selectedCountry,
+  setSelectedCountry
 }): ReactElement => {
   return (
     <Container>
@@ -60,6 +64,8 @@ const Upper: React.FC<Props> = ({
         countries={countries}
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
+        selectedCountry={selectedCountry}
+        setSelectedCountry={setSelectedCountry}
       />
     </Container>
   );

@@ -54,7 +54,7 @@ const Main: React.FC = (): ReactElement => {
         filteredItems={filteredItems}
         inputText={inputText}
         setInputText={setInputText}
-        selectedCountrty={selectedCountrty}
+        selectedCountry={selectedCountry}
         setSelectedCountry={setSelectedCountry}
       />
       <Card

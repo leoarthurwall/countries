@@ -65,11 +65,17 @@ type Props = {
   countries: any;
   inputText: string;
   setInputText: (val: string) => void;
+  selectedCountry: string;
+  setSelectedCountry: (val: string) => void;
+  
 };
 const SearchBar: React.FC<Props> = ({
   countries,
   inputText,
   setInputText,
+  selectedCountry,
+  setSelectedCountry,
+
 }): ReactElement => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
