@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 const CountryContext = createContext({});
 
@@ -6,7 +6,11 @@ export function useCountry() {
   return useContext(CountryContext);
 }
 
-export function CountryProvider({children}) {
+type CountryProviderProps = {
+    children: ReactNode
+}
+
+export function CountryProvider({children}: CountryProviderProps ) {
     return(
         <CountryContext.Provider value={{}}>
             {children}
