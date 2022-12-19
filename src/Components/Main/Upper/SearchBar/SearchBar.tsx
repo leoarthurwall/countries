@@ -95,7 +95,7 @@ const SearchBar: React.FC = (): ReactElement => {
     console.log({ event });
     setInputText("");
     setFilteredCountries(
-      countries.filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
+      [...countries].filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
     ))
   };
 
