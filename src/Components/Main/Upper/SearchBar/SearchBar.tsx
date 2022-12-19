@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useState } from "react";
 import { useCountry } from "../../../../Context/CountryContext";
 
 const Wrapper = styled.div`

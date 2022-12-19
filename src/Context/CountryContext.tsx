@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState, useEffect } from "react";
 import { ICountries } from "../ICountries";
 
 type CountryProviderProps = {
@@ -35,6 +35,16 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [selectedCountry, setSelectedCountry] = useState<any>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
+  //FETCHES COUNTRY DATA FROM API
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setCountries(json);
+      });
+  }, []);
+  console.log({ countries });
 
   //CREATES AN ARRAY THAT MATCHES THE SELECTED REGION FROM THE DROPDOWN
   const filteredItems: any[] = countries.filter(

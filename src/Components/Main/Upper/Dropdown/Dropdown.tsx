@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ReactElement } from "react";
 import { BiChevronUp } from "react-icons/bi";
-import { useState } from "react";
 import { useCountry } from "../../../../Context/CountryContext";
 
 const Wrapper = styled.div`
