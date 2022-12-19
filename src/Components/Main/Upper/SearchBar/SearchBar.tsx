@@ -70,7 +70,7 @@ const SearchBar: React.FC = (): ReactElement => {
     setFilteredCountries,
   } = useCountry();
 
-  //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
+  //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
     if (inputText === "") {
       return null;
@@ -81,21 +81,16 @@ const SearchBar: React.FC = (): ReactElement => {
     }
   });
 
-  //create state for written input and
-
-  // SETS THE INPUT TEXT STATE
   //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
   const displaySearchOptions =
     inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
 
+  // CHANGE HANDLER - RECORDS THE INPUTTED TEXT
   const handleInputChange = (e: any) => {
     setInputText(e.target.value);
-    console.log({ inputText });
-    console.log({ inputFilteredArray });
-    console.log({ isSearchOpen });
   };
 
-  //FORM SUBMIT HANDLER
+  //FORM SUBMIT HANDLER - RETURNS COUNTRIES THAT START WITH TEXT INPUT
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     console.log({ event });
