@@ -37,7 +37,20 @@ const Upper: React.FC = (): ReactElement => {
   const { countries, selectedRegion, filteredCountries, searchQuery } =
     useCountry();
 
-    const queryCapFirstLetter = searchQuery.toLowerCase().charAt(0).toUpperCase() + searchQuery.slice(1)
+  // CAPITALISES ONLY THE FIRST LETTER OF THE SEARCHQUERY STRING
+  const queryWithCapFirstLetter =
+    searchQuery.toLowerCase().charAt(0).toUpperCase() + searchQuery.slice(1);
+  console.log({ searchQuery });
+
+  //  function countryQuantity () {
+  //   if(filteredCountries.length === 1) {
+  //     return "country"
+  //   } else {
+  //     return "countries"
+  //   }
+  //  }
+  console.log("FCL", filteredCountries.length);
+
   return (
     <Container>
       <SearchBar />
@@ -47,8 +60,10 @@ const Upper: React.FC = (): ReactElement => {
         </Text>
       ) : (
         <Text>
-          <SpanQuery>Current Search:</SpanQuery> {queryCapFirstLetter}{" "}
-          <Span>({filteredCountries.length} countries)</Span>
+          <SpanQuery>Current Search:</SpanQuery> {queryWithCapFirstLetter}
+          {filteredCountries.length > 1 && (
+            <Span> ({filteredCountries.length}) countries </Span>
+          )}
         </Text>
       )}
 
