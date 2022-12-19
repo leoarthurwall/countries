@@ -40,7 +40,7 @@ const Upper: React.FC = (): ReactElement => {
         </Text>
       ) : (
         <Text>
-          {selectedRegion} <Span>({filteredCountries.length} countries)</Span>
+         Results for: {selectedRegion} <Span>({filteredCountries.length} countries)</Span>
         </Text>
       )}
 

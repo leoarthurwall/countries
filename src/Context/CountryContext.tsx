@@ -22,12 +22,13 @@ type CountryContextProps = {
   setInputText: (val: string) => void;
   selectedCountry: string;
   setSelectedCountry: (val: string) => void;
-//   filteredItems: any[];
   inputReturn: any[];
   isSearchOpen: boolean;
   setIsSearchOpen: (val: boolean) => void;
   filteredCountries: any[];
   setFilteredCountries: (val: any[]) => void;
+  searchQuery: string;
+  setSearchQuery: (val: string) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -43,6 +44,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [selectedCountry, setSelectedCountry] = useState<any>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("")
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -54,12 +56,6 @@ export function CountryProvider({ children }: CountryProviderProps) {
       });
   }, []);
   console.log({ countries });
-
-  //CREATES AN ARRAY THAT MATCHES THE SELECTED REGION FROM THE DROPDOWN
-//   const filteredItems: any[] = countries.filter(
-//     (country: any) => country.region === selectedRegion
-//   );
-//   console.log({ filteredItems });
 
   // CREATES AN ARRAY THAT MATCHES THE INPUT TEXT COUNTRY
   const inputReturn: any[] = countries.filter(
@@ -81,12 +77,13 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setInputText,
         selectedCountry,
         setSelectedCountry,
-        // filteredItems,
         inputReturn,
         isSearchOpen,
         setIsSearchOpen,
         filteredCountries,
         setFilteredCountries,
+        searchQuery,
+        setSearchQuery,
       }}
     >
       {children}

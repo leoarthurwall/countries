@@ -100,7 +100,7 @@ const Dropdown: React.FC = (): ReactElement => {
 
   const handleAllOptions = () => {
     setFilteredCountries(countries);
-    setSelectedRegion("All")
+    setSelectedRegion("")
     setIsDropdownOpen(!isDropdownOpen);
   };
 
