@@ -93,16 +93,21 @@ const SearchBar: React.FC = (): ReactElement => {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     console.log({ event });
-    setInputText("");
     setFilteredCountries(
       [...countries].filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
-    ))
+      ))
+      setInputText("");
   };
 
   // GETS THE COUNTRY THAT IS CLICKED ON
   const handleCountryClick = (e: any) => {
     setInputText(e.target.innerText);
     console.log("handleCountryClick - selectedCountry:", inputText);
+    setFilteredCountries(
+      [...countries].filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
+    ))
+    setInputText("");
+
   };
 
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
