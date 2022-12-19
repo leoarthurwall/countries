@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
+
   padding-left: 50px;
   height: 45px;
   box-sizing: border-box;
@@ -44,6 +45,7 @@ const SearchOptions = styled.ul<IisSearchOpen>`
   width: 100%;
   top: 55px;
   box-sizing: border-box;
+
   // visibility: ${({ isSearchOpen }) => (isSearchOpen ? "visible" : "hidden")};
 `;
 

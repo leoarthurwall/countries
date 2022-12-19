@@ -36,6 +36,8 @@ const SpanQuery = styled.span`
 const Upper: React.FC = (): ReactElement => {
   const { countries, selectedRegion, filteredCountries, searchQuery } =
     useCountry();
+
+    const queryCapFirstLetter = searchQuery.toLowerCase().charAt(0).toUpperCase() + searchQuery.slice(1)
   return (
     <Container>
       <SearchBar />
@@ -45,7 +47,7 @@ const Upper: React.FC = (): ReactElement => {
         </Text>
       ) : (
         <Text>
-          <SpanQuery>Current Search:</SpanQuery> {searchQuery.toLowerCase()}{" "}
+          <SpanQuery>Current Search:</SpanQuery> {queryCapFirstLetter}{" "}
           <Span>({filteredCountries.length} countries)</Span>
         </Text>
       )}

@@ -4,7 +4,7 @@ import { BiChevronUp } from "react-icons/bi";
 import { useCountry } from "../../../../Context/CountryContext";
 
 const Wrapper = styled.div`
-  z-index: 20;
+  z-index: 40;
   position: relative;
   gap: 10px;
   display: flex;
@@ -60,12 +60,12 @@ const DropdownItem = styled.li`
 
 const OptionsOverlay = styled.div<IisDropdownOpen>`
   position: fixed;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 30;
   visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
 `;
 
