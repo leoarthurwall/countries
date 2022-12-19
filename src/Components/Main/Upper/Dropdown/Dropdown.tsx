@@ -79,9 +79,9 @@ const Dropdown: React.FC = (): ReactElement => {
     setIsDropdownOpen,
     selectedRegion,
     setSelectedRegion,
-    filteredCountries,
     setFilteredCountries,
     countries,
+    setSearchQuery,
   } = useCountry();
 
   const handleDropdownClick = (val: any) => {
@@ -95,8 +95,8 @@ const Dropdown: React.FC = (): ReactElement => {
     setFilteredCountries(
       [...countries].filter((country: any) => country.region === e.target.innerHTML)
     );
+    setSearchQuery(e.target.innerHTML)
   };
-  console.log({ filteredCountries });
 
   const handleAllOptions = () => {
     setFilteredCountries(countries);
