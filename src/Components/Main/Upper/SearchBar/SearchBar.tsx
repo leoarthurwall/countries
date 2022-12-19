@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
+import { useCountry } from "../../../../Context/CountryContext";
 
 const Wrapper = styled.div`
   z-index: 20;
@@ -62,7 +63,6 @@ interface IisSearchOpen {
 }
 
 type Props = {
-  countries: any;
   inputText: string;
   setInputText: (val: string) => void;
   selectedCountry: string;
@@ -70,13 +70,13 @@ type Props = {
   
 };
 const SearchBar: React.FC<Props> = ({
-  countries,
   inputText,
   setInputText,
   selectedCountry,
   setSelectedCountry,
 
 }): ReactElement => {
+  const {countries } = useCountry()
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR

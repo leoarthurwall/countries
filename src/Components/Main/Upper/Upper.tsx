@@ -40,7 +40,6 @@ type Props = {
 const Upper: React.FC<Props> = ({
   countries,
   selectedItem,
-  setSelectedItem,
   filteredItems,
   inputText,
   setInputText,
@@ -50,7 +49,6 @@ const Upper: React.FC<Props> = ({
   return (
     <Container>
       <SearchBar
-        countries={countries}
         inputText={inputText}
         setInputText={setInputText}
         selectedCountry={selectedCountry}
@@ -66,12 +64,7 @@ const Upper: React.FC<Props> = ({
         </Text>
       )}
 
-      <Dropdown
-        countries={countries}
-        selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem}
-       
-      />
+      <Dropdown />
     </Container>
   );
 };

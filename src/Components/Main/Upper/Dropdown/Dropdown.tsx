@@ -69,6 +69,7 @@ const OptionsOverlay = styled.div<IisDropdownOpen>`
   z-index: 5;
   visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
 `;
+
 interface IisDropdownOpen {
   isDropdownOpen: Boolean;
 }

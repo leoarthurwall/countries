@@ -12,6 +12,10 @@ type CountryContextProps = {
   setIsDropdownOpen: (val: boolean) => void;
   selectedItem: string;
   setSelectedItem: (val: string) => void;
+  inputText: string;
+  setInputText: (val: string) => void;
+  selectedCountry: string;
+  setSelectedCountry: (val: string) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -23,6 +27,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [selectedItem, setSelectedItem] = useState<string>("");
+  const [inputText, setInputText] = useState<any>("");
+  const [selectedCountry, setSelectedCountry] = useState<any>("") 
 
 
   return (
@@ -34,6 +40,10 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setIsDropdownOpen,
         selectedItem,
         setSelectedItem,
+        inputText,
+        setInputText,
+        selectedCountry,
+        setSelectedCountry,
       }}
     >
       {children}
