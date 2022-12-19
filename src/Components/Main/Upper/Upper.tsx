@@ -27,10 +27,15 @@ const Span = styled.span`
   font-size: 14px;
   color: grey;
 `;
-
+const SpanQuery = styled.span`
+  font-weight: 500;
+  font-size: 16px;
+  color: grey;
+`;
 
 const Upper: React.FC = (): ReactElement => {
-  const { countries, selectedRegion, filteredCountries} = useCountry()
+  const { countries, selectedRegion, filteredCountries, searchQuery } =
+    useCountry();
   return (
     <Container>
       <SearchBar />
@@ -40,7 +45,8 @@ const Upper: React.FC = (): ReactElement => {
         </Text>
       ) : (
         <Text>
-         Results for: {selectedRegion} <Span>({filteredCountries.length} countries)</Span>
+          <SpanQuery>Current Search:</SpanQuery> {searchQuery.toLowerCase()}{" "}
+          <Span>({filteredCountries.length} countries)</Span>
         </Text>
       )}
 

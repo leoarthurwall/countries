@@ -68,6 +68,7 @@ const SearchBar: React.FC = (): ReactElement => {
     setInputText,
     isSearchOpen,
     setFilteredCountries,
+    setSearchQuery,
   } = useCountry();
 
   //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
@@ -100,6 +101,7 @@ const SearchBar: React.FC = (): ReactElement => {
       )
     );
     setInputText("");
+    setSearchQuery(inputText)
   };
 
   // GETS THE COUNTRY THAT IS CLICKED ON
@@ -112,6 +114,8 @@ const SearchBar: React.FC = (): ReactElement => {
       )
     );
     setInputText("");
+    setSearchQuery(e.target.innerText)
+
   };
 
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED

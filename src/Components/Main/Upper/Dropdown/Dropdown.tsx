@@ -102,6 +102,8 @@ const Dropdown: React.FC = (): ReactElement => {
     setFilteredCountries(countries);
     setSelectedRegion("")
     setIsDropdownOpen(!isDropdownOpen);
+    setSearchQuery("All")
+
   };
 
   return (
