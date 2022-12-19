@@ -62,7 +62,13 @@ interface IisSearchOpen {
 }
 
 const SearchBar: React.FC = (): ReactElement => {
-  const { countries, inputText, setInputText, isSearchOpen, setFilteredCountries } = useCountry();
+  const {
+    countries,
+    inputText,
+    setInputText,
+    isSearchOpen,
+    setFilteredCountries,
+  } = useCountry();
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
@@ -94,20 +100,23 @@ const SearchBar: React.FC = (): ReactElement => {
     event.preventDefault();
     console.log({ event });
     setFilteredCountries(
-      [...countries].filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
-      ))
-      setInputText("");
+      [...countries].filter((country: any) =>
+        country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
+      )
+    );
+    setInputText("");
   };
 
   // GETS THE COUNTRY THAT IS CLICKED ON
   const handleCountryClick = (e: any) => {
-    setInputText(e.target.innerText);
-    console.log("handleCountryClick - selectedCountry:", inputText);
     setFilteredCountries(
-      [...countries].filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
-    ))
+      [...countries].filter((country: any) =>
+        country.name.common
+          .toLowerCase()
+          .startsWith(e.target.innerText.toLowerCase())
+      )
+    );
     setInputText("");
-
   };
 
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
