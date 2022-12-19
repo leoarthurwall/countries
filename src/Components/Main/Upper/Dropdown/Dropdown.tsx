@@ -93,13 +93,14 @@ const Dropdown: React.FC = (): ReactElement => {
     setIsDropdownOpen(!isDropdownOpen);
     console.log({ selectedRegion });
     setFilteredCountries(
-      [...countries].filter((country: any) => country.region === selectedRegion)
+      [...countries].filter((country: any) => country.region === e.target.innerHTML)
     );
   };
   console.log({ filteredCountries });
 
   const handleAllOptions = () => {
-    setSelectedRegion("");
+    setFilteredCountries(countries);
+    setSelectedRegion("All")
     setIsDropdownOpen(!isDropdownOpen);
   };
 
