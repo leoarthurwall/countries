@@ -1,19 +1,30 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
-const CountryContext = createContext({});
+type CountryProviderProps = {
+  children: ReactNode;
+};
+
+type CountryContextProps = {
+  isDropdownOpen: boolean;
+  setIsDropdownOpen: (val: boolean) => void;
+};
+const CountryContext = createContext({} as CountryContextProps);
 
 export function useCountry() {
   return useContext(CountryContext);
 }
 
-type CountryProviderProps = {
-    children: ReactNode
-}
+export function CountryProvider({ children }: CountryProviderProps) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-export function CountryProvider({children}: CountryProviderProps ) {
-    return(
-        <CountryContext.Provider value={{}}>
-            {children}
-        </CountryContext.Provider>
-    )
+  return (
+    <CountryContext.Provider
+      value={{
+        isDropdownOpen,
+        setIsDropdownOpen,
+      }}
+    >
+      {children}
+    </CountryContext.Provider>
+  );
 }
