@@ -62,22 +62,8 @@ interface IisSearchOpen {
   isSearchOpen: Boolean;
 }
 
-type Props = {
-  inputText: string;
-  setInputText: (val: string) => void;
-  selectedCountry: string;
-  setSelectedCountry: (val: string) => void;
-  
-};
-const SearchBar: React.FC<Props> = ({
-  inputText,
-  setInputText,
-  selectedCountry,
-  setSelectedCountry,
-
-}): ReactElement => {
-  const {countries } = useCountry()
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
+const SearchBar: React.FC = (): ReactElement => {
+  const { countries, inputText, setInputText, isSearchOpen } = useCountry();
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
@@ -107,7 +93,7 @@ const SearchBar: React.FC<Props> = ({
   //FORM SUBMIT HANDLER
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log({event})
+    console.log({ event });
     setInputText("");
   };
 

@@ -16,6 +16,10 @@ type CountryContextProps = {
   setInputText: (val: string) => void;
   selectedCountry: string;
   setSelectedCountry: (val: string) => void;
+  filteredItems: any[];
+  inputReturn: any[];
+  isSearchOpen: boolean;
+  setIsSearchOpen: (val: boolean) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -28,8 +32,22 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [selectedItem, setSelectedItem] = useState<string>("");
   const [inputText, setInputText] = useState<any>("");
-  const [selectedCountry, setSelectedCountry] = useState<any>("") 
+  const [selectedCountry, setSelectedCountry] = useState<any>("");
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
 
+
+  //CREATES AN ARRAY THAT MATCHES THE SELECTED REGION FROM THE DROPDOWN
+  const filteredItems: any[] = countries.filter(
+    (country: any) => country.region === selectedItem
+  );
+  console.log({ filteredItems });
+
+  // CREATES AN ARRAY THAT MATCHES THE INPUT TEXT COUNTRY
+  const inputReturn: any[] = countries.filter(
+    (country: any) =>
+      country.name.common.toLowerCase() === inputText.toLowerCase()
+  );
+  console.log({ inputReturn });
 
   return (
     <CountryContext.Provider
@@ -44,6 +62,10 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setInputText,
         selectedCountry,
         setSelectedCountry,
+        filteredItems,
+        inputReturn,
+        isSearchOpen,
+        setIsSearchOpen,
       }}
     >
       {children}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CardSingle from "./CardSingle/CardSingle";
 import { ReactElement } from "react";
+import { useCountry } from "../../../Context/CountryContext";
 
 const Container = styled.section`
   width: auto;
@@ -26,15 +27,10 @@ const Container = styled.section`
   }
 `;
 
-type Props = {
-  countries: any;
-  filteredItems: any;
-  inputReturn: any;
-};
 
-const Card: React.FC<Props> = ({ countries, filteredItems, inputReturn }): ReactElement => {
-  console.log("filteredItems", filteredItems.length);
-  console.log({inputReturn})
+
+const Card: React.FC= (): ReactElement => {
+  const { inputReturn } = useCountry()
   return (
     <Container>
         {inputReturn.length === 1 && inputReturn.map((country: any, index: any) => (

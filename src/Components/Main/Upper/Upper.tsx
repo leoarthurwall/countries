@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import Dropdown from "./Dropdown/Dropdown";
+import { useCountry } from "../../../Context/CountryContext";
 
 const Container = styled.section`
   width: 100%;
@@ -27,33 +28,12 @@ const Span = styled.span`
   color: grey;
 `;
 
-type Props = {
-  countries: any;
-  selectedItem: string;
-  setSelectedItem: (val: string) => void;
-  filteredItems: any[];
-  inputText: string;
-  setInputText: (val: string) => void;
-  selectedCountry: string;
-  setSelectedCountry: (val: string) => void;
-};
-const Upper: React.FC<Props> = ({
-  countries,
-  selectedItem,
-  filteredItems,
-  inputText,
-  setInputText,
-  selectedCountry,
-  setSelectedCountry,
-}): ReactElement => {
+
+const Upper: React.FC = (): ReactElement => {
+  const { countries, selectedItem, filteredItems} = useCountry()
   return (
     <Container>
-      <SearchBar
-        inputText={inputText}
-        setInputText={setInputText}
-        selectedCountry={selectedCountry}
-        setSelectedCountry={setSelectedCountry}
-      />
+      <SearchBar />
       {selectedItem === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
