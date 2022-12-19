@@ -60,7 +60,7 @@ const DropdownItem = styled.li`
 
 const OptionsOverlay = styled.div<IisDropdownOpen>`
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0);
   top: 0;
   bottom: 0;
   left: 0;
