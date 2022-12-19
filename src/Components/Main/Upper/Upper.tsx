@@ -42,15 +42,6 @@ const Upper: React.FC = (): ReactElement => {
     searchQuery.toLowerCase().charAt(0).toUpperCase() + searchQuery.slice(1);
   console.log({ searchQuery });
 
-  //  function countryQuantity () {
-  //   if(filteredCountries.length === 1) {
-  //     return "country"
-  //   } else {
-  //     return "countries"
-  //   }
-  //  }
-  console.log("FCL", filteredCountries.length);
-
   return (
     <Container>
       <SearchBar />
@@ -60,7 +51,7 @@ const Upper: React.FC = (): ReactElement => {
         </Text>
       ) : (
         <Text>
-          <SpanQuery>Current Search:</SpanQuery> {queryWithCapFirstLetter}
+          <SpanQuery>Current Search:</SpanQuery> "{queryWithCapFirstLetter}"
           {filteredCountries.length > 1 && (
             <Span> ({filteredCountries.length}) countries </Span>
           )}
