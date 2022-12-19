@@ -54,7 +54,7 @@ const Upper: React.FC = (): ReactElement => {
   return (
     <Container>
       <SearchBar />
-      {selectedRegion === "" ? (
+      {searchQuery === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
         </Text>
