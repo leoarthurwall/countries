@@ -45,11 +45,17 @@ const Upper: React.FC<Props> = ({
   inputText,
   setInputText,
   selectedCountry,
-  setSelectedCountry
+  setSelectedCountry,
 }): ReactElement => {
   return (
     <Container>
-      <SearchBar countries={countries} inputText={inputText} setInputText={setInputText}/>
+      <SearchBar
+        countries={countries}
+        inputText={inputText}
+        setInputText={setInputText}
+        selectedCountry={selectedCountry}
+        setSelectedCountry={setSelectedCountry}
+      />
       {selectedItem === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
@@ -64,8 +70,7 @@ const Upper: React.FC<Props> = ({
         countries={countries}
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
-        selectedCountry={selectedCountry}
-        setSelectedCountry={setSelectedCountry}
+       
       />
     </Container>
   );
