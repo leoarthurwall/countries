@@ -2,9 +2,7 @@ import styled from "styled-components";
 import Upper from "./Upper/Upper";
 import { ReactElement } from "react";
 import Card from "./Card/Card";
-import { useState, useEffect } from "react";
-import { ICountries } from "../../ICountries";
-import { useCountry } from "../../Context/CountryContext";
+
 
 const Container = styled.main`
   height: 100%;
@@ -20,7 +18,6 @@ const Container = styled.main`
 `;
 
 const Main: React.FC = (): ReactElement => {
-  const { countries, setCountries } = useCountry();
 
   return (
     <Container>

@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState, useEffect } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 import { ICountries } from "../ICountries";
 
 type CountryProviderProps = {
@@ -10,8 +16,8 @@ type CountryContextProps = {
   setCountries: (val: any[]) => void;
   isDropdownOpen: boolean;
   setIsDropdownOpen: (val: boolean) => void;
-  selectedItem: string;
-  setSelectedItem: (val: string) => void;
+  selectedRegion: string;
+  setSelectedRegion: (val: string) => void;
   inputText: string;
   setInputText: (val: string) => void;
   selectedCountry: string;
@@ -20,6 +26,8 @@ type CountryContextProps = {
   inputReturn: any[];
   isSearchOpen: boolean;
   setIsSearchOpen: (val: boolean) => void;
+  filteredCountries: any[];
+  setFilteredCountries: (val: any[]) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -30,10 +38,11 @@ export function useCountry() {
 export function CountryProvider({ children }: CountryProviderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [countries, setCountries] = useState<ICountries[]>([]);
-  const [selectedItem, setSelectedItem] = useState<string>("");
+  const [selectedRegion, setSelectedRegion] = useState<string>("");
   const [inputText, setInputText] = useState<any>("");
   const [selectedCountry, setSelectedCountry] = useState<any>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
+  const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -48,7 +57,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
 
   //CREATES AN ARRAY THAT MATCHES THE SELECTED REGION FROM THE DROPDOWN
   const filteredItems: any[] = countries.filter(
-    (country: any) => country.region === selectedItem
+    (country: any) => country.region === selectedRegion
   );
   console.log({ filteredItems });
 
@@ -66,8 +75,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setCountries,
         isDropdownOpen,
         setIsDropdownOpen,
-        selectedItem,
-        setSelectedItem,
+        selectedRegion,
+        setSelectedRegion,
         inputText,
         setInputText,
         selectedCountry,
@@ -76,6 +85,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         inputReturn,
         isSearchOpen,
         setIsSearchOpen,
+        filteredCountries,
+        setFilteredCountries,
       }}
     >
       {children}

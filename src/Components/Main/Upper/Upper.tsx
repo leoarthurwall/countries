@@ -30,17 +30,17 @@ const Span = styled.span`
 
 
 const Upper: React.FC = (): ReactElement => {
-  const { countries, selectedItem, filteredItems} = useCountry()
+  const { countries, selectedRegion, filteredItems} = useCountry()
   return (
     <Container>
       <SearchBar />
-      {selectedItem === "" ? (
+      {selectedRegion === "" ? (
         <Text>
           All <Span>({countries.length} countries)</Span>
         </Text>
       ) : (
         <Text>
-          {selectedItem} <Span>({filteredItems.length} countries)</Span>
+          {selectedRegion} <Span>({filteredItems.length} countries)</Span>
         </Text>
       )}
 

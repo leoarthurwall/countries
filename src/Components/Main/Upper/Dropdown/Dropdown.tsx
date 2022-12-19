@@ -74,21 +74,32 @@ interface IisDropdownOpen {
 }
 
 const Dropdown: React.FC = (): ReactElement => {
-  const { isDropdownOpen, setIsDropdownOpen, selectedItem, setSelectedItem } =
-    useCountry();
+  const {
+    isDropdownOpen,
+    setIsDropdownOpen,
+    selectedRegion,
+    setSelectedRegion,
+    filteredCountries,
+    setFilteredCountries,
+    countries,
+  } = useCountry();
 
   const handleDropdownClick = (val: any) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleSelectedOption = (e: any) => {
-    setSelectedItem(e.target.innerHTML);
+    setSelectedRegion(e.target.innerHTML);
     setIsDropdownOpen(!isDropdownOpen);
-    console.log({ selectedItem });
+    console.log({ selectedRegion });
+    setFilteredCountries(
+      countries.filter((country: any) => country.region === selectedRegion)
+    );
   };
+  console.log({ filteredCountries });
 
   const handleAllOptions = () => {
-    setSelectedItem("");
+    setSelectedRegion("");
     setIsDropdownOpen(!isDropdownOpen);
   };
 
