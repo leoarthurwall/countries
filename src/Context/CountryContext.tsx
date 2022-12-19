@@ -16,8 +16,6 @@ type CountryContextProps = {
   setCountries: (val: any[]) => void;
   isDropdownOpen: boolean;
   setIsDropdownOpen: (val: boolean) => void;
-  selectedRegion: string;
-  setSelectedRegion: (val: string) => void;
   inputText: string;
   setInputText: (val: string) => void;
   selectedCountry: string;
@@ -39,12 +37,11 @@ export function useCountry() {
 export function CountryProvider({ children }: CountryProviderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [countries, setCountries] = useState<ICountries[]>([]);
-  const [selectedRegion, setSelectedRegion] = useState<string>("");
   const [inputText, setInputText] = useState<any>("");
   const [selectedCountry, setSelectedCountry] = useState<any>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
-  const [searchQuery, setSearchQuery] = useState<string>("")
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -71,8 +68,6 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setCountries,
         isDropdownOpen,
         setIsDropdownOpen,
-        selectedRegion,
-        setSelectedRegion,
         inputText,
         setInputText,
         selectedCountry,

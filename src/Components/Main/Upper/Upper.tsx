@@ -34,7 +34,7 @@ const SpanQuery = styled.span`
 `;
 
 const Upper: React.FC = (): ReactElement => {
-  const { countries, selectedRegion, filteredCountries, searchQuery } =
+  const { countries, filteredCountries, searchQuery } =
     useCountry();
 
   // CAPITALISES ONLY THE FIRST LETTER OF THE SEARCHQUERY STRING

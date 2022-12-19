@@ -77,8 +77,7 @@ const Dropdown: React.FC = (): ReactElement => {
   const {
     isDropdownOpen,
     setIsDropdownOpen,
-    selectedRegion,
-    setSelectedRegion,
+
     setFilteredCountries,
     countries,
     setSearchQuery,
@@ -89,21 +88,19 @@ const Dropdown: React.FC = (): ReactElement => {
   };
 
   const handleSelectedOption = (e: any) => {
-    setSelectedRegion(e.target.innerHTML);
     setIsDropdownOpen(!isDropdownOpen);
-    console.log({ selectedRegion });
     setFilteredCountries(
-      [...countries].filter((country: any) => country.region === e.target.innerHTML)
+      [...countries].filter(
+        (country: any) => country.region === e.target.innerHTML
+      )
     );
-    setSearchQuery(e.target.innerHTML)
+    setSearchQuery(e.target.innerHTML);
   };
 
   const handleAllOptions = () => {
     setFilteredCountries(countries);
-    setSelectedRegion("")
     setIsDropdownOpen(!isDropdownOpen);
-    setSearchQuery("All")
-
+    setSearchQuery("All");
   };
 
   return (
