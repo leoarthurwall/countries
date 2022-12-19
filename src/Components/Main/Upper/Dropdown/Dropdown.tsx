@@ -46,7 +46,8 @@ const DropdownMenu = styled.ul<IisDropdownOpen>`
   width: 200px;
   top: 55px;
   box-sizing: border-box;
-  visibility: ${({ isDropdownOpen }) => (isDropdownOpen ? "visible" : "hidden")};
+  visibility: ${({ isDropdownOpen }) =>
+    isDropdownOpen ? "visible" : "hidden"};
 `;
 const DropdownItem = styled.li`
   font-weight: 400;
@@ -72,17 +73,9 @@ interface IisDropdownOpen {
   isDropdownOpen: Boolean;
 }
 
-type Props = {
-  countries: any;
-  selectedItem: string;
-  setSelectedItem: (val: string) => void;
-};
-
-const Dropdown: React.FC<Props> = ({
-  selectedItem,
-  setSelectedItem,
-}): ReactElement => {
-  const { isDropdownOpen, setIsDropdownOpen } = useCountry();
+const Dropdown: React.FC = (): ReactElement => {
+  const { isDropdownOpen, setIsDropdownOpen, selectedItem, setSelectedItem } =
+    useCountry();
 
   const handleDropdownClick = (val: any) => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -117,7 +110,10 @@ const Dropdown: React.FC<Props> = ({
           <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
         </DropdownMenu>
       </Wrapper>
-      <OptionsOverlay isDropdownOpen={isDropdownOpen} onClick={handleDropdownClick} />
+      <OptionsOverlay
+        isDropdownOpen={isDropdownOpen}
+        onClick={handleDropdownClick}
+      />
     </>
   );
 };
