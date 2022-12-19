@@ -62,7 +62,7 @@ interface IisSearchOpen {
 }
 
 const SearchBar: React.FC = (): ReactElement => {
-  const { countries, inputText, setInputText, isSearchOpen } = useCountry();
+  const { countries, inputText, setInputText, isSearchOpen, setFilteredCountries } = useCountry();
 
   //RETURNS COUNTRRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
@@ -94,6 +94,9 @@ const SearchBar: React.FC = (): ReactElement => {
     event.preventDefault();
     console.log({ event });
     setInputText("");
+    setFilteredCountries(
+      countries.filter((country: any) => country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
+    ))
   };
 
   // GETS THE COUNTRY THAT IS CLICKED ON

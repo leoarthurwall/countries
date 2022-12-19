@@ -22,7 +22,7 @@ type CountryContextProps = {
   setInputText: (val: string) => void;
   selectedCountry: string;
   setSelectedCountry: (val: string) => void;
-  filteredItems: any[];
+//   filteredItems: any[];
   inputReturn: any[];
   isSearchOpen: boolean;
   setIsSearchOpen: (val: boolean) => void;
@@ -56,10 +56,10 @@ export function CountryProvider({ children }: CountryProviderProps) {
   console.log({ countries });
 
   //CREATES AN ARRAY THAT MATCHES THE SELECTED REGION FROM THE DROPDOWN
-  const filteredItems: any[] = countries.filter(
-    (country: any) => country.region === selectedRegion
-  );
-  console.log({ filteredItems });
+//   const filteredItems: any[] = countries.filter(
+//     (country: any) => country.region === selectedRegion
+//   );
+//   console.log({ filteredItems });
 
   // CREATES AN ARRAY THAT MATCHES THE INPUT TEXT COUNTRY
   const inputReturn: any[] = countries.filter(
@@ -81,7 +81,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setInputText,
         selectedCountry,
         setSelectedCountry,
-        filteredItems,
+        // filteredItems,
         inputReturn,
         isSearchOpen,
         setIsSearchOpen,
