@@ -9,10 +9,22 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
 `;
+const Left = styled.section`
+`
+
+const Right = styled.section`
+`
 
 const CardLower = () => {
   return (
-    <Container>CardLower</Container>
+    <Container>
+        <Left>
+
+        </Left>
+        <Right>
+            
+        </Right>
+    </Container>
   )
 }
 
