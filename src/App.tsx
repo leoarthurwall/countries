@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Nav from "./Components/Nav/Nav";
 import Main from "./Components/Main/Main";
+import CountryCard from "./Components/CountryCard/CountryCard";
 
 
 const Container = styled.main`
@@ -17,6 +18,7 @@ function App() {
     <Container>
       <Nav />
       <Main />
+      <CountryCard />
     </Container>
   );
 }
