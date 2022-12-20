@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 80px 40px;
+  padding: 40px 40px;
   border: 2px solid red;
   box-sizing: border-box;
 `;
@@ -22,7 +22,7 @@ const Left = styled.section`
   width: 50%;
   padding-right: 40px;
   box-sizing: border-box;
-  gap: 10px;
+  gap: 30px;
 `;
 
 const Right = styled.section`
@@ -36,7 +36,7 @@ const Right = styled.section`
   gap: 15px;
 `;
 const Flag = styled.div`
-  height: 50%;
+  height: 45%;
   width: 100%;
   background-color: blue;
 `;
@@ -51,7 +51,6 @@ const InfoSpan = styled.span`
   font-weight: 300;
   font-size: 14px;
 `;
-
 
 const ViewMap = styled.a`
 display: flex;
@@ -82,6 +81,34 @@ const MapText = styled.p`
   margin: 0;
 `;
 
+const NeighborContainer = styled.div`
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+width: 100%;
+gap: 10px;
+`
+const Neighbor = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+height: auto;
+width: fit-content;
+padding: 12px 15px;
+font-size: 14px;
+color: white;
+gap 10px;
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 25px;
+box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px;
+text-decoration: none;
+cursor: pointer;
+transition: 0.2s;
+&:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+`;
 const CardLower = () => {
   const { countries } = useCountry();
 
@@ -91,8 +118,18 @@ const CardLower = () => {
         <Flag></Flag>
         <ViewMap href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6" target="_blank">
           <MapText>View On Map</MapText>
-          <BiMap size={18}/>
+          <BiMap size={18} />
         </ViewMap>
+        <Info>Bordering Countries:</Info>
+        <NeighborContainer>
+          <Neighbor>France</Neighbor>
+          <Neighbor>Spain</Neighbor>
+          <Neighbor>Germany</Neighbor>
+          <Neighbor>Poland</Neighbor>
+          <Neighbor>Poland</Neighbor>
+          <Neighbor>Poland</Neighbor><Neighbor>Poland</Neighbor>
+
+        </NeighborContainer>
       </Left>
       <Right>
         <Name>Germany</Name>
