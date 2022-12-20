@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { ReactElement } from "react";
+import CardUpper from "./CardUpper/CardUpper";
+import CardLower from "./CardLower/CardLower";
 
 const Container = styled.section`
   position: fixed;
@@ -25,10 +27,14 @@ const Card = styled.div`
   border-radius: 5px;
 `;
 
+
 const CountryCard: React.FC = (): ReactElement => {
   return (
     <Container>
-      <Card></Card>
+      <Card>
+        <CardUpper />
+        <CardLower />
+      </Card>
     </Container>
   );
 };
