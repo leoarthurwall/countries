@@ -8,6 +8,7 @@ const Container = styled.div`
   align-items: center;
   height: auto;
   width: 100%;
+
 `;
 
 const CloseCircle = styled.div`
@@ -21,6 +22,7 @@ const CloseCircle = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transition: 0.2s;
   margin: 20px;
+
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.5);

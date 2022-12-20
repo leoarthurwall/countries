@@ -25,8 +25,9 @@ const Card = styled.div`
   width: 70%;
   background-color: #fff;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 `;
-
 
 const CountryCard: React.FC = (): ReactElement => {
   return (
