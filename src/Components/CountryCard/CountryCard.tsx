@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import { ReactElement } from "react";
 
 const Container = styled.section`
   position: fixed;
@@ -14,12 +14,23 @@ const Container = styled.section`
 
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 100;
 `;
 
-const CountryCard = () => {
-  return <Container>CountryCard</Container>;
+const Card = styled.div`
+  height: 70%;
+  width: 70%;
+  background-color: #fff;
+  border-radius: 5px;
+`;
+
+const CountryCard: React.FC = (): ReactElement => {
+  return (
+    <Container>
+      <Card></Card>
+    </Container>
+  );
 };
 
 export default CountryCard;
