@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ICountries } from "../../../../ICountries";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   height: 380px;
@@ -26,6 +27,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
+  color: black;
 `;
 const Header = styled.h4`
   margin-bottom: 15px;
@@ -47,21 +49,23 @@ const CardSingle: React.FC<Props> = ({ country }) => {
   const populationFormatted = population.toLocaleString("en-UK");
 
   return (
-    <Container>
-      <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
-      <TextContainer>
-        <Header>{name.common}</Header>
-        <SubHeader>
-          Population: <Result>{populationFormatted}</Result>
-        </SubHeader>
-        <SubHeader>
-          Region: <Result>{region}</Result>
-        </SubHeader>
-        <SubHeader>
-          Capital: <Result>{capital}</Result>
-        </SubHeader>
-      </TextContainer>
-    </Container>
+    <NavLink to="/country" style={{ textDecoration: "none" }}>
+      <Container>
+        <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
+        <TextContainer>
+          <Header>{name.common}</Header>
+          <SubHeader>
+            Population: <Result>{populationFormatted}</Result>
+          </SubHeader>
+          <SubHeader>
+            Region: <Result>{region}</Result>
+          </SubHeader>
+          <SubHeader>
+            Capital: <Result>{capital}</Result>
+          </SubHeader>
+        </TextContainer>
+      </Container>
+    </NavLink>
   );
 };
 
