@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import Main from "./Components/Main/Main";
 import Nav from "./Components/Nav/Nav";
 import { Routes, Route } from "react-router-dom";
 import Country from "./Pages/Country";
+import Home from "./Pages/Home";
+
 
 const Container = styled.main`
 height: 100%;
@@ -18,7 +19,7 @@ function App() {
     <Container>
       <Nav />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Home />} />
         <Route path="/country" element={<Country />} />
       </Routes>
     </Container>
