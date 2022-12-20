@@ -27,6 +27,8 @@ type CountryContextProps = {
   setFilteredCountries: (val: any[]) => void;
   searchQuery: string;
   setSearchQuery: (val: string) => void;
+  countryModalOpen: boolean;
+  setCountryModalOpen: (val: boolean) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -42,6 +44,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false)
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -79,6 +82,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setFilteredCountries,
         searchQuery,
         setSearchQuery,
+        countryModalOpen,
+        setCountryModalOpen,
       }}
     >
       {children}
