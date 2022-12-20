@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { ReactElement } from "react";
-import Upper from "../Components/Main/Upper/Upper";
-import Card from "../Components/Main/Card/Card";
+import Upper from "./Upper/Upper";
+import Card from "./Card/Card";
+
 
 const Container = styled.main`
   height: 100%;
@@ -16,7 +17,7 @@ const Container = styled.main`
   flex-direction: column;
 `;
 
-const Home: React.FC = (): ReactElement => {
+const Main: React.FC = (): ReactElement => {
   return (
     <Container>
       <Upper />
@@ -25,4 +26,4 @@ const Home: React.FC = (): ReactElement => {
   );
 };
 
-export default Home;
+export default Main;

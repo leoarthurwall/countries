@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Nav from "./Components/Nav/Nav";
-import { Routes, Route } from "react-router-dom";
-import Country from "./Pages/Country";
-import Home from "./Pages/Home";
+import Main from "./Components/Main/Main";
 
 
 const Container = styled.main`
@@ -18,10 +16,7 @@ function App() {
   return (
     <Container>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/country" element={<Country />} />
-      </Routes>
+      <Main />
     </Container>
   );
 }
