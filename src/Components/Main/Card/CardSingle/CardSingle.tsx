@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useCountry } from "../../../../Context/CountryContext";
 import { ICountries } from "../../../../ICountries";
 
 const Container = styled.div`
@@ -44,11 +45,16 @@ type Props = {
 
 const CardSingle: React.FC<Props> = ({ country }) => {
   const { region, capital, population, name, flags } = country;
+  const { countryModalOpen, setCountryModalOpen } = useCountry()
 
   const populationFormatted = population.toLocaleString("en-UK");
 
+  const handleCountryModalClick = () => {
+    setCountryModalOpen(!countryModalOpen)
+  }
+
   return (
-    <Container>
+    <Container onClick={handleCountryModalClick}>
       <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
       <TextContainer>
         <Header>{name.common}</Header>
