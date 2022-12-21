@@ -70,16 +70,15 @@ export function CountryProvider({ children }: CountryProviderProps) {
 
   // TOGGLES THE MODAL TO OPEN AND CLOSE
   const handleCountryModalClick = (e: any) => {
-    const clickedId: any = e.target.id;
-
-    
-    const modalCountry: any[] =
-      [...countries].filter((country: any) => country.name.common === clickedId)
-
-    console.log({modalCountry});
+    setModalCountry(
+      [...countries].filter(
+        (country: any) => country.name.common === e.target.id
+      )
+    );
 
     setCountryModalOpen(!countryModalOpen);
   };
+  console.log({ modalCountry });
 
   return (
     <CountryContext.Provider
