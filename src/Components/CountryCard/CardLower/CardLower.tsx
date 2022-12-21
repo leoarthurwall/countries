@@ -109,7 +109,7 @@ transition: 0.2s;
 }
 `;
 const CardLower = () => {
-  const { countries } = useCountry();
+  const { modalCountry } = useCountry();
 
   return (
     <Container>
@@ -133,7 +133,7 @@ const CardLower = () => {
       <Right>
         <Name>Germany</Name>
         <Info>
-          Population: <InfoSpan>5,000,000</InfoSpan>{" "}
+          Population: <InfoSpan>{}</InfoSpan>{" "}
         </Info>
         <Info>
           Region: <InfoSpan>Europe</InfoSpan>{" "}
