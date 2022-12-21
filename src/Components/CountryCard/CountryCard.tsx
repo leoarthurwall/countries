@@ -38,7 +38,7 @@ interface IcountryModalOpen {
 }
 
 const CountryCard: React.FC = (): ReactElement => {
-  const { countryModalOpen, handleCountryModalClick } = useCountry();
+  const { countryModalOpen, handleCountryModalClick, modalCountry } = useCountry();
   return (
     <Container
       countryModalOpen={countryModalOpen}
@@ -46,6 +46,7 @@ const CountryCard: React.FC = (): ReactElement => {
     >
       <Card>
         <CardUpper />
+        {/* {modalCountry && modal} */}
         <CardLower />
       </Card>
     </Container>

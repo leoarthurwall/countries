@@ -81,12 +81,12 @@ const MapText = styled.p`
 `;
 
 const NeighborContainer = styled.div`
-display: flex;
-align-items: center;
-flex-wrap: wrap;
-width: 100%;
-gap: 10px;
-`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+`;
 const Neighbor = styled.div`
 display: flex;
 align-items: center;
@@ -113,47 +113,54 @@ const CardLower = () => {
 
   return (
     <Container>
-      <Left>
-        <Flag></Flag>
-        <ViewMap href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6" target="_blank">
-          <MapText>View On Map</MapText>
-          <BiMap size={18} />
-        </ViewMap>
-        <Info>Bordering Countries:</Info>
-        <NeighborContainer>
-          <Neighbor>France</Neighbor>
-          <Neighbor>Spain</Neighbor>
-          <Neighbor>Germany</Neighbor>
-          <Neighbor>Poland</Neighbor>
-          <Neighbor>Poland</Neighbor>
-          <Neighbor>Poland</Neighbor><Neighbor>Poland</Neighbor>
-
-        </NeighborContainer>
-      </Left>
-      <Right>
-        <Name>Germany</Name>
-        <Info>
-          Population: <InfoSpan>{}</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Region: <InfoSpan>Europe</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Capital: <InfoSpan>Berlin</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Currency: <InfoSpan>Euro</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Languages:<InfoSpan> German</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Continent:<InfoSpan>South America</InfoSpan>{" "}
-        </Info>
-        <Info>
-          Area: <InfoSpan>2,000,000 km2</InfoSpan>{" "}
-        </Info>
-      </Right>
+      {modalCountry ? (
+        <>
+          <Left>
+            <Flag></Flag>
+            <ViewMap
+              href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6"
+              target="_blank"
+            >
+              <MapText>View On Map</MapText>
+              <BiMap size={18} />
+            </ViewMap>
+            <Info>Bordering Countries:</Info>
+            <NeighborContainer>
+              <Neighbor>France</Neighbor>
+              <Neighbor>Spain</Neighbor>
+              <Neighbor>Germany</Neighbor>
+              <Neighbor>Poland</Neighbor>
+              <Neighbor>Poland</Neighbor>
+              <Neighbor>Poland</Neighbor>
+              <Neighbor>Poland</Neighbor>
+            </NeighborContainer>
+          </Left>
+          <Right>
+            <Name>{}</Name>
+            <Info>
+              Population: <InfoSpan>{}</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Region: <InfoSpan>Europe</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Capital: <InfoSpan>Berlin</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Currency: <InfoSpan>Euro</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Languages:<InfoSpan> German</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Continent:<InfoSpan>South America</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Area: <InfoSpan>2,000,000 km2</InfoSpan>{" "}
+            </Info>
+          </Right>
+        </>
+      ) : (null)}
     </Container>
   );
 };
