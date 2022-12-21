@@ -53,8 +53,8 @@ const CardSingle: React.FC<Props> = ({ country }) => {
  
 
   return (
-    <Container onClick={handleCountryModalClick}>
-      <Flag src={flags.png} alt={`image of {name.common}'s flag`}></Flag>
+    <Container id={name.common} onClick={handleCountryModalClick}>
+      <Flag src={flags.png} alt={`image of ${name.common}'s flag`}></Flag>
       <TextContainer>
         <Header>{name.common}</Header>
         <SubHeader>

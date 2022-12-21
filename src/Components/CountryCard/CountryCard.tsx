@@ -21,8 +21,7 @@ const Container = styled.section<IcountryModalOpen>`
   z-index: 100;
   visibility: ${({ countryModalOpen }) => !countryModalOpen && "hidden"};
   opacity: ${({ countryModalOpen }) => (!countryModalOpen ? "0" : "1")};
-transition: all 0.4s;
-
+  transition: all 0.4s;
 `;
 
 const Card = styled.div`
@@ -39,9 +38,12 @@ interface IcountryModalOpen {
 }
 
 const CountryCard: React.FC = (): ReactElement => {
-  const { countryModalOpen, handleCountryModalClick } = useCountry()
+  const { countryModalOpen, handleCountryModalClick } = useCountry();
   return (
-    <Container countryModalOpen={countryModalOpen} onClick={handleCountryModalClick}>
+    <Container
+      countryModalOpen={countryModalOpen}
+      onClick={handleCountryModalClick}
+    >
       <Card>
         <CardUpper />
         <CardLower />
