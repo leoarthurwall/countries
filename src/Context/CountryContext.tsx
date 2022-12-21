@@ -6,7 +6,6 @@ import {
   useEffect,
 } from "react";
 import { ICountries } from "../ICountries";
-import { IModalCountry } from "../IModalCountry";
 
 type CountryProviderProps = {
   children: ReactNode;
@@ -49,7 +48,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false);
-  const [modalCountry, setModalCountry] = useState<IModalCountry[]>([]);
+  const [modalCountry, setModalCountry] = useState<ICountries[]>([]);
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {

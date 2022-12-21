@@ -6,4 +6,11 @@ export interface ICountries {
     population: number
     name: any
     common: string
+    araa: number
+    languages: string
+    maps: string
+    googleMaps: string
+    continents: string
+    currencies: any
+    
 }
