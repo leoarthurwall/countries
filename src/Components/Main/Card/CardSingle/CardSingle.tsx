@@ -12,6 +12,7 @@ const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 
 const Flag = styled.img`
@@ -45,13 +46,11 @@ type Props = {
 
 const CardSingle: React.FC<Props> = ({ country }) => {
   const { region, capital, population, name, flags } = country;
-  const { countryModalOpen, setCountryModalOpen } = useCountry()
+  const { handleCountryModalClick } = useCountry()
 
   const populationFormatted = population.toLocaleString("en-UK");
 
-  const handleCountryModalClick = () => {
-    setCountryModalOpen(!countryModalOpen)
-  }
+ 
 
   return (
     <Container onClick={handleCountryModalClick}>

@@ -29,6 +29,7 @@ type CountryContextProps = {
   setSearchQuery: (val: string) => void;
   countryModalOpen: boolean;
   setCountryModalOpen: (val: boolean) => void;
+  handleCountryModalClick: (val: any) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -44,7 +45,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(true);
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false)
+  const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false);
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -63,6 +64,11 @@ export function CountryProvider({ children }: CountryProviderProps) {
       country.name.common.toLowerCase() === inputText.toLowerCase()
   );
   console.log({ inputReturn });
+
+  // TOGGLES THE MODAL TO OPEN AND CLOSE
+  const handleCountryModalClick = () => {
+    setCountryModalOpen(!countryModalOpen);
+  };
 
   return (
     <CountryContext.Provider
@@ -84,6 +90,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setSearchQuery,
         countryModalOpen,
         setCountryModalOpen,
+        handleCountryModalClick,
       }}
     >
       {children}
