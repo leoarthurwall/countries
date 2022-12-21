@@ -118,7 +118,10 @@ const CardLower = () => {
       {modalCountry.length === 1 ? (
         <>
           <Left>
-            <Flag src={modalCountry[0].flags.png} alt={`${modalCountry[0].name.common}'s flag`}></Flag>
+            <Flag
+              src={modalCountry[0].flags.png}
+              alt={`${modalCountry[0].name.common}'s flag`}
+            ></Flag>
             <ViewMap
               href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6"
               target="_blank"
@@ -128,13 +131,10 @@ const CardLower = () => {
             </ViewMap>
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
-              <Neighbor>France</Neighbor>
-              <Neighbor>Spain</Neighbor>
-              <Neighbor>Germany</Neighbor>
-              <Neighbor>Poland</Neighbor>
-              <Neighbor>Poland</Neighbor>
-              <Neighbor>Poland</Neighbor>
-              <Neighbor>Poland</Neighbor>
+              {modalCountry.length === 1 &&
+                modalCountry[0].borders.map((border: any) => (
+                  <Neighbor>{border}</Neighbor>
+                ))}
             </NeighborContainer>
           </Left>
           <Right>
@@ -164,10 +164,18 @@ const CardLower = () => {
               Continent: <InfoSpan>{modalCountry[0].continents}</InfoSpan>{" "}
             </Info>
             <Info>
-              Area: <InfoSpan>{modalCountry[0].area.toLocaleString("en-UK")} km2</InfoSpan>{" "}
+              Area:{" "}
+              <InfoSpan>
+                {modalCountry[0].area.toLocaleString("en-UK")} km2
+              </InfoSpan>{" "}
             </Info>
             <Info>
-              Country Phone Code: <InfoSpan> {modalCountry[0].idd.root}{modalCountry[0].idd.suffixes[0]}</InfoSpan>{" "}
+              Country Phone Code:{" "}
+              <InfoSpan>
+                {" "}
+                {modalCountry[0].idd.root}
+                {modalCountry[0].idd.suffixes[0]}
+              </InfoSpan>{" "}
             </Info>
           </Right>
         </>
