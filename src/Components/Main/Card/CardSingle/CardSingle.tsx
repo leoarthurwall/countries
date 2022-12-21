@@ -3,6 +3,7 @@ import { useCountry } from "../../../../Context/CountryContext";
 import { ICountries } from "../../../../ICountries";
 
 const Container = styled.div`
+  position: relative;
   height: 380px;
   width: 100%;
   min-width: 220px;
@@ -13,6 +14,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+`;
+const ContainerOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
 `;
 
 const Flag = styled.img`
@@ -46,27 +55,26 @@ type Props = {
 
 const CardSingle: React.FC<Props> = ({ country }) => {
   const { region, capital, population, name, flags } = country;
-  const { handleCountryModalClick } = useCountry()
+  const { handleCountryModalClick } = useCountry();
 
   const populationFormatted = population.toLocaleString("en-UK");
 
- 
-
   return (
-    <Container id={name.common} onClick={handleCountryModalClick}>
-      <Flag src={flags.png} alt={`image of ${name.common}'s flag`}></Flag>
-      <TextContainer>
-        <Header>{name.common}</Header>
-        <SubHeader>
-          Population: <Result>{populationFormatted}</Result>
-        </SubHeader>
-        <SubHeader>
-          Region: <Result>{region}</Result>
-        </SubHeader>
-        <SubHeader>
-          Capital: <Result>{capital}</Result>
-        </SubHeader>
-      </TextContainer>
+    <Container onClick={handleCountryModalClick}>
+        <Flag src={flags.png} alt={`image of ${name.common}'s flag`}></Flag>
+        <TextContainer>
+          <Header>{name.common}</Header>
+          <SubHeader>
+            Population: <Result>{populationFormatted}</Result>
+          </SubHeader>
+          <SubHeader>
+            Region: <Result>{region}</Result>
+          </SubHeader>
+          <SubHeader>
+            Capital: <Result>{capital}</Result>
+          </SubHeader>
+        </TextContainer>
+        <ContainerOverlay id={name.common} />
     </Container>
   );
 };
