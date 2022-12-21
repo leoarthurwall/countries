@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import CardUpper from "./CardUpper/CardUpper";
 import CardLower from "./CardLower/CardLower";
+import { useCountry } from "../../Context/CountryContext";
 
-const Container = styled.section`
+const Container = styled.section<IcountryModalOpen>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -18,6 +19,8 @@ const Container = styled.section`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
+  visibility: ${({ countryModalOpen }) => !countryModalOpen && "hidden"};
+
 `;
 
 const Card = styled.div`
@@ -29,9 +32,14 @@ const Card = styled.div`
   flex-direction: column;
 `;
 
+interface IcountryModalOpen {
+  countryModalOpen: boolean;
+}
+
 const CountryCard: React.FC = (): ReactElement => {
+  const { countryModalOpen } = useCountry()
   return (
-    <Container>
+    <Container countryModalOpen={countryModalOpen}>
       <Card>
         <CardUpper />
         <CardLower />

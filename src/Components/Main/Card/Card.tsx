@@ -27,10 +27,12 @@ const Container = styled.section`
   }
 `;
 
+
+
 const Card: React.FC = (): ReactElement => {
   const { filteredCountries, countries } = useCountry();
   return (
-    <Container>
+    <Container >
       {filteredCountries.length === 0
         ? countries.map((country: any, index: any) => (
             <CardSingle key={index} country={country} />
