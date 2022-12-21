@@ -20,6 +20,8 @@ const Container = styled.section<IcountryModalOpen>`
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   visibility: ${({ countryModalOpen }) => !countryModalOpen && "hidden"};
+  opacity: ${({ countryModalOpen }) => (!countryModalOpen ? "0" : "1")};
+transition: all 0.4s;
 
 `;
 
