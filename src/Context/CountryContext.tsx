@@ -48,7 +48,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false);
-  const [modalCountry, setModalCountry] = useState<ICountries[]>([])
+  const [modalCountry, setModalCountry] = useState<ICountries[]>([]);
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -69,19 +69,14 @@ export function CountryProvider({ children }: CountryProviderProps) {
   console.log({ inputReturn });
 
   // TOGGLES THE MODAL TO OPEN AND CLOSE
-  const handleCountryModalClick = (e:any) => {
-    // if (countryModalOpen === false) {
-    //   setModalCountry( countries.filter((country: any) => {
-    //     if (inputText === "") {
-    //       return null;
-    //     } else if (
-    //       country.name.common.toLowerCase().startsWith(inputText.toLowerCase())
-    //     ) {
-    //       return country;
-    //     }
-    //   }));
-    // }
-    console.log("modalClick;",e.target.id)
+  const handleCountryModalClick = (e: any) => {
+    const clickedId: any = e.target.id;
+
+    
+    const modalCountry: any[] =
+      [...countries].filter((country: any) => country.name.common === clickedId)
+
+    console.log({modalCountry});
 
     setCountryModalOpen(!countryModalOpen);
   };
