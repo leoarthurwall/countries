@@ -77,6 +77,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
     );
 
     setCountryModalOpen(!countryModalOpen);
+
   };
   console.log({ modalCountry });
 

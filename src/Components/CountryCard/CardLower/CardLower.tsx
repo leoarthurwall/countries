@@ -34,10 +34,12 @@ const Right = styled.section`
   padding-left: 40px;
   gap: 15px;
 `;
-const Flag = styled.div`
+const Flag = styled.img`
   height: 45%;
+  max-height: 150px;
+  max-width: 300px;
   width: 100%;
-  background-color: blue;
+  background-color: grey;
 `;
 const Name = styled.h3`
   margin: 0;
@@ -113,10 +115,10 @@ const CardLower = () => {
 
   return (
     <Container>
-      {modalCountry ? (
+      {modalCountry.length === 1 ? (
         <>
           <Left>
-            <Flag></Flag>
+            <Flag src={modalCountry[0].flags.png} alt={`${modalCountry[0].name.common}'s flag`}></Flag>
             <ViewMap
               href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6"
               target="_blank"
@@ -136,31 +138,40 @@ const CardLower = () => {
             </NeighborContainer>
           </Left>
           <Right>
-            <Name>{}</Name>
+            <Name>{modalCountry[0].name.common}</Name>
             <Info>
-              Population: <InfoSpan>{}</InfoSpan>{" "}
+              Population:{" "}
+              <InfoSpan>
+                {modalCountry[0].population.toLocaleString("en-UK")}
+              </InfoSpan>{" "}
             </Info>
             <Info>
-              Region: <InfoSpan>Europe</InfoSpan>{" "}
+              Region: <InfoSpan>{modalCountry[0].continents}</InfoSpan>{" "}
             </Info>
             <Info>
-              Capital: <InfoSpan>Berlin</InfoSpan>{" "}
+              Sub Region: <InfoSpan>{modalCountry[0].subregion}</InfoSpan>{" "}
             </Info>
             <Info>
-              Currency: <InfoSpan>Euro</InfoSpan>{" "}
+              Capital: <InfoSpan>{modalCountry[0].capital}</InfoSpan>{" "}
             </Info>
             <Info>
-              Languages:<InfoSpan> German</InfoSpan>{" "}
+              Currency: <InfoSpan>Building</InfoSpan>{" "}
             </Info>
             <Info>
-              Continent:<InfoSpan>South America</InfoSpan>{" "}
+              Languages:<InfoSpan> Building</InfoSpan>{" "}
             </Info>
             <Info>
-              Area: <InfoSpan>2,000,000 km2</InfoSpan>{" "}
+              Continent: <InfoSpan>{modalCountry[0].continents}</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Area: <InfoSpan>{modalCountry[0].area.toLocaleString("en-UK")} km2</InfoSpan>{" "}
+            </Info>
+            <Info>
+              Country Phone Code: <InfoSpan> {modalCountry[0].idd.root}{modalCountry[0].idd.suffixes[0]}</InfoSpan>{" "}
             </Info>
           </Right>
         </>
-      ) : (null)}
+      ) : null}
     </Container>
   );
 };
