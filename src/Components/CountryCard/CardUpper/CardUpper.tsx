@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
+import { useCountry } from "../../../Context/CountryContext";
 
 const Container = styled.div`
   display: flex;
@@ -30,9 +31,10 @@ const CloseCircle = styled.div`
   cursor: pointer;
 `;
 const CardUpper = () => {
+  const { handleCountryModalClick} = useCountry()
   return (
     <Container>
-      <CloseCircle>
+      <CloseCircle onClick={handleCountryModalClick}>
         <AiOutlineClose size={16} style={{ color: "white" }} />
       </CloseCircle>
     </Container>

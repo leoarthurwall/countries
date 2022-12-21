@@ -37,9 +37,9 @@ interface IcountryModalOpen {
 }
 
 const CountryCard: React.FC = (): ReactElement => {
-  const { countryModalOpen } = useCountry()
+  const { countryModalOpen, handleCountryModalClick } = useCountry()
   return (
-    <Container countryModalOpen={countryModalOpen}>
+    <Container countryModalOpen={countryModalOpen} onClick={handleCountryModalClick}>
       <Card>
         <CardUpper />
         <CardLower />
