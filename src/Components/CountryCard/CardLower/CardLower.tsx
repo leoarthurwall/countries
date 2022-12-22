@@ -42,10 +42,12 @@ const Flag = styled.img`
   background-color: grey;
 `;
 const Name = styled.h3`
+  font-size: 24px;
   margin: 0;
 `;
 const Info = styled.h4`
   margin: 0;
+  font-weight: 600;
 `;
 const InfoSpan = styled.span`
   color: grey;
@@ -170,7 +172,7 @@ const CardLower = () => {
               </InfoSpan>{" "}
             </Info>
             <Info>
-              Country Phone Code:{" "}
+              Country phone code:{" "}
               <InfoSpan>
                 {" "}
                 {modalCountry[0].idd.root}
