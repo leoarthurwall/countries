@@ -134,8 +134,8 @@ const CardLower = () => {
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
               {modalCountry.length === 1 &&
-                modalCountry[0].borders.map((border: any) => (
-                  <Neighbor>{border}</Neighbor>
+                modalCountry[0].borders.map((border: any, index: any) => (
+                  <Neighbor key={index}>{border}</Neighbor>
                 ))}
             </NeighborContainer>
           </Left>
