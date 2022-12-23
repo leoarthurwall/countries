@@ -24,7 +24,7 @@ const Container = styled.section<IcountryModalOpen>`
 `;
 
 const Card = styled.div`
-  height: 70%;
+  height: auto;
   width: 70%;
   background-color: #FAFAFA;
   border-radius: 5px;
