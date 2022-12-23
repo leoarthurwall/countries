@@ -133,10 +133,13 @@ const CardLower = () => {
             </ViewMap>
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
-              {modalCountry.length === 1 &&
+              {modalCountry[0].borders ? (
                 modalCountry[0].borders.map((border: any, index: any) => (
                   <Neighbor key={index}>{border}</Neighbor>
-                ))}
+                ))
+              ) : (
+                <Neighbor>No Border data</Neighbor>
+              )}
             </NeighborContainer>
           </Left>
           <Right>
