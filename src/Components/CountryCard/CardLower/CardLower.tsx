@@ -125,7 +125,7 @@ const CardLower = () => {
               alt={`${modalCountry[0].name.common}'s flag`}
             ></Flag>
             <ViewMap
-              href="https://goo.gl/maps/Z9DXNxhf2o93kvyc6"
+              href={modalCountry[0].maps.googleMaps}
               target="_blank"
             >
               <MapText>View On Map</MapText>
