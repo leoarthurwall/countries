@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 40px 40px;
+  padding: 0px 40px 40px 40px;
   box-sizing: border-box;
 `;
 const Left = styled.section`
@@ -134,7 +134,7 @@ const CardLower = () => {
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
               {!modalCountry[0].borders ? (
-                <Neighbor>No Border data</Neighbor>
+                <Neighbor>None</Neighbor>
               ) : (
                 modalCountry[0].borders.map((border: any, index: any) => (
                   <Neighbor key={index}>{border}</Neighbor>
