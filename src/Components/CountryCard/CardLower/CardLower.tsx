@@ -133,12 +133,12 @@ const CardLower = () => {
             </ViewMap>
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
-              {modalCountry[0].borders ? (
+              {!modalCountry[0].borders ? (
+                <Neighbor>No Border data</Neighbor>
+              ) : (
                 modalCountry[0].borders.map((border: any, index: any) => (
                   <Neighbor key={index}>{border}</Neighbor>
                 ))
-              ) : (
-                <Neighbor>No Border data</Neighbor>
               )}
             </NeighborContainer>
           </Left>
@@ -176,11 +176,14 @@ const CardLower = () => {
             </Info>
             <Info>
               Country phone code:{" "}
-              <InfoSpan>
-                {" "}
-                {modalCountry[0].idd.root}
-                {modalCountry[0].idd.suffixes[0]}
-              </InfoSpan>{" "}
+              {!modalCountry[0].idd?.root?  (
+                <InfoSpan>No Info</InfoSpan>
+              ) : (
+                <InfoSpan>
+                  {modalCountry[0].idd.root}
+                  {modalCountry[0].idd.suffixes[0]}
+                </InfoSpan>
+              )}
             </Info>
           </Right>
         </>

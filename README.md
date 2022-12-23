@@ -1,8 +1,9 @@
-## Input plan
+## TODO
 
-- Create a select box
-- give the select box an onChange event handler
-- create inputText state 
-- save the onChange e.target.innerHTML to the inputText state
-- filter the countries array to return only the countries that match the input text state
-- map through the filtered variable to display the selected country
+- setTimeout for countryModal - currently when you click off and on too quickly, the aray hasnt filled and the container is blank
+- add +1 for countries.length in the nav
+- make countries modal responsive
+- make nav responsive
+- display country name rather than abbrev for borders
+- link between countries when click on border
+- style countryModal
