@@ -12,5 +12,5 @@ export interface ICountries {
     googleMaps: string
     continents: string
     currencies: any
-    
+    borders: any
 }

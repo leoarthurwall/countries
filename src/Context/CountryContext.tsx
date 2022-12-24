@@ -32,6 +32,8 @@ type CountryContextProps = {
   handleCountryModalClick: (val: any) => void;
   modalCountry: any[];
   setModalCountry: (val: any[]) => void;
+  modalCountryBorders: any[];
+  setModalCountryBorders: (val: any[]) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -49,6 +51,9 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false);
   const [modalCountry, setModalCountry] = useState<ICountries[]>([]);
+  const [modalCountryBorders, setModalCountryBorders] = useState<ICountries[]>(
+    []
+  );
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -77,7 +82,6 @@ export function CountryProvider({ children }: CountryProviderProps) {
     );
 
     setCountryModalOpen(!countryModalOpen);
-
   };
   console.log({ modalCountry });
 
@@ -104,6 +108,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         handleCountryModalClick,
         modalCountry,
         setModalCountry,
+        modalCountryBorders,
+        setModalCountryBorders,
       }}
     >
       {children}

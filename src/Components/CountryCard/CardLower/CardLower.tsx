@@ -115,6 +115,7 @@ transition: 0.2s;
 const CardLower = () => {
   const { modalCountry } = useCountry();
 
+ 
   return (
     <Container>
       {modalCountry.length === 1 ? (
@@ -124,10 +125,7 @@ const CardLower = () => {
               src={modalCountry[0].flags.png}
               alt={`${modalCountry[0].name.common}'s flag`}
             ></Flag>
-            <ViewMap
-              href={modalCountry[0].maps.googleMaps}
-              target="_blank"
-            >
+            <ViewMap href={modalCountry[0].maps.googleMaps} target="_blank">
               <MapText>View On Map</MapText>
               <BiMap size={18} />
             </ViewMap>
@@ -176,7 +174,7 @@ const CardLower = () => {
             </Info>
             <Info>
               Country phone code:{" "}
-              {!modalCountry[0].idd?.root?  (
+              {!modalCountry[0].idd?.root ? (
                 <InfoSpan>No Info</InfoSpan>
               ) : (
                 <InfoSpan>
