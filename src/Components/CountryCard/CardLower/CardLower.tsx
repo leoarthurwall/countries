@@ -66,14 +66,14 @@ font-size: 14px;
 color: white;
 gap 10px;
 box-sizing: border-box;
-background-color: rgba(0, 0, 0, 0.4);
+background-color: #7A74E0;
 border-radius: 25px;
 box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px;
 text-decoration: none;
 cursor: pointer;
 transition: 0.2s;
 &:hover{
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: #5B4E87;
 }
 `;
 
@@ -85,11 +85,11 @@ const MapText = styled.p`
 `;
 
 const InfoContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 10px;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+`;
 const NeighborContainer = styled.div`
   display: flex;
   align-items: center;
@@ -108,20 +108,19 @@ font-size: 14px;
 color: white;
 gap 10px;
 box-sizing: border-box;
-background-color: rgba(0, 0, 0, 0.4);
+background-color: #7A74E0;
 border-radius: 25px;
 box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px;
 text-decoration: none;
 cursor: pointer;
 transition: 0.2s;
 &:hover{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #5B4E87;
 }
 `;
 const CardLower = () => {
   const { modalCountry } = useCountry();
 
- 
   return (
     <Container>
       {modalCountry.length === 1 ? (
@@ -136,17 +135,16 @@ const CardLower = () => {
               <BiMap size={18} />
             </ViewMap>
             <InfoContainer>
-
-            <Info>Bordering Countries:</Info>
-            <NeighborContainer>
-              {!modalCountry[0].borders ? (
-                <Neighbor>None</Neighbor>
-              ) : (
-                modalCountry[0].borders.map((border: any, index: any) => (
-                  <Neighbor key={index}>{border}</Neighbor>
-                ))
-              )}
-            </NeighborContainer>
+              <Info>Bordering Countries:</Info>
+              <NeighborContainer>
+                {!modalCountry[0].borders ? (
+                  <Neighbor>None</Neighbor>
+                ) : (
+                  modalCountry[0].borders.map((border: any, index: any) => (
+                    <Neighbor key={index}>{border}</Neighbor>
+                  ))
+                )}
+              </NeighborContainer>
             </InfoContainer>
           </Left>
           <Right>
