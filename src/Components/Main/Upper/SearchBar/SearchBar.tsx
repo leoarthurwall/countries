@@ -12,7 +12,6 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
-
   padding-left: 50px;
   height: 45px;
   box-sizing: border-box;
@@ -22,6 +21,9 @@ const Input = styled.input`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   ::placeholder {
     color: grey;
+  }
+  &:focus {
+    box-shadow: #5b4e87 0px 1px 4px;
   }
   @media (max-width: 700px) {
     width: 250px;
@@ -103,7 +105,7 @@ const SearchBar: React.FC = (): ReactElement => {
       )
     );
     setInputText("");
-    setSearchQuery(inputText)
+    setSearchQuery(inputText);
   };
 
   // GETS THE COUNTRY THAT IS CLICKED ON
@@ -116,8 +118,7 @@ const SearchBar: React.FC = (): ReactElement => {
       )
     );
     setInputText("");
-    setSearchQuery(e.target.innerText)
-
+    setSearchQuery(e.target.innerText);
   };
 
   // NOTE - BRING SEARCH STATE, FILTERS AND HANDLERS TO MAIN SO IT CAN BE PASSED INTO THE CARD WHEN SELECTED
