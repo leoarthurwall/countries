@@ -84,6 +84,12 @@ const MapText = styled.p`
   margin: 0;
 `;
 
+const InfoContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 10px;
+`
 const NeighborContainer = styled.div`
   display: flex;
   align-items: center;
@@ -129,6 +135,8 @@ const CardLower = () => {
               <MapText>View On Map</MapText>
               <BiMap size={18} />
             </ViewMap>
+            <InfoContainer>
+
             <Info>Bordering Countries:</Info>
             <NeighborContainer>
               {!modalCountry[0].borders ? (
@@ -139,6 +147,7 @@ const CardLower = () => {
                 ))
               )}
             </NeighborContainer>
+            </InfoContainer>
           </Left>
           <Right>
             <Name>{modalCountry[0].name.common}</Name>
