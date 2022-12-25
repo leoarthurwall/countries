@@ -23,7 +23,7 @@ const Input = styled.input`
     color: grey;
   }
   &:focus {
-    box-shadow: #5b4e87 0px 1px 4px;
+    box-shadow: #7A74E0 0px 1px 4px;
   }
   @media (max-width: 700px) {
     width: 250px;
@@ -133,7 +133,7 @@ const SearchBar: React.FC = (): ReactElement => {
         ></Input>
         <AiOutlineSearch
           size={20}
-          style={{ position: "absolute", left: "20px", color: "grey" }}
+          style={{ position: "absolute", left: "20px", color: "#7A74E0" }}
         />
       </InputForm>
       {displaySearchOptions ? (
