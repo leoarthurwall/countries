@@ -19,7 +19,7 @@ const Left = styled.section`
   flex-direction: column;
   height: 100%;
   width: 50%;
-  padding-right: 40px;
+  padding-right: 20px;
   box-sizing: border-box;
   gap: 30px;
 `;
@@ -31,7 +31,7 @@ const Right = styled.section`
   flex-direction: column;
   height: 100%;
   width: 50%;
-  padding-left: 40px;
+  padding-left: 20px;
   gap: 15px;
 `;
 const Flag = styled.img`
