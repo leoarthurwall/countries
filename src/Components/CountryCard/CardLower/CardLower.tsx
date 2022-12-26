@@ -6,7 +6,6 @@ import { BiMap } from "react-icons/bi";
 const Container = styled.div`
   display: flex;
   justify-content: end;
-  align-items: center;
   height: 100%;
   width: 100%;
   padding: 0px 40px 40px 40px;
@@ -33,6 +32,7 @@ const Right = styled.section`
   width: 50%;
   padding-left: 20px;
   gap: 15px;
+
 `;
 const Flag = styled.img`
   height: 45%;
@@ -163,12 +163,6 @@ const CardLower = () => {
             </Info>
             <Info>
               Capital: <InfoSpan>{modalCountry[0].capital}</InfoSpan>{" "}
-            </Info>
-            <Info>
-              Currency: <InfoSpan>Building</InfoSpan>{" "}
-            </Info>
-            <Info>
-              Languages:<InfoSpan> Building</InfoSpan>{" "}
             </Info>
             <Info>
               Continent: <InfoSpan>{modalCountry[0].continents}</InfoSpan>{" "}
