@@ -4,6 +4,7 @@ import CardUpper from "./CardUpper/CardUpper";
 import CardLower from "./CardLower/CardLower";
 import { useCountry } from "../../Context/CountryContext";
 import CardMobile from "./CardMobile/CardMobile";
+import { useMediaQuery } from "react-responsive";
 
 const Container = styled.section<IcountryModalOpen>`
   position: fixed;
@@ -27,8 +28,8 @@ const Container = styled.section<IcountryModalOpen>`
 const Card = styled.div`
   height: auto;
   width: 70%;
-  max-width:750px;
-  background-color: #FAFAFA;
+  max-width: 750px;
+  background-color: #fafafa;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -55,14 +56,15 @@ interface IcountryModalOpen {
 const CountryCard: React.FC = (): ReactElement => {
   const { countryModalOpen, handleCountryModalClick } = useCountry();
 
-  
+  const isMobile = useMediaQuery({
+    query: "(max-width: 600px)",
+  });
 
   return (
     <Container countryModalOpen={countryModalOpen}>
       <Card>
         <CardUpper />
-        <CardMobile />
-        {/* <CardLower /> */}
+        {isMobile ? <CardMobile /> : <CardLower />}
       </Card>
       <Overlay
         onClick={handleCountryModalClick}

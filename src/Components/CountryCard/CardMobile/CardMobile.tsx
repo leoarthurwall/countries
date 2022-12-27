@@ -28,7 +28,8 @@ const Flag = styled.img`
   background-color: grey;
 `;
 const Name = styled.h3`
-  font-size: 24px;
+  font-size: 18px;
+  text-align: center;
   margin: 0;
 `;
 const Info = styled.h4`
