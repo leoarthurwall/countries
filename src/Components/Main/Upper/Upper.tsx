@@ -23,7 +23,7 @@ const Text = styled.h3`
   font-weight: 500;
   padding: 0 20px;
   font-size: 16px;
-  @media(max-width:900px){
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -39,8 +39,7 @@ const SpanQuery = styled.span`
 `;
 
 const Upper: React.FC = (): ReactElement => {
-  const { countries, filteredCountries, searchQuery } =
-    useCountry();
+  const { countries, filteredCountries, searchQuery } = useCountry();
 
   // CAPITALISES ONLY THE FIRST LETTER OF THE SEARCHQUERY STRING
   const queryWithCapFirstLetter =

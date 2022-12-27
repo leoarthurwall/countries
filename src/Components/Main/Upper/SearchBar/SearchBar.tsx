@@ -23,10 +23,11 @@ const Input = styled.input`
     color: grey;
   }
   &:focus {
-    box-shadow: #7A74E0 0px 1px 4px;
+    box-shadow: #7a74e0 0px 1px 4px;
   }
   @media (max-width: 700px) {
-    width: 250px;
+    width: 100%;
+    max-width: 300px;
   }
 `;
 

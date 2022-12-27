@@ -15,6 +15,10 @@ const Container = styled.main`
 
   display: flex;
   flex-direction: column;
+  @media(max-width: 600px){
+    padding: 0 40px 50px 40px;
+
+  }
 `;
 
 const Main: React.FC = (): ReactElement => {
