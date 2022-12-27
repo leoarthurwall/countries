@@ -10,6 +10,9 @@ const Container = styled.nav`
   padding: 0 70px;
   box-sizing: border-box;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  @media (max-width: 600px) {
+    padding: 0 40px;
+  }
 `;
 const Header = styled.h1`
   margin: 0;
@@ -17,6 +20,9 @@ const Header = styled.h1`
   font-size: 20px;
   font-weight: 700;
   width: fit-content;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 
 const DarkContainer = styled.div`
