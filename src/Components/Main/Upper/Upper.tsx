@@ -22,6 +22,10 @@ const Container = styled.section`
 const Text = styled.h3`
   font-weight: 500;
   padding: 0 20px;
+  font-size: 16px;
+  @media(max-width:900px){
+    display: none;
+  }
 `;
 const Span = styled.span`
   font-weight: 300;
