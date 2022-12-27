@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import CardUpper from "./CardUpper/CardUpper";
 import CardLower from "./CardLower/CardLower";
 import { useCountry } from "../../Context/CountryContext";
+import CardMobile from "./CardMobile/CardMobile";
 
 const Container = styled.section<IcountryModalOpen>`
   position: fixed;
@@ -60,7 +61,8 @@ const CountryCard: React.FC = (): ReactElement => {
     <Container countryModalOpen={countryModalOpen}>
       <Card>
         <CardUpper />
-        <CardLower />
+        <CardMobile />
+        {/* <CardLower /> */}
       </Card>
       <Overlay
         onClick={handleCountryModalClick}
