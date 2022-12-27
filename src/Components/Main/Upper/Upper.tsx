@@ -21,6 +21,7 @@ const Container = styled.section`
 
 const Text = styled.h3`
   font-weight: 500;
+  padding: 0 20px;
 `;
 const Span = styled.span`
   font-weight: 300;
