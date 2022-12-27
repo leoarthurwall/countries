@@ -26,8 +26,7 @@ const Input = styled.input`
     box-shadow: #7a74e0 0px 1px 4px;
   }
   @media (max-width: 700px) {
-    width: 100%;
-    max-width: 300px;
+    width:200px;
   }
 `;
 

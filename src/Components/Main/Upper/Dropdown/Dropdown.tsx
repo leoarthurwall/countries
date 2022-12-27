@@ -21,7 +21,9 @@ const DropdownContainer = styled.div`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
- 
+  @media (max-width: 600px) {
+    
+  }
 `;
 const Text = styled.h4`
   margin: 0;
