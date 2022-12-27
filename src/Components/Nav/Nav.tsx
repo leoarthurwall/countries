@@ -24,12 +24,24 @@ const DarkContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding
+  @media (max-width: 600px) {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.2s;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 `;
 const DarkText = styled.h4`
   margin: 0;
   font-size: 16px;
   font-weight: 600;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 const Nav = () => {
   return (
