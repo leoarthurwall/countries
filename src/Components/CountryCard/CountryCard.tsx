@@ -34,6 +34,9 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 120;
+  @media(max-width:600px){
+    width: 80%;
+  }
 `;
 
 const Overlay = styled.div<IcountryModalOpen>`
