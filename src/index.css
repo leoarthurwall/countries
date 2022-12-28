@@ -17,7 +17,9 @@ code {
 :root {
   --accent-color: 
   --font-color: #666;
-  --background-color:
-  --card-color:
+  --font-span-color: grey;
+  --body-background-color: #FAFAFA;
+  --card-color: #fff;
+  --box-shadow:
 
 }
