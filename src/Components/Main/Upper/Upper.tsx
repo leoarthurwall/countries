@@ -21,6 +21,7 @@ const Container = styled.section`
 
 const Text = styled.h3`
   font-weight: 500;
+  color: ${(props) => props.theme.fontColor};
   padding: 0 20px;
   font-size: 16px;
   @media (max-width: 900px) {
@@ -30,12 +31,13 @@ const Text = styled.h3`
 const Span = styled.span`
   font-weight: 300;
   font-size: 14px;
-  color: grey;
+  color: ${(props) => props.theme.fontSpanColor};
 `;
+
 const SpanQuery = styled.span`
   font-weight: 500;
   font-size: 16px;
-  color: grey;
+  color: ${(props) => props.theme.fontSpanColor};
 `;
 
 const Upper: React.FC = (): ReactElement => {
