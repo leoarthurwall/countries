@@ -34,6 +34,8 @@ type CountryContextProps = {
   setModalCountry: (val: any[]) => void;
   modalCountryBorders: any[];
   setModalCountryBorders: (val: any[]) => void;
+  isDarkMode: boolean;
+  setIsDarkMode: (val: boolean) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -54,6 +56,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [modalCountryBorders, setModalCountryBorders] = useState<ICountries[]>(
     []
   );
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -110,6 +113,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setModalCountry,
         modalCountryBorders,
         setModalCountryBorders,
+        isDarkMode,
+        setIsDarkMode,
       }}
     >
       {children}
