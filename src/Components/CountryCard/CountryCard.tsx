@@ -29,7 +29,7 @@ const Card = styled.div`
   height: auto;
   width: 70%;
   max-width: 750px;
-  background-color: #fafafa;
+  background-color: ${(props) => props.theme.mainBackgroundColor};
   border-radius: 5px;
   display: flex;
   flex-direction: column;

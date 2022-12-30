@@ -19,14 +19,14 @@ const CloseCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: ${(props) => props.theme.closeCircle};
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   transition: 0.2s;
   margin: 20px;
 
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: ${(props) => props.theme.closeCircleHover};
   }
   cursor: pointer;
 `;

@@ -44,15 +44,20 @@ const Flag = styled.img`
 const Name = styled.h3`
   font-size: 24px;
   margin: 0;
+  color: ${(props) => props.theme.header};
 `;
 const Info = styled.h4`
   margin: 0;
   font-weight: 600;
+  color: ${(props) => props.theme.fontColor};
+
 `;
 const InfoSpan = styled.span`
   color: grey;
   font-weight: 300;
   font-size: 14px;
+  color: ${(props) => props.theme.fontSpanColor};
+
 `;
 
 const ViewMap = styled.a`
@@ -66,19 +71,19 @@ font-size: 14px;
 color: white;
 gap 10px;
 box-sizing: border-box;
-background-color: #7A74E0;
+background-color: ${(props) => props.theme.accentColor};
 border-radius: 25px;
-box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px;
+box-shadow: ${(props) => props.theme.boxShadow} 1px 3px 5px;
 text-decoration: none;
 cursor: pointer;
 transition: 0.2s;
 &:hover{
-  background-color: #5B4E87;
+  background-color: ${(props) => props.theme.accentColorHover};
 }
 `;
 
 const MapText = styled.p`
-  color: white;
+  color: ${(props) => props.theme.buttonTextColor};
   font-size: 14px;
   font-weight: 500;
   margin: 0;
@@ -105,17 +110,17 @@ height: auto;
 width: fit-content;
 padding: 12px 15px;
 font-size: 14px;
-color: white;
+color: ${(props) => props.theme.buttonTextColor};
 gap 10px;
 box-sizing: border-box;
-background-color: #7A74E0;
+background-color: ${(props) => props.theme.accentColor};
 border-radius: 25px;
-box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px;
+box-shadow: ${(props) => props.theme.boxShadow}; 1px 3px 5px;
 text-decoration: none;
 cursor: pointer;
 transition: 0.2s;
 &:hover{
-    background-color: #5B4E87;
+    background-color: ${(props) => props.theme.accentColorHover};
 }
 `;
 const CardLower = () => {
