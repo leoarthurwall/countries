@@ -15,8 +15,9 @@ const lightTheme = {
   body: "#FAFAFA",
   fontColor: "#666",
   fontSpanColor: "#808080",
-  cardColor: "#fff",
+  mainBackgroundColor: "#fff",
   placeholder: "#808080",
+  searchHoverBackground: "#e8eaed",
 };
 
 function App() {

@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
+  color: ${(props) => props.theme.fontColor};
   padding-left: 50px;
   height: 45px;
   box-sizing: border-box;
@@ -26,7 +27,7 @@ const Input = styled.input`
     box-shadow: #7a74e0 0px 1px 4px;
   }
   @media (max-width: 700px) {
-    width:200px;
+    width: 200px;
   }
 `;
 
@@ -40,7 +41,7 @@ const InputForm = styled.form`
 const SearchOptions = styled.ul<IisSearchOpen>`
   margin: 0;
   list-style: none;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.mainBackgroundColor};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 10px 0;
   position: absolute;
@@ -52,12 +53,13 @@ const SearchOptions = styled.ul<IisSearchOpen>`
 `;
 
 const SearchItem = styled.li`
+  color: ${(props) => props.theme.fontColor};
   font-weight: 400;
   font-size: 14px;
   padding: 10px 20px;
   cursor: pointer;
   &:hover {
-    background-color: #e8eaed;
+    background-color: ${(props) => props.theme.searchHoverBackground};
   }
 `;
 

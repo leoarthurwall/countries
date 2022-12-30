@@ -18,7 +18,7 @@ const DropdownContainer = styled.div`
   padding: 0 20px;
   width: 200px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.mainBackgroundColor};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
   @media (max-width: 600px) {
@@ -41,7 +41,7 @@ const IconContainer = styled.div<IisDropdownOpen>`
 const DropdownMenu = styled.ul<IisDropdownOpen>`
   margin: 0;
   list-style: none;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.mainBackgroundColor};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 10px 0;
   position: absolute;
@@ -53,11 +53,12 @@ const DropdownMenu = styled.ul<IisDropdownOpen>`
 `;
 const DropdownItem = styled.li`
   font-weight: 400;
+  color: ${(props) => props.theme.fontColor}
   font-size: 14px;
   padding: 10px 20px;
   cursor: pointer;
   &:hover {
-    background-color: #e8eaed;
+    background-color: ${(props) => props.theme.searchHoverBackground};
   }
 `;
 
