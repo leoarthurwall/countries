@@ -17,6 +17,7 @@ const Container = styled.nav`
 const Header = styled.h1`
   margin: 0;
   padding: 0;
+  color: ${(props) => props.theme.header};
   font-size: 20px;
   font-weight: 700;
   width: fit-content;
@@ -33,17 +34,18 @@ const DarkContainer = styled.div`
   @media (max-width: 600px) {
     padding: 8px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.05);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: ${(props) => props.theme.circle};
+    box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
     transition: 0.2s;
     &:hover {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: ${(props) => props.theme.circleHover};
     }
   }
 `;
 const DarkText = styled.h4`
   margin: 0;
   font-size: 16px;
+  color: ${(props) => props.theme.header};
   font-weight: 600;
   @media (max-width: 600px) {
     display: none;

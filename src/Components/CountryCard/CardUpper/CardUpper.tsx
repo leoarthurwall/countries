@@ -19,14 +19,14 @@ const CloseCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.closeCircle};
+  background-color: ${(props) => props.theme.circle};
   box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   transition: 0.2s;
   margin: 20px;
 
 
   &:hover {
-    background-color: ${(props) => props.theme.closeCircleHover};
+    background-color: ${(props) => props.theme.circleHover};
   }
   cursor: pointer;
 `;
@@ -35,7 +35,7 @@ const CardUpper = () => {
   return (
     <Container>
       <CloseCircle onClick={handleCountryModalClick}>
-        <AiOutlineClose size={16} style={{ color: "white" }} />
+        <AiOutlineClose size={16} />
       </CloseCircle>
     </Container>
   );
