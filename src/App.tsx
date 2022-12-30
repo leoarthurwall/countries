@@ -28,6 +28,24 @@ const lightTheme = {
   buttonTextColor: "#fff",
 };
 
+// NEED TO UPDATE DARK THEME
+const darkTheme = {
+  body: "#FAFAFA",
+  header: "#000",
+  fontColor: "#666",
+  fontSpanColor: "#808080",
+  mainBackgroundColor: "#fff",
+  placeholder: "#808080",
+  searchHoverBackground: "#e8eaed",
+  boxShadow: "rgba(0, 0, 0, 0.16)",
+  circle: "rgba(0, 0, 0, 0.05)",
+  circleHover: "rgba(0, 0, 0, 0.2)",
+  circleIconColor: "#000",
+  accentColor: "#7A74E0",
+  accentColorHover: "#5B4E87",
+  buttonTextColor: "#fff",
+};
+
 function App() {
   return (
     <ThemeProvider theme={lightTheme}>
