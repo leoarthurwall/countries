@@ -49,7 +49,7 @@ const Name = styled.h3`
 const Info = styled.h4`
   margin: 0;
   font-weight: 600;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.header};
 
 `;
 const InfoSpan = styled.span`
