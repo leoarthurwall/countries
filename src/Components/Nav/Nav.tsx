@@ -9,7 +9,7 @@ const Container = styled.nav`
   align-items: center;
   padding: 0 70px;
   box-sizing: border-box;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 5px 0px;
   @media (max-width: 600px) {
     padding: 0 40px;
   }
