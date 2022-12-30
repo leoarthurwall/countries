@@ -8,8 +8,8 @@ const Container = styled.div`
   width: 100%;
   min-width: 220px;
   max-width: 300px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: ${(props) => props.theme.mainBackgroundColor};
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
 
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ const ContainerOverlay = styled.div`
 `;
 
 const Flag = styled.img`
-  background-color: #92d3ee;
+  background-color: ${(props) => props.theme.placeholder};
   height: 50%;
   width: 100%;
 `;
@@ -37,16 +37,18 @@ const TextContainer = styled.div`
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
-  color: black;
 `;
 const Header = styled.h4`
   margin-bottom: 15px;
+  color: ${(props) => props.theme.header};
 `;
 const SubHeader = styled.h5`
   margin: 5px 0;
+  color: ${(props) => props.theme.fontColor};
 `;
 const Result = styled.span`
   font-weight: 300;
+  color: ${(props) => props.theme.fontSpanColor}
 `;
 
 type Props = {

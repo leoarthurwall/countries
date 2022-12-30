@@ -13,6 +13,7 @@ flex-direction: column;
 `;
 const lightTheme = {
   body: "#FAFAFA",
+  header: "#000",
   fontColor: "#666",
   fontSpanColor: "#808080",
   mainBackgroundColor: "#fff",
