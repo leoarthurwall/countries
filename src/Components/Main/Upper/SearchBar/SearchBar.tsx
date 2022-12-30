@@ -19,13 +19,11 @@ const Input = styled.input`
   width: 300px;
   outline: none;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   ::placeholder {
     color: ${(props) => props.theme.placeholder};
   }
-  &:focus {
-    box-shadow: #7a74e0 0px 1px 4px;
-  }
+
   @media (max-width: 700px) {
     width: 200px;
   }
@@ -42,7 +40,7 @@ const SearchOptions = styled.ul<IisSearchOpen>`
   margin: 0;
   list-style: none;
   background-color: ${(props) => props.theme.mainBackgroundColor};
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   padding: 10px 0;
   position: absolute;
   width: 100%;

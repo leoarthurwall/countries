@@ -18,6 +18,7 @@ const lightTheme = {
   mainBackgroundColor: "#fff",
   placeholder: "#808080",
   searchHoverBackground: "#e8eaed",
+  boxShadow: "rgba(0, 0, 0, 0.16)",
 };
 
 function App() {
