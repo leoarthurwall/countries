@@ -20,7 +20,7 @@ const Input = styled.input`
   border: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   ::placeholder {
-    color: grey;
+    color: ${(props) => props.theme.placeholder};
   }
   &:focus {
     box-shadow: #7a74e0 0px 1px 4px;
