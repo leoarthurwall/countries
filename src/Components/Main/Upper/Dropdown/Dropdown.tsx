@@ -19,7 +19,7 @@ const DropdownContainer = styled.div`
   width: 200px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.mainBackgroundColor};
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   cursor: pointer;
   @media (max-width: 600px) {
     
@@ -28,6 +28,7 @@ const DropdownContainer = styled.div`
 const Text = styled.h4`
   margin: 0;
   font-weight: 400;
+  color: ${(props) => props.theme.fontColor};
   font-size: 14px;
 `;
 const IconContainer = styled.div<IisDropdownOpen>`
@@ -42,7 +43,7 @@ const DropdownMenu = styled.ul<IisDropdownOpen>`
   margin: 0;
   list-style: none;
   background-color: ${(props) => props.theme.mainBackgroundColor};
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   padding: 10px 0;
   position: absolute;
   width: 200px;
@@ -53,7 +54,7 @@ const DropdownMenu = styled.ul<IisDropdownOpen>`
 `;
 const DropdownItem = styled.li`
   font-weight: 400;
-  color: ${(props) => props.theme.fontColor}
+  color: ${(props) => props.theme.fontColor};
   font-size: 14px;
   padding: 10px 20px;
   cursor: pointer;
