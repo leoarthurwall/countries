@@ -30,7 +30,6 @@ const lightTheme = {
   buttonTextColor: "#fff",
 };
 
-// NEED TO UPDATE DARK THEME
 const darkTheme = {
   body: "#222D35",
   header: "#fff",
