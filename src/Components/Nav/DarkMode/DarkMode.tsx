@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useCountry } from "../../../Context/CountryContext";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
-const Container = styled.div<IisDarkMode>`
+const Container = styled.div`
   height: 22px;
   width: 45px;
   color: ${(props) => props.theme.fontColor};
@@ -11,7 +11,6 @@ const Container = styled.div<IisDarkMode>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  animation-duration: 0.5s;
 `;
 
 const IconCircle = styled.div<IisDarkMode>`
@@ -37,9 +36,13 @@ interface IisDarkMode {
 const DarkMode = () => {
   const { isDarkMode, handleColorThemeClick } = useCountry();
   return (
-    <Container onClick={handleColorThemeClick} isDarkMode={isDarkMode}>
+    <Container onClick={handleColorThemeClick}>
       <IconCircle isDarkMode={isDarkMode}>
-        {isDarkMode ? <BsFillMoonFill size={14}/> : <BsFillSunFill size={14}/>}
+        {isDarkMode ? (
+          <BsFillMoonFill size={14} />
+        ) : (
+          <BsFillSunFill size={14} />
+        )}
       </IconCircle>
     </Container>
   );
