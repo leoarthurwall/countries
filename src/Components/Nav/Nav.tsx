@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { IoMoonOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { useCountry } from "../../Context/CountryContext";
+import DarkMode from "./DarkMode/DarkMode";
 
 const Container = styled.nav`
   height: 60px;
@@ -64,6 +65,7 @@ const Nav = () => {
         <IoMoonOutline />
         <DarkText>Dark Mode</DarkText>
       </DarkContainer>
+      <DarkMode />
     </Container>
   );
 };
