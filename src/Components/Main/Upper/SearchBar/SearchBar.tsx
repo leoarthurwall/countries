@@ -61,6 +61,12 @@ const SearchItem = styled.li`
     background-color: ${(props) => props.theme.searchHoverBackground};
   }
 `;
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => props.theme.fontColor};
+`;
 
 interface IisSearchOpen {
   isSearchOpen: Boolean;
@@ -132,10 +138,12 @@ const SearchBar: React.FC = (): ReactElement => {
           placeholder="Search for a country..."
           onChange={handleInputChange}
         ></Input>
-        <AiOutlineSearch
-          size={20}
-          style={{ position: "absolute", left: "20px", color: "#7A74E0" }}
-        />
+        <IconContainer>
+          <AiOutlineSearch
+            size={20}
+            style={{ position: "absolute", left: "20px" }}
+          />
+        </IconContainer>
       </InputForm>
       {displaySearchOptions ? (
         <SearchOptions isSearchOpen={isSearchOpen}>

@@ -25,8 +25,8 @@ const lightTheme = {
   circle: "rgba(0, 0, 0, 0.05)",
   circleHover: "rgba(0, 0, 0, 0.2)",
   circleIconColor: "#000",
-  accentColor: "#7A74E0",
-  accentColorHover: "#5B4E87",
+  accentColor: "#334560",
+  accentColorHover: "#222D35",
   buttonTextColor: "#fff",
 };
 
@@ -43,8 +43,8 @@ const darkTheme = {
   circle: "#334560",
   circleHover: "#222D35",
   circleIconColor: "#fff",
-  accentColor: "#7A74E0",
-  accentColorHover: "#5B4E87",
+  accentColor: "#334560",
+  accentColorHover: "#222D35",
   buttonTextColor: "#fff",
 };
 
