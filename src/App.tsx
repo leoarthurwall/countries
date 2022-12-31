@@ -5,6 +5,7 @@ import CountryCard from "./Components/CountryCard/CountryCard";
 import { useCountry } from "./Context/CountryContext";
 
 const Container = styled.body`
+min-height: 100vh;
 height: 100%;
 width: 100vw;
 background-color: ${(props) => props.theme.body};
@@ -33,15 +34,15 @@ const lightTheme = {
 const darkTheme = {
   body: "#222D35",
   header: "#fff",
-  fontColor: "#B5B9C0",
-  fontSpanColor: "#B5B9C0",
+  fontColor: "#fff",
+  fontSpanColor: "#fff",
   mainBackgroundColor: "#2D3641",
-  placeholder: "#808080",
-  searchHoverBackground: "#e8eaed",
+  placeholder: "#fff",
+  searchHoverBackground: "#334560",
   boxShadow: "rgba(0, 0, 0, 0.16)",
   circle: "#2D3641",
   circleHover: "rgba(0, 0, 0, 0.2)",
-  circleIconColor: "#000",
+  circleIconColor: "#fff",
   accentColor: "#7A74E0",
   accentColorHover: "#5B4E87",
   buttonTextColor: "#fff",

@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   color: ${(props) => props.theme.fontColor};
+  background-color: ${(props) => props.theme.mainBackgroundColor};
   padding-left: 50px;
   height: 45px;
   box-sizing: border-box;
