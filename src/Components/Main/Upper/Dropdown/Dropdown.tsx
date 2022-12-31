@@ -9,6 +9,11 @@ const Wrapper = styled.div`
   gap: 10px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 200px;
+  }
+  
 `;
 const DropdownContainer = styled.div`
   display: flex;
@@ -22,7 +27,7 @@ const DropdownContainer = styled.div`
   box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   cursor: pointer;
   @media (max-width: 600px) {
-    
+    width: 100%;
   }
 `;
 const Text = styled.h4`

@@ -4,11 +4,15 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useCountry } from "../../../../Context/CountryContext";
 
 const Wrapper = styled.div`
-  z-index: 20;
+  z-index: 50;
   position: relative;
   gap: 10px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 600px) {
+    max-width: 300px;
+    width: 100%;
+  }
 `;
 
 const Input = styled.input`
@@ -27,6 +31,9 @@ const Input = styled.input`
 
   @media (max-width: 700px) {
     width: 200px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
 

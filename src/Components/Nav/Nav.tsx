@@ -56,11 +56,11 @@ const DarkText = styled.h4`
   }
 `;
 const Nav = () => {
-  const {handleColorThemeClick} = useCountry();
+  const { handleColorThemeClick } = useCountry();
   return (
     <Container>
       <Header>Where in the world?</Header>
-      <DarkContainer onClick={handleColorThemeClick} >
+      <DarkContainer onClick={handleColorThemeClick}>
         <IoMoonOutline />
         <DarkText>Dark Mode</DarkText>
       </DarkContainer>
