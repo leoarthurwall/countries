@@ -23,6 +23,7 @@ const CloseCircle = styled.div`
   box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   transition: 0.2s;
   margin: 20px;
+  color: ${(props) => props.theme.circleIconColor};
 
 
   &:hover {
