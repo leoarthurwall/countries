@@ -53,7 +53,7 @@ const Upper: React.FC = (): ReactElement => {
       <SearchBar />
       {searchQuery === "" ? (
         <Text>
-          All <Span>({countries.length} countries)</Span>
+          All <Span>({countries.length + 1} countries)</Span>
         </Text>
       ) : (
         <Text>
