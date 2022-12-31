@@ -30,15 +30,15 @@ const lightTheme = {
 
 // NEED TO UPDATE DARK THEME
 const darkTheme = {
-  body: "#FAFAFA",
-  header: "#000",
-  fontColor: "#666",
-  fontSpanColor: "#808080",
-  mainBackgroundColor: "#fff",
+  body: "#222D35",
+  header: "#fff",
+  fontColor: "#B5B9C0",
+  fontSpanColor: "#B5B9C0",
+  mainBackgroundColor: "#2D3641",
   placeholder: "#808080",
   searchHoverBackground: "#e8eaed",
   boxShadow: "rgba(0, 0, 0, 0.16)",
-  circle: "rgba(0, 0, 0, 0.05)",
+  circle: "#2D3641",
   circleHover: "rgba(0, 0, 0, 0.2)",
   circleIconColor: "#000",
   accentColor: "#7A74E0",
