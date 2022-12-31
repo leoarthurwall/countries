@@ -2,6 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Nav from "./Components/Nav/Nav";
 import Main from "./Components/Main/Main";
 import CountryCard from "./Components/CountryCard/CountryCard";
+import { useCountry } from "./Context/CountryContext";
 
 const Container = styled.body`
 height: 100%;
@@ -47,8 +48,9 @@ const darkTheme = {
 };
 
 function App() {
+  const { isDarkMode } = useCountry();
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Container>
         <Nav />
         <Main />

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { IoMoonOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { useCountry } from "../../Context/CountryContext";
 
 const Container = styled.nav`
   height: 60px;
@@ -52,10 +54,11 @@ const DarkText = styled.h4`
   }
 `;
 const Nav = () => {
+  const {handleColorThemeClick} = useCountry();
   return (
     <Container>
       <Header>Where in the world?</Header>
-      <DarkContainer>
+      <DarkContainer onClick={handleColorThemeClick} >
         <IoMoonOutline />
         <DarkText>Dark Mode</DarkText>
       </DarkContainer>
