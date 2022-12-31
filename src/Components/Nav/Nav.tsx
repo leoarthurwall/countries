@@ -33,6 +33,8 @@ const DarkContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
+  color: ${(props) => props.theme.fontColor};
+  cursor: pointer;
   @media (max-width: 600px) {
     padding: 8px;
     border-radius: 50%;

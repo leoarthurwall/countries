@@ -38,6 +38,7 @@ const IconContainer = styled.div<IisDropdownOpen>`
   transform: ${({ isDropdownOpen }) => isDropdownOpen && "rotate(0.5turn)"};
   transform-origin: center center;
   transition: all 0.4s ease-in-out;
+  color: ${(props) => props.theme.fontColor};
 `;
 const DropdownMenu = styled.ul<IisDropdownOpen>`
   margin: 0;
@@ -73,6 +74,7 @@ const OptionsOverlay = styled.div<IisDropdownOpen>`
   z-index: 30;
   visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
 `;
+
 
 interface IisDropdownOpen {
   isDropdownOpen: Boolean;
