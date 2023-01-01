@@ -124,7 +124,7 @@ transition: 0.2s;
 }
 `;
 const CardLower = () => {
-  const { modalCountry } = useCountry();
+  const { modalCountry, handleBoarderClick } = useCountry();
 
   return (
     <Container>
@@ -146,7 +146,7 @@ const CardLower = () => {
                   <Neighbor>None</Neighbor>
                 ) : (
                   modalCountry[0].borders.map((border: any, index: any) => (
-                    <Neighbor key={index}>{border}</Neighbor>
+                    <Neighbor key={index} onClick={handleBoarderClick}>{border}</Neighbor>
                   ))
                 )}
               </NeighborContainer>

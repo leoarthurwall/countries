@@ -61,11 +61,11 @@ export function CountryProvider({ children }: CountryProviderProps) {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   //ON CLICK HANDLER THAT DISPLAYS THE COUNTRY OF THE BOARDER THAT IS CLICKED
-
   const handleBoarderClick = () =>
  {
-
+  
  }
+
   //TOGGLES BETWEEN LIGHT AND DARK MODE
   const handleColorThemeClick = () => {
     setIsDarkMode(!isDarkMode);
