@@ -62,9 +62,10 @@ export function CountryProvider({ children }: CountryProviderProps) {
 
   //ON CLICK HANDLER THAT DISPLAYS THE COUNTRY OF THE BOARDER THAT IS CLICKED
   const handleBoarderClick = (e: any) => {
-    console.log("found border",
-      countries.find((country) => country.cca3 === e.target.innerText)
+    const clickedBorder: any[] = [...countries].filter(
+      (country) => country.cca3 === e.target.innerText
     );
+    setModalCountry(clickedBorder);
   };
 
   //TOGGLES BETWEEN LIGHT AND DARK MODE
