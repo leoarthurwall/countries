@@ -31,20 +31,20 @@ const Name = styled.h3`
   font-size: 18px;
   text-align: center;
   margin: 0;
-  ${(props) => props.theme.header}
+  color: ${(props) => props.theme.header};
 `;
 const Info = styled.h4`
   margin: 0;
   font-weight: 600;
   font-size: 12px;
   text-align: center;
-  ${(props) => props.theme.header}
+  color: ${(props) => props.theme.header};
 `;
 const InfoSpan = styled.span`
-  color: grey;
+  color: ${(props) => props.theme.fontSpanColor};
   font-weight: 300;
   font-size: 12px;
-  ${(props) => props.theme.fontSpanColor}
+  
 `;
 
 const ViewMap = styled.a`
