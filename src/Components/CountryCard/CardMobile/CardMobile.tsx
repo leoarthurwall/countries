@@ -114,19 +114,7 @@ transition: 0.2s;
 const CardMobile = () => {
   const { modalCountry, handleBoarderClick, countries } = useCountry();
 
-  // const output = [...countries].filter(
-  //   (country: any) => country.cca3 === modalCountry[0]?.border?.slice()
-  // );
 
-  const output = modalCountry[0]?.border?.filter(
-    (country: any) => country === countries.map((country: any) => country.cca3)
-  );
-  console.log("indexOf output:", output);
-
-  const countriesAbbreviations = [...countries].map((country: any) => country.cca3)
-  console.log({countriesAbbreviations})
-   
-    console.log()
   // console.log(
   //   "border filtered",
   //   modalCountry.length === 1 &&
@@ -141,6 +129,9 @@ const CardMobile = () => {
 
   // Plan
   //1 - create a new array with the countries that match the borders pf the modal country
+
+  // NOTE - cannot seem to find a way to create a new array of the countries that match the modalCountry's boarders. 
+
   //2 - map through the country.name.common of the new array
 
   console.log(
