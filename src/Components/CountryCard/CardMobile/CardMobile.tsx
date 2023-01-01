@@ -112,7 +112,27 @@ transition: 0.2s;
 }
 `;
 const CardMobile = () => {
-  const { modalCountry } = useCountry();
+  const { modalCountry, handleBoarderClick, countries } = useCountry();
+
+  // console.log(
+  //   "border filtered",
+  //   modalCountry.length === 1 &&
+  //   countries.filter(
+  //     (country: any) => country.cca3.match(modalCountry[0].border)
+  //   )
+  // );
+
+  // Plan
+  //1 - create a new array with the countries that match the borders pf the modal country
+  //2 - map through the country.name.common of the new array
+
+  console.log(
+    "modal country borders",
+    modalCountry.length === 1 &&
+    modalCountry[0].borders
+  )
+
+  
 
   return (
     <Container>
@@ -172,7 +192,9 @@ const CardMobile = () => {
                   <Neighbor>None</Neighbor>
                 ) : (
                   modalCountry[0].borders.map((border: any, index: any) => (
-                    <Neighbor key={index}>{border}</Neighbor>
+                    <Neighbor onClick={handleBoarderClick} key={index}>
+                      {border}
+                    </Neighbor>
                   ))
                 )}
               </NeighborContainer>
