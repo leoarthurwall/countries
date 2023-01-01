@@ -13,4 +13,5 @@ export interface ICountries {
     continents: string
     currencies: any
     borders: any
+    cca3: any
 }
