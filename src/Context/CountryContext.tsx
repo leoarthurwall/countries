@@ -37,6 +37,7 @@ type CountryContextProps = {
   isDarkMode: boolean;
   setIsDarkMode: (val: boolean) => void;
   handleColorThemeClick: (val: any) => void;
+  handleBoarderClick: (val: any) => void;
 };
 const CountryContext = createContext({} as CountryContextProps);
 
@@ -59,10 +60,16 @@ export function CountryProvider({ children }: CountryProviderProps) {
   );
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
-    //TOGGLES BETWEEN LIGHT AND DARK MODE
-    const handleColorThemeClick = () => {
-      setIsDarkMode(!isDarkMode)
-    }
+  //ON CLICK HANDLER THAT DISPLAYS THE COUNTRY OF THE BOARDER THAT IS CLICKED
+
+  const handleBoarderClick = () =>
+ {
+
+ }
+  //TOGGLES BETWEEN LIGHT AND DARK MODE
+  const handleColorThemeClick = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   //FETCHES COUNTRY DATA FROM API
   useEffect(() => {
@@ -122,6 +129,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
         isDarkMode,
         setIsDarkMode,
         handleColorThemeClick,
+        handleBoarderClick,
       }}
     >
       {children}

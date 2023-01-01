@@ -4,7 +4,7 @@ import Main from "./Components/Main/Main";
 import CountryCard from "./Components/CountryCard/CountryCard";
 import { useCountry } from "./Context/CountryContext";
 
-const Container = styled.body`
+const Container = styled.main`
 min-height: 100vh;
 height: 100%;
 width: 100vw;

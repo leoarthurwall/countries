@@ -1,13 +1,14 @@
 ## TODO
 
 - setTimeout for countryModal - currently when you click off and on too quickly, the aray hasnt filled and the container is blank
-- add +1 for countries.length in the nav
+- add +1 for countries.length in the nav - DONE
 - make countries modal responsive - DONE
 - make nav responsive - DONE
 - display country name rather than abbrev for borders
 - link between countries when click on border
 - style countryModal - DONE
 - create a darkmode toggle - DONE
+- Write Read me
 
 how to return the border full word rather than the initials?
 
