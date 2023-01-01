@@ -18,12 +18,3 @@ how to return the border full word rather than the initials?
 
 setModalCountryBorders(modalCountry[0].borders)
 
-modalCountry[0].borders.find((border) => border === countries.)
-
-
-  setModalCountryBorders(
-      modalCountry[0].borders?.filter((country: any) =>
-        countries.includes(country)
-      )
-
-    );

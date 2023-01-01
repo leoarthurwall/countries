@@ -114,13 +114,30 @@ transition: 0.2s;
 const CardMobile = () => {
   const { modalCountry, handleBoarderClick, countries } = useCountry();
 
+  // const output = [...countries].filter(
+  //   (country: any) => country.cca3 === modalCountry[0]?.border?.slice()
+  // );
+
+  const output = modalCountry[0]?.border?.filter(
+    (country: any) => country === countries.map((country: any) => country.cca3)
+  );
+  console.log("indexOf output:", output);
+
+  const countriesAbbreviations = [...countries].map((country: any) => country.cca3)
+  console.log({countriesAbbreviations})
+   
+    console.log()
   // console.log(
   //   "border filtered",
   //   modalCountry.length === 1 &&
-  //   countries.filter(
-  //     (country: any) => country.cca3.match(modalCountry[0].border)
+  //   [...countries].filter(
+  //     (country: any) => (modalCountry[0]?.border).indexOf(country?.cca3) !== -1
   //   )
   // );
+  //   let arrayOne  = [1,2,3,4,5]
+  //   let arrayTwo  = [1,2,4,5,6]
+  //   const output = arrayTwo.filter((number) => arrayOne.indexOf(number) !== -1)
+  // console.log("output:", output)
 
   // Plan
   //1 - create a new array with the countries that match the borders pf the modal country
@@ -128,11 +145,8 @@ const CardMobile = () => {
 
   console.log(
     "modal country borders",
-    modalCountry.length === 1 &&
-    modalCountry[0].borders
-  )
-
-  
+    modalCountry.length === 1 && modalCountry[0].borders
+  );
 
   return (
     <Container>
