@@ -16,6 +16,8 @@ type CountryContextProps = {
   setCountries: (val: any[]) => void;
   isDropdownOpen: boolean;
   setIsDropdownOpen: (val: boolean) => void;
+  isInputOpen: boolean;
+  setIsInputOpen: (val: boolean) => void;
   inputText: string;
   setInputText: (val: string) => void;
   selectedCountry: string;
@@ -47,6 +49,7 @@ export function useCountry() {
 
 export function CountryProvider({ children }: CountryProviderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [isInputOpen, setIsInputOpen] = useState<boolean>(false);
   const [countries, setCountries] = useState<ICountries[]>([]);
   const [inputText, setInputText] = useState<any>("");
   const [selectedCountry, setSelectedCountry] = useState<any>("");
@@ -132,6 +135,8 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setIsDarkMode,
         handleColorThemeClick,
         handleBoarderClick,
+        isInputOpen,
+        setIsInputOpen,
       }}
     >
       {children}

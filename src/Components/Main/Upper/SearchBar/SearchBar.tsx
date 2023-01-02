@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useCountry } from "../../../../Context/CountryContext";
+import { useEffect } from "react";
 
 const Wrapper = styled.div`
   z-index: 50;
@@ -80,6 +81,7 @@ interface IisSearchOpen {
 }
 
 const SearchBar: React.FC = (): ReactElement => {
+  
   const {
     countries,
     inputText,
@@ -88,6 +90,20 @@ const SearchBar: React.FC = (): ReactElement => {
     setFilteredCountries,
     setSearchQuery,
   } = useCountry();
+
+    //HANDLES THE OFF DROPDOWN CLICK TO CLOSE THE DROPDOWN MENU
+    useEffect(() => {
+      const handleDropdownClick = (e: any) => {
+        if (e.path[0].id !== "dropdown-button-display") {
+          setIsDropdownOpen(false);
+        }
+        console.log("pathTagname:", e.path[0]);
+      };
+      document.body.addEventListener("click", handleDropdownClick);
+  
+      return () =>
+        document.body.removeEventListener("click", handleDropdownClick);
+    }, []);
 
   //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
