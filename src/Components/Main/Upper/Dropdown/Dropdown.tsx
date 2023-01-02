@@ -118,8 +118,10 @@ const Dropdown: React.FC = (): ReactElement => {
 
   useEffect(() => {
     const handleDropdownClick = (e: any) => {
-      setIsDropdownOpen(false);
-      console.log("i've clicked:", e)
+      if (e.path[0].id !== "dropdown-button-display") {
+        setIsDropdownOpen(false);
+      }
+      console.log("pathTagname:", e.path[0]);
     };
     document.body.addEventListener("click", handleDropdownClick);
 
@@ -130,10 +132,16 @@ const Dropdown: React.FC = (): ReactElement => {
   return (
     <>
       <Wrapper>
-        <DropdownContainer onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-          <Text> Filter by Region</Text>
-          <IconContainer isDropdownOpen={isDropdownOpen}>
-            <BiChevronUp size={"auto"} />
+        <DropdownContainer
+          id="dropdown-button-display"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
+          <Text id="dropdown-button-display"> Filter by Region</Text>
+          <IconContainer
+            id="dropdown-button-display"
+            isDropdownOpen={isDropdownOpen}
+          >
+            <BiChevronUp id="dropdown-button-display" size={"auto"} />
           </IconContainer>
         </DropdownContainer>
         <DropdownMenu isDropdownOpen={isDropdownOpen}>
