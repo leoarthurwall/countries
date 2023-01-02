@@ -116,6 +116,7 @@ const SearchBar: React.FC = (): ReactElement => {
     ) {
       return country;
     }
+    return null
   });
 
   //ONLY DISPLAYS SEARCH OPTIONS WHEN MET

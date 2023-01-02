@@ -71,7 +71,6 @@ const DropdownItem = styled.li`
   }
 `;
 
-
 interface IisDropdownOpen {
   isDropdownOpen: Boolean;
 }
@@ -139,7 +138,6 @@ const Dropdown: React.FC = (): ReactElement => {
           <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
         </DropdownMenu>
       </Wrapper>
-      
     </>
   );
 };

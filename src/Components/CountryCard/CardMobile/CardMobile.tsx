@@ -112,7 +112,7 @@ transition: 0.2s;
 }
 `;
 const CardMobile = () => {
-  const { modalCountry, handleBoarderClick, countries } = useCountry();
+  const { modalCountry, handleBoarderClick } = useCountry();
 
 
   // console.log(
