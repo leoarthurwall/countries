@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import { BiChevronUp } from "react-icons/bi";
 import { useCountry } from "../../../../Context/CountryContext";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const Wrapper = styled.div`
   z-index: 40;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     max-width: 200px;
   }
 `;
-const DropdownContainer = styled.button`
+const DropdownButton = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,16 +71,6 @@ const DropdownItem = styled.li`
   }
 `;
 
-const OptionsOverlay = styled.div<IisDropdownOpen>`
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 30;
-  visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
-`;
 
 interface IisDropdownOpen {
   isDropdownOpen: Boolean;
@@ -94,11 +84,6 @@ const Dropdown: React.FC = (): ReactElement => {
     countries,
     setSearchQuery,
   } = useCountry();
-
-  // const handleDropdownClick = (e: any) => {
-  //   setIsDropdownOpen(!isDropdownOpen);
-  //   console.log("handleDropdownCLick Target:",)
-  // };
 
   const handleSelectedOption = (e: any) => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -116,6 +101,7 @@ const Dropdown: React.FC = (): ReactElement => {
     setSearchQuery("All");
   };
 
+  //HANDLES THE OFF DROPDOWN CLICK TO CLOSE THE DROPDOWN MENU
   useEffect(() => {
     const handleDropdownClick = (e: any) => {
       if (e.path[0].id !== "dropdown-button-display") {
@@ -132,7 +118,7 @@ const Dropdown: React.FC = (): ReactElement => {
   return (
     <>
       <Wrapper>
-        <DropdownContainer
+        <DropdownButton
           id="dropdown-button-display"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
@@ -143,7 +129,7 @@ const Dropdown: React.FC = (): ReactElement => {
           >
             <BiChevronUp id="dropdown-button-display" size={"auto"} />
           </IconContainer>
-        </DropdownContainer>
+        </DropdownButton>
         <DropdownMenu isDropdownOpen={isDropdownOpen}>
           <DropdownItem onClick={handleSelectedOption}>Europe</DropdownItem>
           <DropdownItem onClick={handleSelectedOption}>Americas</DropdownItem>
@@ -153,10 +139,7 @@ const Dropdown: React.FC = (): ReactElement => {
           <DropdownItem onClick={handleAllOptions}>View All</DropdownItem>
         </DropdownMenu>
       </Wrapper>
-      <OptionsOverlay
-        isDropdownOpen={isDropdownOpen}
-        // onClick={handleDropdownClick}
-      />
+      
     </>
   );
 };
