@@ -92,18 +92,20 @@ const SearchBar: React.FC = (): ReactElement => {
   } = useCountry();
 
   //HANDLES THE OFF DROPDOWN CLICK TO CLOSE THE DROPDOWN MENU
-  // useEffect(() => {
-  //   const handleDropdownClick = (e: any) => {
-  //     if (e.path[0].id !== "search-ul") {
-  //       displaySearchOptions = false;
-  //     }
-  //     console.log("pathTagname:", e.path[1].id);
-  //   };
-  //   document.body.addEventListener("click", handleDropdownClick);
+  useEffect(() => {
+    const handleSearchOffClick = (e: any) => {
+      if (e.path[0].id !== "search-ul") {
+        setInputText("");
+        setIsSearchOpen(false);
+      }
+      console.log("pathTagname:", e.path[1].id);
+    };
+    document.body.addEventListener("click", handleSearchOffClick);
 
-  //   return () =>
-  //     document.body.removeEventListener("click", handleDropdownClick);
-  // }, []);
+    return () =>
+      document.body.removeEventListener("click", handleSearchOffClick);
+  }, []);
+  console.log({ isSearchOpen });
 
   //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
@@ -122,7 +124,6 @@ const SearchBar: React.FC = (): ReactElement => {
   } else {
     setIsSearchOpen(false);
   }
-
 
   // CHANGE HANDLER - RECORDS THE INPUTTED TEXT
   const handleInputChange = (e: any) => {
