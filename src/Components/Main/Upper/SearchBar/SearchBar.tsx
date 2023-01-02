@@ -81,29 +81,29 @@ interface IisSearchOpen {
 }
 
 const SearchBar: React.FC = (): ReactElement => {
-  
   const {
     countries,
     inputText,
     setInputText,
+    setIsSearchOpen,
     isSearchOpen,
     setFilteredCountries,
     setSearchQuery,
   } = useCountry();
 
-    //HANDLES THE OFF DROPDOWN CLICK TO CLOSE THE DROPDOWN MENU
-    useEffect(() => {
-      const handleDropdownClick = (e: any) => {
-        if (e.path[0].id !== "dropdown-button-display") {
-          setIsDropdownOpen(false);
-        }
-        console.log("pathTagname:", e.path[0]);
-      };
-      document.body.addEventListener("click", handleDropdownClick);
-  
-      return () =>
-        document.body.removeEventListener("click", handleDropdownClick);
-    }, []);
+  //HANDLES THE OFF DROPDOWN CLICK TO CLOSE THE DROPDOWN MENU
+  // useEffect(() => {
+  //   const handleDropdownClick = (e: any) => {
+  //     if (e.path[0].id !== "search-ul") {
+  //       displaySearchOptions = false;
+  //     }
+  //     console.log("pathTagname:", e.path[1].id);
+  //   };
+  //   document.body.addEventListener("click", handleDropdownClick);
+
+  //   return () =>
+  //     document.body.removeEventListener("click", handleDropdownClick);
+  // }, []);
 
   //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR
   const inputFilteredArray = countries.filter((country: any) => {
@@ -117,8 +117,12 @@ const SearchBar: React.FC = (): ReactElement => {
   });
 
   //ONLY DISPLAYS SEARCH OPTIONS WHEN MET
-  const displaySearchOptions =
-    inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0;
+  if (inputFilteredArray.length !== 250 && inputFilteredArray.length !== 0) {
+    setIsSearchOpen(true);
+  } else {
+    setIsSearchOpen(false);
+  }
+
 
   // CHANGE HANDLER - RECORDS THE INPUTTED TEXT
   const handleInputChange = (e: any) => {
@@ -168,10 +172,10 @@ const SearchBar: React.FC = (): ReactElement => {
           />
         </IconContainer>
       </InputForm>
-      {displaySearchOptions ? (
-        <SearchOptions isSearchOpen={isSearchOpen}>
+      {isSearchOpen ? (
+        <SearchOptions id="search-ul" isSearchOpen={isSearchOpen}>
           {inputFilteredArray.map((item: any, index: any) => (
-            <SearchItem key={index} onClick={handleCountryClick}>
+            <SearchItem id="search-ul" key={index} onClick={handleCountryClick}>
               {item.name.common}
             </SearchItem>
           ))}
