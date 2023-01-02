@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import { BiChevronUp } from "react-icons/bi";
 import { useCountry } from "../../../../Context/CountryContext";
+import { useEffect, useRef } from "react";
 
 const Wrapper = styled.div`
   z-index: 40;
@@ -89,14 +90,14 @@ const Dropdown: React.FC = (): ReactElement => {
   const {
     isDropdownOpen,
     setIsDropdownOpen,
-
     setFilteredCountries,
     countries,
     setSearchQuery,
   } = useCountry();
 
-  const handleDropdownClick = (val: any) => {
+  const handleDropdownClick = (e: any) => {
     setIsDropdownOpen(!isDropdownOpen);
+    console.log("handleDropdownCLick Target:",)
   };
 
   const handleSelectedOption = (e: any) => {
@@ -115,6 +116,10 @@ const Dropdown: React.FC = (): ReactElement => {
     setSearchQuery("All");
   };
 
+  useEffect(() => {
+
+  }, [])
+  
   return (
     <>
       <Wrapper>
