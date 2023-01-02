@@ -14,7 +14,6 @@ const Wrapper = styled.div`
     width: 100%;
     max-width: 200px;
   }
-  
 `;
 const DropdownContainer = styled.div`
   display: flex;
@@ -81,7 +80,6 @@ const OptionsOverlay = styled.div<IisDropdownOpen>`
   visibility: ${({ isDropdownOpen }) => !isDropdownOpen && "hidden"};
 `;
 
-
 interface IisDropdownOpen {
   isDropdownOpen: Boolean;
 }
@@ -116,14 +114,15 @@ const Dropdown: React.FC = (): ReactElement => {
     setSearchQuery("All");
   };
 
-  // useEffect(() => {
+  useEffect(() => {
+    const handleDropdownClick = (e: any) => {
+      setIsDropdownOpen(false);
+    };
+    document.body.addEventListener("click", handleDropdownClick);
 
-  //   const handleDropdownClick = (e: any) => {
-  //     setIsDropdownOpen(!isDropdownOpen);
-  //     console.log("handleDropdownCLick Target:",)
-  //   };
-  //   document.body.addEventListener('click', handleDropdownClick)
-  // }, [])
+    return () =>
+      document.body.removeEventListener("click", handleDropdownClick);
+  }, []);
 
   return (
     <>
