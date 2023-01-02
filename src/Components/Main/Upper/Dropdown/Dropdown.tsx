@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     max-width: 200px;
   }
 `;
-const DropdownContainer = styled.div`
+const DropdownContainer = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +26,8 @@ const DropdownContainer = styled.div`
   background-color: ${(props) => props.theme.mainBackgroundColor};
   box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
   cursor: pointer;
+  border: none;
+
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -117,7 +119,7 @@ const Dropdown: React.FC = (): ReactElement => {
   useEffect(() => {
     const handleDropdownClick = (e: any) => {
       setIsDropdownOpen(false);
-      console.log("i've clicked:", e.target)
+      console.log("i've clicked:", e)
     };
     document.body.addEventListener("click", handleDropdownClick);
 
