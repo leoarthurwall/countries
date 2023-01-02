@@ -117,6 +117,7 @@ const Dropdown: React.FC = (): ReactElement => {
   useEffect(() => {
     const handleDropdownClick = (e: any) => {
       setIsDropdownOpen(false);
+      console.log("i've clicked:", e.target)
     };
     document.body.addEventListener("click", handleDropdownClick);
 
