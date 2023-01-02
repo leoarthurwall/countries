@@ -19,7 +19,7 @@ const Header = styled.h1`
   padding: 0;
   color: ${(props) => props.theme.header};
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   width: fit-content;
   @media (max-width: 600px) {
     font-size: 16px;
@@ -31,7 +31,7 @@ const Header = styled.h1`
 const Nav = () => {
   return (
     <Container>
-      <Header>Where in the world?</Header>
+      <Header>Countries of the World</Header>
       <DarkMode />
     </Container>
   );
