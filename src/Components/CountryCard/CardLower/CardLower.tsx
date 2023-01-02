@@ -32,7 +32,6 @@ const Right = styled.section`
   width: 50%;
   padding-left: 20px;
   gap: 15px;
-
 `;
 const Flag = styled.img`
   height: 45%;
@@ -50,14 +49,12 @@ const Info = styled.h4`
   margin: 0;
   font-weight: 600;
   color: ${(props) => props.theme.header};
-
 `;
 const InfoSpan = styled.span`
   color: grey;
   font-weight: 300;
   font-size: 14px;
   color: ${(props) => props.theme.fontSpanColor};
-
 `;
 
 const ViewMap = styled.a`
@@ -146,7 +143,9 @@ const CardLower = () => {
                   <Neighbor>None</Neighbor>
                 ) : (
                   modalCountry[0].borders.map((border: any, index: any) => (
-                    <Neighbor key={index} onClick={handleBoarderClick}>{border}</Neighbor>
+                    <Neighbor key={index} onClick={handleBoarderClick}>
+                      {border}
+                    </Neighbor>
                   ))
                 )}
               </NeighborContainer>

@@ -113,7 +113,7 @@ const Dropdown: React.FC = (): ReactElement => {
 
     return () =>
       document.body.removeEventListener("click", handleDropdownClick);
-  }, []);
+  }, [setIsDropdownOpen]);
 
   return (
     <>

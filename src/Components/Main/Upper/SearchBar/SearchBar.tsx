@@ -104,7 +104,7 @@ const SearchBar: React.FC = (): ReactElement => {
 
     return () =>
       document.body.removeEventListener("click", handleSearchOffClick);
-  }, []);
+  }, [setInputText, setIsSearchOpen]);
   console.log({ isSearchOpen });
 
   //RETURNS COUNTRIES THAT START WITH THE LETTERS WRITTEN INTO THE INPUT BAR

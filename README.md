@@ -5,9 +5,10 @@
 - make countries modal responsive - DONE
 - make nav responsive - DONE
 - display country name rather than abbrev for borders
-- link between countries when click on border
+- link between countries when click on border - DONE
 - style countryModal - DONE
 - create a darkmode toggle - DONE
+- create off click for both the dropdown and search - DONE
 - Write Read me
 
 how to return the border full word rather than the initials?
