@@ -59,7 +59,7 @@ color: white;
 gap 10px;
 box-sizing: border-box;
 background-color: ${(props) => props.theme.accentColor};
-border-radius: 25px;
+border-radius: 2px;
 box-shadow: ${(props) => props.theme.boxShadow} 1px 3px 5px;
 text-decoration: none;
 cursor: pointer;
