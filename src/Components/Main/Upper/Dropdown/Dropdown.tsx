@@ -95,10 +95,10 @@ const Dropdown: React.FC = (): ReactElement => {
     setSearchQuery,
   } = useCountry();
 
-  const handleDropdownClick = (e: any) => {
-    setIsDropdownOpen(!isDropdownOpen);
-    console.log("handleDropdownCLick Target:",)
-  };
+  // const handleDropdownClick = (e: any) => {
+  //   setIsDropdownOpen(!isDropdownOpen);
+  //   console.log("handleDropdownCLick Target:",)
+  // };
 
   const handleSelectedOption = (e: any) => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -116,14 +116,19 @@ const Dropdown: React.FC = (): ReactElement => {
     setSearchQuery("All");
   };
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, [])
-  
+  //   const handleDropdownClick = (e: any) => {
+  //     setIsDropdownOpen(!isDropdownOpen);
+  //     console.log("handleDropdownCLick Target:",)
+  //   };
+  //   document.body.addEventListener('click', handleDropdownClick)
+  // }, [])
+
   return (
     <>
       <Wrapper>
-        <DropdownContainer onClick={handleDropdownClick}>
+        <DropdownContainer onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
           <Text> Filter by Region</Text>
           <IconContainer isDropdownOpen={isDropdownOpen}>
             <BiChevronUp size={"auto"} />
@@ -140,7 +145,7 @@ const Dropdown: React.FC = (): ReactElement => {
       </Wrapper>
       <OptionsOverlay
         isDropdownOpen={isDropdownOpen}
-        onClick={handleDropdownClick}
+        // onClick={handleDropdownClick}
       />
     </>
   );
