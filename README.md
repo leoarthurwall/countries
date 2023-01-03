@@ -1,3 +1,7 @@
+## COUNTRIES APP
+
+Welcome to th countries app where you can search for any of the world countries by region in the dropdown menu, or directly in the input bar. Click on any country to see more detailed information. Once here, you can view the country on google maps, or click through to it's neighboring countries.
+
 ## TODO
 
 - setTimeout for countryModal - currently when you click off and on too quickly, the aray hasnt filled and the container is blank
@@ -18,4 +22,6 @@ how to return the border full word rather than the initials?
 3 - map through new array and display country.name.common
 
 setModalCountryBorders(modalCountry[0].borders)
+
+https://www.youtube.com/watch?v=zgd-z3R1o2k
 
