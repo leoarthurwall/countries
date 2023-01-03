@@ -20,10 +20,25 @@ Welcome to th countries app where you can search for any of the world countries 
 
 
 ## LEARNING POINTS
+- ARRAY METHODS
+  - filter
+  - Map
+  - find
+  - match
+- Context
+- off click
+- toggle themes
+- grid layout
+
 
 ## CHALLENGES
 
+- making sure the page renders the same time an event is triggered
+- displaying results based on user search
+
 ## FUTURE ITERATIONS
+
+- display full names for border instead on abbreviations 
 
 ## TODO
 
