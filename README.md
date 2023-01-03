@@ -1,6 +1,29 @@
-## COUNTRIES APP
+# COUNTRIES APP
 
 Welcome to th countries app where you can search for any of the world countries by region in the dropdown menu, or directly in the input bar. Click on any country to see more detailed information. Once here, you can view the country on google maps, or click through to it's neighboring countries.
+
+## FEATURES
+
+### SEARCH INPUT BAR
+### DROPDOWN MENU
+### DARKMODE TOGGLE
+### COUNTRY MODAL
+### API DATA
+### BORDER CLICK THROUGH
+### CLOSE OFF CLICK
+### GRID LAYOUT
+
+## TECH STACK
+- REACT
+- TYPESCRIPT
+- STYLED COMPONENTS
+
+
+## LEARNING POINTS
+
+## CHALLENGES
+
+## FUTURE ITERATIONS
 
 ## TODO
 
