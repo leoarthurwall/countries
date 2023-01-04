@@ -19,10 +19,15 @@ This web application has a number of key features that are worth knowing about a
 - When you select a country, a modal will appear with more details about the country as well as a link to google maps, and option to click thrlugh to bordering countries.
 
 ### API DATA
+- The country data is fetched from the REST Countries API. Once fetched, it is stored in an array as state and then used throughout the application.
 
 ### BORDER CLICK THROUGH
+- When you are on the Country modal, you have the option to view the bordering countries by clicking on the button. The same modal will appear, but now with the data of the county you clicked on. This is another way of viewing country information.
+
 ### CLOSE OFF CLICK
+- Being able to close the region dropdown or the input dropdown when clicking of them was a really important functionality I wanted to implement. Both function really nicely, and only one is ever open at a time.
 ### GRID LAYOUT
+- The countries on the main screen are laid out using the CSS Grid layout. It's a great way to display a really clean layout. And this offers a great example of it's use.
 
 ## TECH STACK
 - REACT
