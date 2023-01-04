@@ -13,9 +13,13 @@ This web application has a number of key features that are worth knowing about a
 - The custom dropdown menu enables you to search for countries by region. Also, the Chevron is animated so it rotates 180 degrees in a smooth motion.
 
 ### DARKMODE TOGGLE
-- This is another custom built feature. The Funtionality changes the color theme from light to dark when clicked. The button itself is custom made using some cool CSS tricks to make it transition smoothly from side to side,
+- This is another custom built feature. The Funtionality changes the color theme from light to dark when clicked. The button itself is custom made using some cool CSS tricks to make it transition smoothly from side to side.
+
 ### COUNTRY MODAL
+- When you select a country, a modal will appear with more details about the country as well as a link to google maps, and option to click thrlugh to bordering countries.
+
 ### API DATA
+
 ### BORDER CLICK THROUGH
 ### CLOSE OFF CLICK
 ### GRID LAYOUT
