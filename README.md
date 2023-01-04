@@ -4,9 +4,16 @@ Welcome to th countries app where you can search for any of the world countries 
 
 ## FEATURES
 
+This web application has a number of key features that are worth knowing about and trying for yourself:
+
 ### SEARCH INPUT BAR
+- A custom built search bar that enables you to search for any country. It will display in a menu below all of the countries that start with the the letters you input. 
+
 ### DROPDOWN MENU
+- The custom dropdown menu enables you to search for countries by region. Also, the Chevron is animated so it rotates 180 degrees in a smooth motion.
+
 ### DARKMODE TOGGLE
+- This is another custom built feature. The Funtionality changes the color theme from light to dark when clicked. The button itself is custom made using some cool CSS tricks to make it transition smoothly from side to side,
 ### COUNTRY MODAL
 ### API DATA
 ### BORDER CLICK THROUGH
