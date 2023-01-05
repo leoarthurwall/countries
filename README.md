@@ -75,7 +75,9 @@ Making this list interactive was also a big challenge. I worked it out by settin
 
 ## FUTURE ITERATIONS
 
-- display full names for border instead on abbreviations 
+### display full names for border instead on abbreviations 
+I give this a good shot but am so far still trying to figure out how to display the border names in full rather than just the abbreviations. If you fancy giving yourself a good challenge, why not fork this repo and see if you can work it out. If you do, I'd love to hear how you worked it out.
+
 
 ## TODO
 
