@@ -43,15 +43,14 @@ The tech stack for this front-end project is:
 This project covered a number of learning points, some of which are new areas.
 
 ### ARRAY METHODS
-  - filter
-  - Map
-  - find
-  - match
+  - filter - filter through API data and create a new array with desired output.
+  - Map - iterate through the array that then enables you to display the desired content of that array, for instance, the countries on the main screen.
+  
 
 ### Hooks
-- useContext
-- UueEffect
-- useState
+- useContext - Tidy way to manage the state and functions and then distribute them throughout the app where needed.
+- UueEffect - used for the API fetch request to fetch the data upon page render. 
+- useState - used to store the the various data, which can then be used throughout the app.
 
 ### Event Handling
 - close element when clicking anywhere outside of it - dropdown & input menus, and country modal.
