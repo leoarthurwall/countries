@@ -64,8 +64,14 @@ This project covered a number of learning points, some of which are new areas.
 
 ## CHALLENGES
 
-- making sure the page renders the same time an event is triggered
-- displaying results based on user search
+### displaying results based on user search
+It was really important to give the user a good searching experience. The Dropdown and input menus give the user an opportunity to refine their search by region, by country name, or even by starting letters. For instance, searching for 'FR' would display all the countries starting with FR. 
+
+### displaying the searched input live as the user types
+This was a really exciting challenge to overcome. As the user types, the input is being stored in a state, on change. The entire list of counties is filtered by matching the unput text to the any country names that astart with it, which is then stored to a new 'filtered' array. I then map through the new filtered array, which is what displays in a list when you type. 
+
+Making this list interactive was also a big challenge. I worked it out by setting the 'filtered countries' array to filter through the countries array and then return any country that started with the input text. These countries would then be displayed in the grid
+
 
 ## FUTURE ITERATIONS
 
