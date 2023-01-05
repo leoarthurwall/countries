@@ -30,21 +30,37 @@ This web application has a number of key features that are worth knowing about a
 - The countries on the main screen are laid out using the CSS Grid layout. It's a great way to display a really clean layout. And this offers a great example of it's use.
 
 ## TECH STACK
+
+The tech stack for this front-end project is:
+
 - REACT
 - TYPESCRIPT
 - STYLED COMPONENTS
 
 
 ## LEARNING POINTS
-- ARRAY METHODS
+
+This project covered a number of learning points, some of which are new areas.
+
+### ARRAY METHODS
   - filter
   - Map
   - find
   - match
-- Context
-- off click
-- toggle themes
-- grid layout
+
+### Hooks
+- useContext
+- UueEffect
+- useState
+
+### Event Handling
+- close element when clicking anywhere outside of it - dropdown & input menus, and country modal.
+
+### toggle color themes 
+- create a light and dark theme on the app compoent, wrap the app in a theme provider, pass in the themes as props to the styled components, toggle theme with state and a ternary Operator.
+
+### grid layout
+- using css flex:grid, the country was laid out in a clean and easy to manage way. Would absolutely reccomend using flex:grid for a use case such as this.
 
 
 ## CHALLENGES
