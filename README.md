@@ -109,6 +109,13 @@ I give this a good shot but am so far still trying to figure out how to display 
 - create a darkmode toggle - DONE
 - create off click for both the dropdown and search - DONE
 - Write Read me
+  -  Deploy site
+     - Add link
+  - take screen shots
+    - add to images folder in public
+    - add throughout readme
+- add to portfolio
+  - create cover image
 
 how to return the border full word rather than the initials?
 
