@@ -2,6 +2,20 @@
 
 Welcome to th countries app where you can search for any of the world countries by region in the dropdown menu, or directly in the input bar. Click on any country to see more detailed information. Once here, you can view the country on google maps, or click through to it's neighboring countries.
 
+## DEPLOYED SITE:
+
+follow this link to have a play around on the app on your own.
+
+Alternatively, you can create a fork of this repo, then run:
+
+///npm i
+
+to install all the dependencies, and then run:
+
+///npm start
+
+to run the app on your localhost:3000
+
 ## FEATURES
 
 This web application has a number of key features that are worth knowing about and trying for yourself:
