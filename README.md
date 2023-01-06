@@ -4,17 +4,21 @@ Welcome to th countries app where you can search for any of the world countries 
 
 ## DEPLOYED SITE:
 
-follow this link to have a play around on the app on your own.
+Follow this link to have a play around on the app on your own.
 
 Alternatively, you can create a fork of this repo, then run:
 
-///npm i
+```
+npm i
+```
 
 to install all the dependencies, and then run:
 
-///npm start
+```
+npm start
+```
 
-to run the app on your localhost:3000
+to run the app on your localhost.
 
 ## FEATURES
 
