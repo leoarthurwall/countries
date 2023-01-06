@@ -22,19 +22,20 @@ const Header = styled.h1`
   font-size: 20px;
   font-weight: 600;
   width: fit-content;
+  cursor: pointer;
   @media (max-width: 600px) {
     font-size: 16px;
   }
 `;
 
-
-
 const Nav = () => {
-  const {} = useCountry()
+  const { setInputText, setFilteredCountries, setSearchQuery } = useCountry();
 
   const handleHomeClick = () => {
-
-  }
+    setInputText("");
+    setFilteredCountries([]);
+    setSearchQuery("");
+  };
 
   return (
     <Container>
