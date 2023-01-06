@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useCountry } from "../../Context/CountryContext";
 import DarkMode from "./DarkMode/DarkMode";
 
 const Container = styled.nav`
@@ -29,9 +30,15 @@ const Header = styled.h1`
 
 
 const Nav = () => {
+  const {} = useCountry()
+
+  const handleHomeClick = () => {
+
+  }
+
   return (
     <Container>
-      <Header>Countries of the World</Header>
+      <Header onClick={handleHomeClick}>Countries of the World</Header>
       <DarkMode />
     </Container>
   );
