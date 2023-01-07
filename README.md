@@ -2,6 +2,8 @@
 
 Welcome to th countries app where you can search for any of the world countries by region in the dropdown menu, or directly in the input bar. Click on any country to see more detailed information. Once here, you can view the country on google maps, or click through to it's neighboring countries.
 
+![Main Image](public/images/main.png)
+
 ## DEPLOYED SITE:
 
 Follow this link to have a play around on the app on your own.
@@ -27,14 +29,23 @@ This web application has a number of key features that are worth knowing about a
 ### SEARCH INPUT BAR
 - A custom built search bar that enables you to search for any country. It will display in a menu below all of the countries that start with the the letters you input. 
 
+![Search on Tablet Image](public/images/searchTablet.png)
+
 ### DROPDOWN MENU
 - The custom dropdown menu enables you to search for countries by region. Also, the Chevron is animated so it rotates 180 degrees in a smooth motion.
+
+![Dropdown Image](public/images/dropdown.png)
 
 ### DARKMODE TOGGLE
 - This is another custom built feature. The Funtionality changes the color theme from light to dark when clicked. The button itself is custom made using some cool CSS tricks to make it transition smoothly from side to side.
 
+![Darkmode Image](public/images/darkMode.png)
+![Lightmode Image](public/images/lightMode.png)
+
 ### COUNTRY MODAL
 - When you select a country, a modal will appear with more details about the country as well as a link to google maps, and option to click thrlugh to bordering countries.
+
+![Country Modal Image](public/images/modal.png)
 
 ### API DATA
 - The country data is fetched from the REST Countries API. Once fetched, it is stored in an array as state and then used throughout the application.
@@ -44,8 +55,11 @@ This web application has a number of key features that are worth knowing about a
 
 ### CLOSE OFF CLICK
 - Being able to close the region dropdown or the input dropdown when clicking of them was a really important functionality I wanted to implement. Both function really nicely, and only one is ever open at a time.
+
 ### GRID LAYOUT
 - The countries on the main screen are laid out using the CSS Grid layout. It's a great way to display a really clean layout. And this offers a great example of it's use.
+![Darkmode Main Image](public/images/darkModeMain.png)
+
 
 ## TECH STACK
 
@@ -64,6 +78,7 @@ This project covered a number of learning points, some of which are new areas.
   - filter - filter through API data and create a new array with desired output.
   - Map - iterate through the array that then enables you to display the desired content of that array, for instance, the countries on the main screen.
   
+![Search Output Image](public/images/searchOutput.png)
 
 ### Hooks
 - useContext - Tidy way to manage the state and functions and then distribute them throughout the app where needed.
