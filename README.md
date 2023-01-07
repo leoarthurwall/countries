@@ -128,12 +128,12 @@ I give this a good shot but am so far still trying to figure out how to display 
 - style countryModal - DONE
 - create a darkmode toggle - DONE
 - create off click for both the dropdown and search - DONE
-- Write Read me
-  -  Deploy site
-     - Add link
-  - take screen shots
-    - add to images folder in public
-    - add throughout readme
+- Write Read me - DONE
+  -  Deploy site - DONE
+     - Add link - DONE
+  - take screen shots - DONE
+    - add to images folder in public - DONE
+    - add throughout readme - DONE
 - add to portfolio
   - create cover image
 
