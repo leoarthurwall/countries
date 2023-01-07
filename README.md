@@ -82,7 +82,7 @@ This project covered a number of learning points, some of which are new areas.
 
 ### Hooks
 - useContext - Tidy way to manage the state and functions and then distribute them throughout the app where needed.
-- UueEffect - used for the API fetch request to fetch the data upon page render. 
+- useEffect - used for the API fetch request to fetch the data upon page render. 
 - useState - used to store the the various data, which can then be used throughout the app.
 
 ### Event Handling
@@ -90,6 +90,9 @@ This project covered a number of learning points, some of which are new areas.
 
 ### toggle color themes 
 - create a light and dark theme on the app compoent, wrap the app in a theme provider, pass in the themes as props to the styled components, toggle theme with state and a ternary Operator.
+
+![Darkmode Mobile Image](public/images/darkModeMobile.png)
+
 
 ### grid layout
 - using css flex:grid, the country was laid out in a clean and easy to manage way. Would absolutely reccomend using flex:grid for a use case such as this.
@@ -104,6 +107,8 @@ It was really important to give the user a good searching experience. The Dropdo
 This was a really exciting challenge to overcome. As the user types, the input is being stored in a state, on change. The entire list of counties is filtered by matching the unput text to the any country names that astart with it, which is then stored to a new 'filtered' array. I then map through the new filtered array, which is what displays in a list when you type. 
 
 Making this list interactive was also a big challenge. I worked it out by setting the 'filtered countries' array to filter through the countries array and then return any country that started with the input text. These countries would then be displayed in the grid
+
+![Search Image](public/images/searchBar.png)
 
 
 ## FUTURE ITERATIONS
