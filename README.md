@@ -6,7 +6,7 @@ Welcome to th countries app where you can search for any of the world countries 
 
 ## DEPLOYED SITE:
 
-Follow this link to have a play around on the app on your own.
+Follow this link to have a play around on the <a href="https://countrieslw.netlify.app/">deployed site</a>.
 
 Alternatively, you can create a fork of this repo, then run:
 
