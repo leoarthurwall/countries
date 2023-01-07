@@ -18,8 +18,6 @@ type CountryContextProps = {
   setIsDropdownOpen: (val: boolean) => void;
   inputText: string;
   setInputText: (val: string) => void;
-  selectedCountry: string;
-  setSelectedCountry: (val: string) => void;
   inputReturn: any[];
   isSearchOpen: boolean;
   setIsSearchOpen: (val: boolean) => void;
@@ -46,19 +44,18 @@ export function useCountry() {
 }
 
 export function CountryProvider({ children }: CountryProviderProps) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-  const [countries, setCountries] = useState<ICountries[]>([]);
-  const [inputText, setInputText] = useState<any>("");
-  const [selectedCountry, setSelectedCountry] = useState<any>("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false); // boolean that states if dropdown is open or closed
+  const [countries, setCountries] = useState<ICountries[]>([]); // Array that stores all of the country data from the API
+  const [inputText, setInputText] = useState<any>(""); // stores the input text as string
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false); //State to know if search bar is open or closed
-  const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]);
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false);
-  const [modalCountry, setModalCountry] = useState<ICountries[]>([]);
+  const [filteredCountries, setFilteredCountries] = useState<ICountries[]>([]); // Array of filtered countries from dropdown or input change
+  const [searchQuery, setSearchQuery] = useState<string>(""); // Stores the search query of the user: dorpodown selection or input string
+  const [countryModalOpen, setCountryModalOpen] = useState<boolean>(false); // boolean to state if country modal is open or closed
+  const [modalCountry, setModalCountry] = useState<ICountries[]>([]); //Array that stores the modal display country
   const [modalCountryBorders, setModalCountryBorders] = useState<ICountries[]>(
     []
-  );
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  ); // Array that stores the modal country's borders
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false); //boolean to toggle dark mode on or off
 
   //ON CLICK HANDLER THAT DISPLAYS THE COUNTRY OF THE BOARDER THAT IS CLICKED
   const handleBoarderClick = (e: any) => {
@@ -112,8 +109,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setIsDropdownOpen,
         inputText,
         setInputText,
-        selectedCountry,
-        setSelectedCountry,
+    
         inputReturn,
         isSearchOpen,
         setIsSearchOpen,
@@ -132,7 +128,6 @@ export function CountryProvider({ children }: CountryProviderProps) {
         setIsDarkMode,
         handleColorThemeClick,
         handleBoarderClick,
-      
       }}
     >
       {children}
