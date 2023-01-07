@@ -57,6 +57,7 @@ export function CountryProvider({ children }: CountryProviderProps) {
   ); // Array that stores the modal country's borders
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false); //boolean to toggle dark mode on or off
 
+  
   //ON CLICK HANDLER THAT DISPLAYS THE COUNTRY OF THE BOARDER THAT IS CLICKED
   const handleBoarderClick = (e: any) => {
     const clickedBorder: any[] = [...countries].filter(
