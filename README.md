@@ -83,18 +83,18 @@ The tech stack for this front-end project is:
 This project covered a number of learning points, some of which are new areas.
 
 ### ARRAY METHODS
-  - filter - filter through API data and create a new array with desired output.
-  - Map - iterate through the array that then enables you to display the desired content of that array, for instance, the countries on the main screen.
+  - Filter - filter through API data and create a new array with the desired output.
+  - Map - iterate through the array that then displays the desired content of that array, for instance, the countries on the main screen.
   
 ![Search Output Image](public/images/searchOutput.png)
 
 ### Hooks
 - useContext - Tidy way to manage the state and functions and then distribute them throughout the app where needed.
 - useEffect - used for the API fetch request to fetch the data upon page render. 
-- useState - used to store the the various data, which can then be used throughout the app.
+- useState - used to store the various data, which can then be used throughout the app.
 
 ### Event Handling
-- close element when clicking anywhere outside of it - dropdown & input menus, and country modal.
+- close an element when clicking anywhere outside of it - dropdown & input menus, and country modal.
 
 ### toggle color themes 
 - create a light and dark theme on the app compoent, wrap the app in a theme provider, pass in the themes as props to the styled components, toggle theme with state and a ternary Operator.
@@ -112,9 +112,9 @@ This project covered a number of learning points, some of which are new areas.
 It was really important to give the user a good searching experience. The Dropdown and input menus give the user an opportunity to refine their search by region, by country name, or even by starting letters. For instance, searching for 'FR' would display all the countries starting with FR. 
 
 ### displaying the searched input live as the user types
-This was a really exciting challenge to overcome. As the user types, the input is being stored in a state, on change. The entire list of counties is filtered by matching the unput text to the any country names that astart with it, which is then stored to a new 'filtered' array. I then map through the new filtered array, which is what displays in a list when you type. 
+This was a really exciting challenge to overcome. As the user types, the input is being stored in a state, on change. The entire list of counties is filtered by matching the input text to the any country names that start with it, which is then stored to a new 'filtered' array. I then map through the new filtered array, which is what displays in a list when you type. 
 
-Making this list interactive was also a big challenge. I worked it out by setting the 'filtered countries' array to filter through the countries array and then return any country that started with the input text. These countries would then be displayed in the grid
+Making this list interactive was also a big challenge. I worked it out by setting the 'filtered countries' array to filter through the countries array and then return any country that started with the input text. These countries would then be displayed in the grid.
 
 ![Search Image](public/images/searchBar.png)
 
@@ -123,10 +123,12 @@ Making this list interactive was also a big challenge. I worked it out by settin
 
 ### set timeout for country modal
 
-Currently when you click off and on too quickly, the array hasnt filled and the container is blank. By setting a timeout, this should give the data a chance to load before the user can click on it.
+Currently when you click off and on too quickly, the array hasn't filled and the container is blank. By setting a timeout, this should give the data a chance to load before the user can click on it. 
+
+Another possible solution would be to set an error boundry, that would enable a placeholder UI if the data fails to load. I need to do more research on this to see if this would be a suitable solution.
 
 ### display full names for border instead on abbreviations 
-I give this a good shot but am so far still trying to figure out how to display the border names in full rather than just the abbreviations. If you fancy giving yourself a good challenge, why not fork this repo and see if you can work it out. If you do, I'd love to hear how you worked it out.
+I gave this a good shot but so far I'm still trying to figure out how to display the border names in full rather than just the abbreviations. If you fancy giving yourself a good challenge, why not fork this repo and see if you can work it out. If you do, I'd love to hear how you worked it out.
 
 
 
